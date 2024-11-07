@@ -1,70 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <script src="script_switch_theme.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon’s Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <meta name="description" content="Portfolio of Sir Simon, a computer science enthusiast, backend developer, and AI learner. Showcasing projects in Rust, Python, and more.">
+    <meta name="keywords" content="Portfolio, Computer Science, AI, Rust, Backend Developer, Programming, Tech Stack">
+    <meta name="author" content="Sir Simon">
+    <title>Sir Simon's Portfolio</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/">
+    <meta property="og:title" content="Sir Simon's Portfolio">
+    <meta property="og:description" content="Explore Sir Simon's projects, skills, and insights in computer science, Rust, Python, and backend development.">
+    <meta property="og:image" content="https://yourportfolio.com/images/portfolio-thumbnail.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourportfolio.com/">
+    <meta property="twitter:title" content="Sir Simon's Portfolio">
+    <meta property="twitter:description" content="Explore Sir Simon's projects, skills, and insights in computer science, Rust, Python, and backend development.">
+    <meta property="twitter:image" content="https://yourportfolio.com/images/portfolio-thumbnail.jpg">
+    
+  </head>
+  <body>
     <!-- Navigation Bar -->
+    <button id="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#thoughts">Blog/Thoughts</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="theme-switcher">🌞 | 🌜</div>
+      <!-- Theme Switcher Button -->
+
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#thoughts">Blog/Thoughts</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="theme-switcher">🌞 | 🌜</div>
     </header>
 
     <!-- Main Sections -->
     <main>
-        <!-- About Section -->
-        <section id="about">
-            <h1>About Me</h1>
-            <p>I’m a tech enthusiast interested in aviation, gaming, and pencil art...</p>
-        </section>
+      <!-- About Section -->
+      <section id="about">
+        <h1>About Me</h1>
+        <p>
+          I’m an aviation enthusiast with expertise in computer science, a touch
+          of gaming spirit, and a passion for pencil art. I’m currently working
+          on a Tic Tac Toe game AI bot and exploring the Rust programming
+          language.
+        </p>
+        <p>
+          I'm also seeking collaboration on a language learning app powered by
+          AI, so if you're interested, feel free to reach out! Don’t hesitate to
+          ask me about computer science!
+        </p>
+      </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <!-- Skills icons and levels will go here -->
-            </div>
-        </section>
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <img src="assets/cpp.png" alt="C++" />C++
+          </div>
+          <div class="skill-item">
+            <img src="assets/python.png" alt="Python" />Python
+          </div>
+          <div class="skill-item">
+            <img src="assets/rust.png" alt="Rust" />Rust
+          </div>
+          <div class="skill-item">
+            <img src="assets/html5.png" alt="HTML5" />HTML5
+          </div>
+          <div class="skill-item">
+            <img src="assets/javascript.png" alt="JavaScript" />JavaScript
+          </div>
+          <!-- Add more skill items as needed -->
+        </div>
+      </section>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-                <!-- Portfolio projects here -->
-            </div>
-        </section>
+      <!-- Portfolio Section -->
+      <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <h3>GainChain</h3>
+            <p>
+              Backend development on a decentralized social media project using
+              Rust.
+            </p>
+            <a href="https://github.com/BX7GamerX/Gain-Chain" target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+          <div class="portfolio-item">
+            <h3>Recommendation Neural Network</h3>
+            <p>
+              Built a C++ neural network to recommend social media content,
+              integrated with Rust.
+            </p>
+            <a
+              href="https://github.com/BX7GamerX/recomendation-neural-network"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+          <div class="portfolio-item">
+            <h3>Python Language Project</h3>
+            <p>A Python project showcasing language processing capabilities.</p>
+            <!-- Link can be updated when available -->
+            <a href="#">Project Details Coming Soon</a>
+          </div>
+        </div>
+      </section>
 
-        <!-- Blog Section -->
-        <section id="thoughts">
-            <h2>Blog/Thoughts</h2>
-            <div class="thoughts-grid">
-                <!-- Blog posts and artwork here -->
-            </div>
-        </section>
+      <!-- Blog Section -->
+      <section id="thoughts">
+        <h2>Blog/Thoughts</h2>
+        <div class="thoughts-grid">
+          <!-- Blog posts and artwork here -->
+        </div>
+      </section>
+      <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <p>"A brilliant backend developer with a knack for creating efficient systems." - Project Teammate</p>
+        </div>
+        <div class="testimonial">
+            <p>"Creative, technical, and an absolute pleasure to work with!" - Collaborator</p>
+        </div>
+        <!-- Add more testimonials as needed -->
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name">
-                <input type="email" name="email" placeholder="Your Email">
-                <textarea name="message" placeholder="Your Message"></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+      <!-- Testimonials Section -->
+
+
     </main>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

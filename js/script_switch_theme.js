@@ -1,8 +1,3 @@
-document.getElementById('theme-switcher').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    document.getElementById('theme-switcher').textContent = 
-        document.body.classList.contains('dark-mode') ? '🌜' : '🌞';
-});
 // Load preferred theme on page load
 window.onload = function() {
     // Check if a theme preference exists in localStorage
