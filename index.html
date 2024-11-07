@@ -7,22 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Sir Simon, a computer science enthusiast, backend developer, and AI learner. Showcasing projects in Rust, Python, and more."
+      content="Portfolio of Simon Wandera, a computer science enthusiast, backend developer, and AI learner. Showcasing projects in Rust, Python, and more."
     />
     <meta
       name="keywords"
       content="Portfolio, Computer Science, AI, Rust, Backend Developer, Programming, Tech Stack"
     />
-    <meta name="author" content="Sir Simon" />
-    <title>Sir Simon's Portfolio</title>
+    <meta name="author" content="Simon" />
+    <title>Simon's Portfolio</title>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yourportfolio.com/" />
-    <meta property="og:title" content="Sir Simon's Portfolio" />
+    <meta property="og:title" content="Simon's Portfolio" />
     <meta
       property="og:description"
-      content="Explore Sir Simon's projects, skills, and insights in computer science, Rust, Python, and backend development."
+      content="Explore Simon's projects, skills, and insights in computer science, Rust, Python, and backend development."
     />
     <meta
       property="og:image"
@@ -42,8 +42,21 @@
       content="https://yourportfolio.com/images/portfolio-thumbnail.jpg"
     />
     <!-- Navigation Bar -->
-    <button id="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
   </head>
+  <!-- Landing Section -->
+  <section id="landing">
+    <div class="landing-content">
+      <h1>Welcome to Simon's Portfolio</h1>
+      <p>
+        Backend developer, AI enthusiast, and passionate problem-solver in
+        computer science. Explore my journey through Rust, Python, and C++
+        projects.
+      </p>
+      <p>Let's dive into innovation, technology, and a touch of creativity.</p>
+      <a href="#portfolio" class="cta-button">Explore My Work</a>
+    </div>
+  </section>
+
   <body>
     <header>
       <!-- Theme Switcher Button -->
@@ -52,12 +65,12 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="#thoughts">Blog/Thoughts</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div id="theme-switcher">🌞 | 🌜</div>
+      <div id="theme-switcher" onclick="toggleTheme()">🌞 | 🌜</div>
     </header>
 
     <!-- Main Sections -->
@@ -136,13 +149,37 @@
         </div>
       </section>
 
-      <!-- Blog Section -->
+      <!-- Thoughts Section -->
       <section id="thoughts">
         <h2>Blog/Thoughts</h2>
         <div class="thoughts-grid">
-          <!-- Blog posts and artwork here -->
+          <div class="thought-item">
+            <img src="assets/images/IMAGE.jpg" alt="Drawing 1" />
+            <p>A brief description of the drawing or related thoughts.</p>
+          </div>
+          <div class="thought-item">
+            <img
+              src="assets/images/face-reveal-v0-t2y2jj75rnid1.png"
+              alt="Drawing 2"
+            />
+            <p>Your thoughts, poetry, or blog-style entry here.</p>
+          </div>
+          <!-- Add more thought items as needed -->
         </div>
       </section>
+
+      <section id="artwork">
+        <h2>Artwork Showcase</h2>
+        <div class="art-gallery">
+          <img src="assets/images/IMAGE.jpg" alt="Drawing Title 1" />
+          <img
+            src="assets/images/face-reveal-v0-t2y2jj75rnid1.png"
+            alt="Drawing Title 2"
+          />
+          <!-- More images as needed -->
+        </div>
+      </section>
+
       <section id="testimonials">
         <h2>Testimonials</h2>
         <div class="testimonial">
