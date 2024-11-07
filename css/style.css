@@ -12,12 +12,24 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+/* Centered Header */
 header {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     background-color: #1a1a1a;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
 }
 
 nav ul {
@@ -181,7 +193,7 @@ button:hover {
 }
 /* Default light theme styles */
 body {
-    background-color: #f4f4f4;
+    background-color: #b8b8b8;
     color: #333;
 }
 
@@ -255,4 +267,87 @@ button:hover, .portfolio-item a:hover {
     .skills-grid, .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+.art-gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.art-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.thoughts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.thought-item {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.thought-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.thought-item p {
+    color: #d4d4d4;
+}
+
+/* Landing Section */
+#landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #121212, #1a1a1a);
+    color: #ffffff;
+}
+
+.landing-content {
+    max-width: 800px;
+}
+
+.landing-content h1 {
+    font-size: 2.5em;
+    color: #ff7139;
+    margin-bottom: 20px;
+}
+
+.landing-content p {
+    font-size: 1.2em;
+    color: #d4d4d4;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff7139;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: #ff7139;
+    transform: translateY(-3px);
 }
