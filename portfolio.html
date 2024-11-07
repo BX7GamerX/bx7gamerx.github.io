@@ -1,66 +1,335 @@
-<head>
-    
-</head>
+<head> </head>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sir Simon's Portfolio</title>
-    <link rel="stylesheet" href="css/styles_new.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles_new.css" />
+  </head>
+  <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    
     <header>
-        <h1>Sir Simon's Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#experience">Experience</a>
-            <a href="#blog">Blog/Thoughts</a>
-            <a href="#contact">Contact</a>
-        </nav>
+      <h1>Sir Simon's Portfolio</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#experience">Experience</a>
+        <a href="#blog">Blog/Thoughts</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Aviation enthusiast, computer science expert, gamer, and pencil artist.</p>
+    <section id="about" id="about" class="fade-in">
+      <h2>About Me</h2>
+      <p>
+        Aviation enthusiast, computer science expert, gamer, and pencil artist.
+      </p>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <!-- Skills content will be added here with previous styling -->
+    <section id="skills" id="about" class="fade-in">
+      <h2>Skills</h2>
+      <!-- Skills content will be added here with previous styling -->
+      <div class="skills-container">
+        <div class="skill-card">
+          <h3>C++</h3>
+        </div>
+        <div class="skill-card">
+          <h3>Python</h3>
+        </div>
+        <div class="skill-card">
+          <h3>HTML/CSS</h3>
+        </div>
+        <div class="skill-card">
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+          <h3>Rust</h3>
+        </div>
+        <div class="skill-card">
+          <h3>Blockchain Development</h3>
+        </div>
+      </div>
     </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <!-- Portfolio projects and details will go here -->
+    <section id="portfolio" id="about" class="fade-in">
+      <h2>Portfolio</h2>
+      <!-- Portfolio projects and details will go here -->
+      <div class="portfolio-container">
+        <div class="portfolio-card">
+          <h3>Python Language Project</h3>
+          <p>
+            A showcase of my projects in Python, including key achievements and
+            details.
+          </p>
+          <a href="#" class="view-project">View Project</a>
+        </div>
+        <div class="portfolio-card">
+          <h3>GainChain</h3>
+          <p>
+            Backend development for GainChain, a decentralized social media
+            platform on the ICP blockchain.
+          </p>
+          <a href="#" class="view-project">View Project</a>
+        </div>
+        <div class="portfolio-card">
+          <h3>Recommendation Neural Network</h3>
+          <p>
+            A neural network system designed in C++ for personalized
+            recommendations in social media.
+          </p>
+          <a href="#" class="view-project">View Project</a>
+        </div>
+      </div>
     </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <!-- Brief experience highlights here -->
+    <section id="experience" id="about" class="fade-in">
+      <h2>Experience</h2>
+      <!-- Brief experience highlights here -->
+      <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <img src="path/to/profile1.jpg" alt="Profile 1" />
+            <p class="testimonial-quote">
+              "A truly exceptional developer with an eye for detail and
+              creativity."
+            </p>
+            <h4>Jane Doe</h4>
+            <span>Project Manager</span>
+          </div>
+          <div class="testimonial-card">
+            <img src="path/to/profile2.jpg" alt="Profile 2" />
+            <p class="testimonial-quote">
+              "Working with Sir Simon was inspiring. Highly recommended for
+              anyone seeking quality."
+            </p>
+            <h4>John Smith</h4>
+            <span>Software Engineer</span>
+          </div>
+          <div class="testimonial-card">
+            <img src="path/to/profile3.jpg" alt="Profile 3" />
+            <p class="testimonial-quote">
+              "An incredibly talented coder and problem-solver. Their skills are
+              top-notch."
+            </p>
+            <h4>Emily White</h4>
+            <span>CTO</span>
+          </div>
+        </div>
+      </section>
     </section>
 
-    <section id="blog">
-        <h2>Blog / Thoughts</h2>
-        <!-- Blog section with artwork can go here -->
+    <section id="blog" id="about" class="fade-in">
+      <h2>Blog / Thoughts</h2>
+      <!-- Blog section with artwork can go here -->
+      <div class="thoughts-container">
+        <div class="thought-card">
+          <img src="path/to/your-artwork1.jpg" alt="Artwork 1" />
+          <h3>The Journey of Coding</h3>
+          <p>
+            Thoughts on my journey through programming and the challenges I’ve
+            overcome.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="thought-card">
+          <img src="path/to/your-artwork2.jpg" alt="Artwork 2" />
+          <h3>Art & Inspiration</h3>
+          <p>
+            A piece reflecting my creative side and inspirations from life and
+            coding.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="thought-card">
+          <img src="path/to/your-artwork3.jpg" alt="Artwork 3" />
+          <h3>The Intersection of Art & Code</h3>
+          <p>
+            Exploring how coding and art intersect and inspire each other in my
+            projects.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name">
-            <input type="email" name="email" placeholder="Your Email">
-            <textarea name="message" placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <section id="contact" id="about" class="fade-in">
+      <h2>Contact</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" />
+        <input type="email" name="email" placeholder="Your Email" />
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
     </section>
 
     <footer>
-        <p>Connect with me on <a href="#social-links">Social Media</a></p>
+      <p>Connect with me on <a href="#social-links">Social Media</a></p>
     </footer>
 
     <script src="script.js"></script>
-</body>
+    <script>
+      // Smooth scroll effect for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+    <button id="scrollToTop" title="Go to top">↑</button>
+    <script>
+        const sections = document.querySelectorAll('.section');
+    
+        const revealSection = () => {
+            const windowHeight = window.innerHeight;
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        };
+    
+        window.addEventListener('scroll', revealSection);
+        window.addEventListener('load', revealSection);
+    </script>
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => preloader.style.display = 'none', 600);
+        });
+    </script>
+    
+  </body>
+  <footer>
+    <div class="footer-content">
+      <h3>Sir Simon's Portfolio</h3>
+      <p>
+        Thank you for visiting my portfolio. Feel free to connect with me on
+        social media or send me an email.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/your-profile" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/your-profile" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com/your-profile" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <p>© 2024 Sir Simon. All rights reserved.</p>
+    </div>
+  </footer>
 </html>
+<script>
+  // Scroll-triggered fade-in animation
+  const fadeInElements = document.querySelectorAll(".fade-in");
+
+  function checkVisibility() {
+    const triggerBottom = window.innerHeight / 1.1;
+    fadeInElements.forEach((element) => {
+      const boxTop = element.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        element.classList.add("fade-in-visible");
+      } else {
+        element.classList.remove("fade-in-visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", checkVisibility);
+  checkVisibility(); // Initial check on load
+</script>
+<script>
+    const sections = document.querySelectorAll('.section');
+
+    const revealSection = () => {
+        const windowHeight = window.innerHeight;
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < windowHeight - 100) {
+                section.classList.add('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealSection);
+    window.addEventListener('load', revealSection);
+</script>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  function activateLinkOnScroll() {
+    let currentSection = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 60; // Adjust if needed for your header height
+      if (window.scrollY >= sectionTop) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(currentSection)) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateLinkOnScroll);
+</script>
+<script>
+  // Scroll to Top functionality
+  const scrollToTopButton = document.getElementById("scrollToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopButton.style.display = "block";
+    } else {
+      scrollToTopButton.style.display = "none";
+    }
+  });
+
+  scrollToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+<script>
+  // Custom cursor functionality
+  const cursor = document.createElement("div");
+  cursor.classList.add("cursor");
+  document.body.appendChild(cursor);
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  });
+
+  document.querySelectorAll("a, button").forEach((element) => {
+    element.addEventListener(
+      "mouseover",
+      () => (cursor.style.transform = "scale(1.5)")
+    );
+    element.addEventListener(
+      "mouseout",
+      () => (cursor.style.transform = "scale(1)")
+    );
+  });
+</script>

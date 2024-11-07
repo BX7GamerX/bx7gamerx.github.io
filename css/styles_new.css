@@ -12,10 +12,17 @@ body {
 }
 
 header {
+    background: url('your-image.jpg') no-repeat center center / cover;
+    height: 100vh;
+    position: relative;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
     text-align: center;
-    padding: 1rem 0;
-    background-color: #111;
 }
+
 
 header h1 {
     font-size: 2rem;
@@ -69,4 +76,369 @@ footer {
     text-align: center;
     padding: 1rem;
     background-color: #111;
+}
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.skill-card {
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.skill-card h3 {
+    color: #f1f1f1;
+    font-size: 1.2rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+}
+nav a:hover, footer a:hover {
+    text-shadow: 0 0 5px #fff;
+}
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.portfolio-card {
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+.portfolio-card h3 {
+    color: #f1f1f1;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-card p {
+    color: #ddd;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-card .view-project {
+    color: #f1f1f1;
+    background-color: #444;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+}
+
+.portfolio-card .view-project:hover {
+    background-color: #555;
+}
+.portfolio-card .view-project:hover {
+    background-color: #555;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+.thoughts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.thought-card {
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.thought-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: opacity 0.3s;
+}
+
+.thought-card h3 {
+    color: #f1f1f1;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.thought-card p {
+    color: #ddd;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.thought-card .read-more {
+    color: #f1f1f1;
+    background-color: #444;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.thought-card:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+}
+
+.thought-card img:hover {
+    opacity: 0.9;
+}
+
+.thought-card .read-more:hover {
+    background-color: #555;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+#testimonials {
+    padding: 2rem 0;
+    background-color: #111;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2rem;
+    color: #f1f1f1;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    max-width: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card .testimonial-quote {
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card h4 {
+    color: #f1f1f1;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.testimonial-card span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+footer {
+    padding: 2rem 0;
+    background-color: #111;
+    color: #f1f1f1;
+    text-align: center;
+}
+
+.footer-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #f1f1f1;
+}
+
+.footer-content p {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.social-icons a {
+    margin: 0 0.5rem;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f1f1f1;
+}
+
+footer p:last-of-type {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+/* Initial state for fade-in animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Active state for when the element is in view */
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.portfolio-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+nav a.active {
+    color: #ffd700; /* Gold color */
+    font-weight: bold;
+}
+#scrollToTop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.8;
+}
+
+#scrollToTop:hover {
+    background-color: #ffd700; /* Change color on hover */
+}
+.testimonial-card {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+body {
+    cursor: none;
+}
+
+.cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    z-index: 10000;
+}
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #333;
+    border-top-color: #ffd700;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.portfolio-item {
+    position: relative;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+}
+.modal {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    transform: scale(1);
 }
