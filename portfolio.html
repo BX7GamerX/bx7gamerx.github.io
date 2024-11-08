@@ -12,25 +12,27 @@
     </div>
     <div class="custom-cursor"></div>
     <!-- Landing Section (Replaces Header) -->
-    <section id="sir-simon">
-      <div class="landing-content">
-        <!-- Minimalist Profile Picture -->
+    <!-- Sir Simon Section (Landing Section) -->
+    <section id="sir-simon" class="landing">
+      <div class="profile-container">
         <img
-          src="assets/him_not.jpeg"
-          alt="Sir Simon's Profile Picture"
-          class="profile-pic"
+          src="assets/him_dp.jpeg"
+          alt="Sir Simon Profile Picture"
+          class="profile-picture"
         />
-        <!-- Title to the Right of Profile Picture -->
-        <h1 class="portfolio-title">Sir Simon's Portfolio</h1>
+        <div class="intro-text">
+          <h1>Sir Simon's Portfolio</h1>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      <!-- Navigation Links at the Bottom of the Landing Section -->
-      <nav class="landing-nav">
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </section>
 
     <section id="about">
@@ -156,10 +158,7 @@
           <h3>Blockchain Development</h3>
         </div>
         <div class="skill-card">
-          <img
-            src="assets/ml.png"
-            alt="Machine Learning & Neural Networks"
-          />
+          <img src="assets/ml.png" alt="Machine Learning & Neural Networks" />
           <h3>Machine Learning & Neural Networks</h3>
         </div>
         <div class="skill-card">
@@ -173,71 +172,79 @@
       </div>
     </section>
 
+    <!-- Portfolio Section -->
     <section id="portfolio" class="fade-in">
       <h2>Portfolio</h2>
       <div class="portfolio-container">
-        <div class="portfolio-card">
-          <h3>Python Language Project</h3>
-          <p>
-            A showcase of my projects in Python, including key achievements and
-            details.
-          </p>
-          <a href="#" class="view-project">View Project</a>
-        </div>
-        <div class="portfolio-card">
+        <div class="portfolio-item">
+          <img src="images/gainchain.jpg" alt="GainChain" />
           <h3>GainChain</h3>
           <p>
-            Backend development for GainChain, a decentralized social media
-            platform on the ICP blockchain.
+            Backend Developer for GainChain, a decentralized social media
+            platform utilizing Internet Computer Protocol and blockchain
+            technology.
           </p>
-          <a href="#" class="view-project">View Project</a>
+          <a href="https://github.com/BX7GamerX/Gain-Chain" target="_blank"
+            >View Project</a
+          >
         </div>
-        <div class="portfolio-card">
+        <div class="portfolio-item">
+          <img
+            src="images/neural-network.jpg"
+            alt="Recommendation Neural Network"
+          />
           <h3>Recommendation Neural Network</h3>
           <p>
-            A neural network system designed in C++ for personalized
-            recommendations in social media.
+            Developed a C++ neural network for recommending social media content
+            in decentralized platforms. Integrated with Rust for enhanced
+            performance.
           </p>
-          <a href="#" class="view-project">View Project</a>
+          <a
+            href="https://github.com/BX7GamerX/recomendation-neural-network"
+            target="_blank"
+            >View Project</a
+          >
         </div>
       </div>
     </section>
 
-    <section id="experience" class="fade-in">
+    <section id="experience">
       <h2>Experience</h2>
-      <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial-container">
-          <div class="testimonial-card">
-            <img src="path/to/profile1.jpg" loading="lazy" alt="Profile 1" />
-            <p class="testimonial-quote">
-              "A truly exceptional developer with an eye for detail and
-              creativity."
-            </p>
-            <h4>Jane Doe</h4>
-            <span>Project Manager</span>
-          </div>
-          <div class="testimonial-card">
-            <img src="path/to/profile2.jpg" loading="lazy" alt="Profile 2" />
-            <p class="testimonial-quote">
-              "Working with Sir Simon was inspiring. Highly recommended for
-              anyone seeking quality."
-            </p>
-            <h4>John Smith</h4>
-            <span>Software Engineer</span>
-          </div>
-          <div class="testimonial-card">
-            <img src="path/to/profile3.jpg" loading="lazy" alt="Profile 3" />
-            <p class="testimonial-quote">
-              "An incredibly talented coder and problem-solver. Their skills are
-              top-notch."
-            </p>
-            <h4>Emily White</h4>
-            <span>CTO</span>
-          </div>
-        </div>
-      </section>
+    
+      <div class="experience-item">
+        <h3>Backend Developer - GainChain</h3>
+        <p><em>October 2024 - Present</em></p>
+        <p>Working as a backend developer on GainChain, a decentralized social media platform on the Internet Computer (ICP) blockchain. My work here involves:</p>
+        <ul>
+          <li>Developing the backend infrastructure in Rust for secure, blockchain-based social media features.</li>
+          <li>Collaborating with a team to implement blockchain authentication and transaction systems.</li>
+          <li>Optimizing backend components for data efficiency and high performance.</li>
+        </ul>
+      </div>
+    
+      <div class="experience-item">
+        <h3>Software Developer - SpadeChain</h3>
+        <p><em>September 2024 - October 2024</em></p>
+        <p>Contributed to SpadeChain, an essential tools provider for blockchain and AI projects. Responsibilities included:</p>
+        <ul>
+          <li>Working with similar tech stacks as GainChain, primarily in Rust, focusing on decentralized infrastructure.</li>
+          <li>Providing backend support and implementing scalable database solutions.</li>
+          <li>Assisting in cross-project collaborations between GainChain and SpadeChain for shared development efficiency.</li>
+        </ul>
+      </div>
+    
+      <div class="experience-item">
+        <h3>Freelance Developer - Various Projects</h3>
+        <p><em>2023 - Present</em></p>
+        <p>Developed and deployed various projects, including:</p>
+        <ul>
+          <li>A C++ neural network recommendation system designed for cross-integration with Rust projects.</li>
+          <li>Web development projects in HTML, CSS, JavaScript, and Python, including static sites and interactive elements.</li>
+          <li>Collaborated with front-end developers and cybersecurity experts to enhance project functionality and security.</li>
+        </ul>
+      </div>
     </section>
+    
 
     <section id="blog" class="fade-in">
       <h2>Blog / Thoughts</h2>
@@ -272,19 +279,20 @@
       </div>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
       <h2>Contact Me</h2>
       <form action="https://formspree.io/f/myzywnyn" method="POST">
-        <label for="name">Name:</label>
+        <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
 
-        <label for="email">Email:</label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="email" required />
 
-        <label for="message">Message:</label>
+        <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Send</button>
+        <button type="submit">Send Message</button>
       </form>
     </section>
 

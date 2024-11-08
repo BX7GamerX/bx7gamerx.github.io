@@ -78,19 +78,3 @@ document.querySelectorAll("a, button").forEach((element) => {
     document.body.classList.remove("hovering");
   });
 });
-/*
-// Optional JavaScript for Smooth Scrolling and Hiding Header
-document.addEventListener("DOMContentLoaded", function() {
-  // Get reference to the landing section
-  const landingSection = document.querySelector("#sir-simon");
-  
-  // Hide landing section on scroll
-  window.addEventListener("scroll", function() {
-    if (window.scrollY > landingSection.clientHeight) {
-      landingSection.style.display = "none";
-    } else {
-      landingSection.style.display = "flex";
-    }
-  });
-});
-*/
