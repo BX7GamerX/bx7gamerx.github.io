@@ -1,221 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="script_switch_theme.js" defer></script>
-    <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Simon Wandera, a computer science enthusiast, backend developer, and AI learner. Showcasing projects in Rust, Python, and more."
+      content="Sir Simon's Portfolio - Showcasing projects, skills, and experiences in tech, gaming, and aviation."
     />
-    <meta
-      name="keywords"
-      content="Portfolio, Computer Science, AI, Rust, Backend Developer, Programming, Tech Stack"
-    />
-    <meta name="author" content="Simon" />
-    <title>Simon's Portfolio</title>
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourportfolio.com/" />
-    <meta property="og:title" content="Simon's Portfolio" />
+    <meta property="og:title" content="Sir Simon's Portfolio" />
     <meta
       property="og:description"
-      content="Explore Simon's projects, skills, and insights in computer science, Rust, Python, and backend development."
+      content="Explore my projects and skills in tech, gaming, and aviation!"
     />
+    <meta property="og:image" content="assets/github_profile.png" />
+    <meta property="og:url" content="https://github.com/BX7GamerX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sir Simon's Portfolio" />
     <meta
-      property="og:image"
-      content="https://yourportfolio.com/images/portfolio-thumbnail.jpg"
+      name="twitter:description"
+      content="Explore my projects and skills in tech, gaming, and aviation!"
     />
+    <meta name="twitter:image" content="assets/github_profile.png" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://yourportfolio.com/" />
-    <meta property="twitter:title" content="Sir Simon's Portfolio" />
-    <meta
-      property="twitter:description"
-      content="Explore Sir Simon's projects, skills, and insights in computer science, Rust, Python, and backend development."
-    />
-    <meta
-      property="twitter:image"
-      content="https://yourportfolio.com/images/portfolio-thumbnail.jpg"
-    />
-    <!-- Navigation Bar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sir Simon's Portfolio</title>
+    <link rel="stylesheet" href="css/styles_new.css" />
   </head>
-  <!-- Landing Section -->
-  <section id="landing">
-    <div class="landing-content">
-      <h1>Welcome to Simon's Portfolio</h1>
-      <p>
-        Backend developer, AI enthusiast, and passionate problem-solver in
-        computer science. Explore my journey through Rust, Python, and C++
-        projects.
-      </p>
-      <p>Let's dive into innovation, technology, and a touch of creativity.</p>
-      <a href="#portfolio" class="cta-button">Explore My Work</a>
-    </div>
-  </section>
-
   <body>
-    <header>
-      <!-- Theme Switcher Button -->
-
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="#thoughts">Blog/Thoughts</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div id="theme-switcher" onclick="toggleTheme()">🌞 | 🌜</div>
-    </header>
-
-    <!-- Main Sections -->
-    <main>
-      <!-- About Section -->
-      <section id="about">
-        <h1>About Me</h1>
-        <p>
-          I’m an aviation enthusiast with expertise in computer science, a touch
-          of gaming spirit, and a passion for pencil art. I’m currently working
-          on a Tic Tac Toe game AI bot and exploring the Rust programming
-          language.
-        </p>
-        <p>
-          I'm also seeking collaboration on a language learning app powered by
-          AI, so if you're interested, feel free to reach out! Don’t hesitate to
-          ask me about computer science!
-        </p>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <img src="assets/cpp.png" alt="C++" />C++
-          </div>
-          <div class="skill-item">
-            <img src="assets/python.png" alt="Python" />Python
-          </div>
-          <div class="skill-item">
-            <img src="assets/rust.png" alt="Rust" />Rust
-          </div>
-          <div class="skill-item">
-            <img src="assets/html5.png" alt="HTML5" />HTML5
-          </div>
-          <div class="skill-item">
-            <img src="assets/javascript.png" alt="JavaScript" />JavaScript
-          </div>
-          <!-- Add more skill items as needed -->
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+    <div class="custom-cursor"></div>
+    <!-- Landing Section (Replaces Header) -->
+    <!-- Sir Simon Section (Landing Section) -->
+    <section id="sir-simon" class="landing">
+      <div class="profile-container">
+        <img
+          src="assets/him_dp.jpeg"
+          alt="Sir Simon Profile Picture"
+          class="profile-picture"
+        />
+        <div class="intro-text">
+          <h1 class="landing-title">Welcome to Sir Simon's Portfolio</h1>
+          <p class="landing-subtitle">
+            Exploring the intersection of code, creativity, and innovation
+          </p>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Portfolio Section -->
-      <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <h3>GainChain</h3>
-            <p>
-              Backend development on a decentralized social media project using
-              Rust.
-            </p>
-            <a href="https://github.com/BX7GamerX/Gain-Chain" target="_blank"
-              >View on GitHub</a
-            >
-          </div>
-          <div class="portfolio-item">
-            <h3>Recommendation Neural Network</h3>
-            <p>
-              Built a C++ neural network to recommend social media content,
-              integrated with Rust.
-            </p>
-            <a
-              href="https://github.com/BX7GamerX/recomendation-neural-network"
-              target="_blank"
-              >View on GitHub</a
-            >
-          </div>
-          <div class="portfolio-item">
-            <h3>Python Language Project</h3>
-            <p>A Python project showcasing language processing capabilities.</p>
-            <!-- Link can be updated when available -->
-            <a href="#">Project Details Coming Soon</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Thoughts Section -->
-      <section id="thoughts">
-        <h2>Blog/Thoughts</h2>
-        <div class="thoughts-grid">
-          <div class="thought-item">
-            <img src="assets/images/IMAGE.jpg" alt="Drawing 1" />
-            <p>A brief description of the drawing or related thoughts.</p>
-          </div>
-          <div class="thought-item">
-            <img
-              src="assets/images/face-reveal-v0-t2y2jj75rnid1.png"
-              alt="Drawing 2"
-            />
-            <p>Your thoughts, poetry, or blog-style entry here.</p>
-          </div>
-          <!-- Add more thought items as needed -->
-        </div>
-      </section>
-
-      <section id="artwork">
-        <h2>Artwork Showcase</h2>
-        <div class="art-gallery">
-          <img src="assets/images/IMAGE.jpg" alt="Drawing Title 1" />
+    <section id="about">
+      <div class="about-container">
+        <div class="profile">
           <img
-            src="assets/images/face-reveal-v0-t2y2jj75rnid1.png"
-            alt="Drawing Title 2"
+            src="assets/him_dp.jpeg"
+            alt="Sir Simon's profile picture"
+            class="profile-img"
           />
-          <!-- More images as needed -->
         </div>
-      </section>
-
-      <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
+        <div class="about-text">
+          <h2>About Me</h2>
           <p>
-            "A brilliant backend developer with a knack for creating efficient
-            systems." - Project Teammate
+            Hello, I'm <strong>Sir Simon</strong>, a passionate
+            <strong>Computer Science</strong> enthusiast, a
+            <strong>programming geek</strong>, and a creative mind with a
+            diverse set of interests ranging from <strong>aviation</strong> to
+            <strong>gaming</strong> and even <strong>pencil art</strong>. I’m
+            constantly evolving, learning, and exploring new technologies, and
+            my goal is to make meaningful contributions to the world of
+            technology, whether it’s through innovative
+            <strong>backend development</strong>, <strong>AI</strong>, or
+            <strong>blockchain</strong> projects.
+          </p>
+
+          <h3>My Journey in Technology</h3>
+          <p>
+            I am currently expanding my skills in <strong>C++</strong>,
+            <strong>Python</strong>, <strong>Rust</strong>, and web development
+            technologies such as <strong>HTML</strong>, <strong>CSS</strong>,
+            and <strong>JavaScript</strong>. I’m particularly intrigued by the
+            intersection of <strong>AI</strong> and
+            <strong>blockchain</strong> and how they can be leveraged to build
+            decentralized systems that are more efficient and secure.
+          </p>
+          <p>
+            In my recent projects, I’ve worked on <strong>GainChain</strong>, a
+            decentralized social media platform on the
+            <strong>Internet Computer (ICP)</strong> blockchain, where I
+            contribute as a <strong>backend developer</strong>. In this project,
+            I’ve also implemented a <strong>recommendation system</strong> using
+            a <strong>C++ neural network</strong> that analyzes social media
+            content and recommends relevant posts. This neural network is
+            integrated into the backend architecture, which aims to offer users
+            a more personalized experience.
+          </p>
+          <p>
+            Another project close to my heart is <strong>SpadeChain</strong>, a
+            tool and infrastructure platform I’m building for
+            <strong>blockchain</strong> and <strong>AI</strong> developers. It's
+            designed to simplify the development of decentralized applications
+            (dApps) and AI models, providing essential resources for creators in
+            these fields.
+          </p>
+
+          <h3>My Creative Side</h3>
+          <p>
+            When I’m not coding or thinking about system architecture, I love to
+            immerse myself in <strong>aviation</strong>—an industry that has
+            always fascinated me. I enjoy reading about the latest technological
+            advancements in aircraft and the aviation sector. I’m also a
+            <strong>gamer</strong>, finding enjoyment in exploring virtual
+            worlds and tackling complex challenges.
+          </p>
+          <p>
+            I’ve also dabbled in <strong>pencil art</strong>, creating sketches
+            and designs that express my creativity. Whether it’s drawing people,
+            animals, or abstract concepts, art allows me to channel my
+            imagination in a different way and brings balance to my tech-heavy
+            routine.
+          </p>
+
+          <h3>Current Focus</h3>
+          <p>
+            At the moment, I’m focused on refining my
+            <strong>full-stack development</strong> skills and am working on a
+            <strong>portfolio website</strong> where I showcase my skills,
+            projects, and creative pursuits. This website serves as both a
+            <strong>digital portfolio</strong> and an ongoing project where I
+            implement the latest trends in web development. I aim to blend
+            <strong>minimalism</strong> and
+            <strong>user-centric design</strong> to create an intuitive, elegant
+            interface.
+          </p>
+          <p>
+            In the future, I hope to continue building scalable
+            <strong>AI models</strong> and
+            <strong>blockchain applications</strong> while also exploring new
+            realms of <strong>3D animation</strong> and
+            <strong>virtual reality</strong>.
           </p>
         </div>
-        <div class="testimonial">
-          <p>
-            "Creative, technical, and an absolute pleasure to work with!" -
-            Collaborator
-          </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card">
+          <img src="assets/cpp.png" alt="C++" />
+          <h3>C++</h3>
         </div>
-        <!-- Add more testimonials as needed -->
-      </section>
+        <div class="skill-card">
+          <img src="assets/python.png" alt="Python" />
+          <h3>Python</h3>
+        </div>
+        <div class="skill-card">
+          <img src="assets/html5.png" alt="HTML/CSS" />
+          <h3>HTML/CSS</h3>
+        </div>
+        <div class="skill-card">
+          <img src="assets/javascript.png" alt="JavaScript" />
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+          <img src="assets/rust.png" alt="Rust" />
+          <h3>Rust</h3>
+        </div>
+        <div class="skill-card">
+          <img src="assets/blockchain_dev.png" alt="Blockchain Development" />
+          <h3>Blockchain Development</h3>
+        </div>
+        <div class="skill-card">
+          <img src="assets/ml.png" alt="Machine Learning & Neural Networks" />
+          <h3>Machine Learning & Neural Networks</h3>
+        </div>
+        <div class="skill-card">
+          <img src="assets/backend.png" alt="Backend Development" />
+          <h3>Backend Development</h3>
+        </div>
+        <div class="skill-card">
+          <img src="assets/web dev.png" alt="Web Development" />
+          <h3>Web Development</h3>
+        </div>
+      </div>
+    </section>
 
-      <!-- Contact Section -->
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/myzywnyn" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="fade-in">
+      <h2>My Projects</h2>
+      <div class="portfolio-container">
+        <!-- Project 1 -->
+        <div class="portfolio-card">
+          <img
+            src="assets/gainchain.jpeg"
+            alt="GainChain"
+            class="project-image"
+          />
+          <h3>GainChain</h3>
+          <p>
+            A decentralized social media platform built on Internet Computer
+            Protocol, where I focused on backend development.
+          </p>
+          <a
+            href="gainchain.html"
+            target="_blank"
+            class="view-project"
+          >
+            View Project
+          </a>
+        </div>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+        <!-- Project 2 -->
+        <div class="portfolio-card">
+          <img
+            src="assets/nnp.png"
+            alt="Recommendation Neural Network"
+            class="project-image"
+          />
+          <h3>Recommendation Neural Network</h3>
+          <p>
+            A C++ neural network model integrated with Rust, designed for social
+            media content recommendations.
+          </p>
+          <a
+            href="https://github.com/BX7GamerX/recomendation-neural-network"
+            target="_blank"
+            class="view-project"
+          >
+            View Project
+          </a>
+        </div>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+        <!-- Project 3 -->
+        <div class="portfolio-card">
+          <img
+            src="assets/lingoleap_logo_dark.png"
+            alt="Language Quiz App"
+            class="project-image"
+          />
+          <h3>Language Quiz App</h3>
+          <p>
+            An interactive quiz application focused on language learning. Built
+            with attention to UI/UX and responsiveness.
+          </p>
+          <a
+            href="https://github.com/BX7GamerX/language-quiz-app"
+            target="_blank"
+            class="view-project"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </section>
 
-          <button type="submit">Send</button>
-        </form>
-      </section>
-      <!-- Testimonials Section -->
-    </main>
+    <section id="experience">
+      <h2>Experience</h2>
 
-    <script src="js/script.js"></script>
+      <div class="experience-item">
+        <h3>Backend Developer - GainChain</h3>
+        <p><em>October 2024 - Present</em></p>
+        <p>
+          Working as a backend developer on GainChain, a decentralized social
+          media platform on the Internet Computer (ICP) blockchain. My work here
+          involves:
+        </p>
+        <ul>
+          <li>
+            Developing the backend infrastructure in Rust for secure,
+            blockchain-based social media features.
+          </li>
+          <li>
+            Collaborating with a team to implement blockchain authentication and
+            transaction systems.
+          </li>
+          <li>
+            Optimizing backend components for data efficiency and high
+            performance.
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Software Developer - SpadeChain</h3>
+        <p><em>September 2024 - October 2024</em></p>
+        <p>
+          Contributed to SpadeChain, an essential tools provider for blockchain
+          and AI projects. Responsibilities included:
+        </p>
+        <ul>
+          <li>
+            Working with similar tech stacks as GainChain, primarily in Rust,
+            focusing on decentralized infrastructure.
+          </li>
+          <li>
+            Providing backend support and implementing scalable database
+            solutions.
+          </li>
+          <li>
+            Assisting in cross-project collaborations between GainChain and
+            SpadeChain for shared development efficiency.
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Freelance Developer - Various Projects</h3>
+        <p><em>2023 - Present</em></p>
+        <p>Developed and deployed various projects, including:</p>
+        <ul>
+          <li>
+            A C++ neural network recommendation system designed for
+            cross-integration with Rust projects.
+          </li>
+          <li>
+            Web development projects in HTML, CSS, JavaScript, and Python,
+            including static sites and interactive elements.
+          </li>
+          <li>
+            Collaborated with front-end developers and cybersecurity experts to
+            enhance project functionality and security.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="blog" class="fade-in">
+      <h2>Blog / Thoughts</h2>
+      <div class="thoughts-container">
+        <div class="thought-card">
+          <img src="path/to/your-artwork1.jpg" loading="lazy" alt="Artwork 1" />
+          <h3>The Journey of Coding</h3>
+          <p>
+            Thoughts on my journey through programming and the challenges I’ve
+            overcome.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="thought-card">
+          <img src="path/to/your-artwork2.jpg" loading="lazy" alt="Artwork 2" />
+          <h3>Art & Inspiration</h3>
+          <p>
+            A piece reflecting my creative side and inspirations from life and
+            coding.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="thought-card">
+          <img src="path/to/your-artwork3.jpg" loading="lazy" alt="Artwork 3" />
+          <h3>The Intersection of Art & Code</h3>
+          <p>
+            Exploring how coding and art intersect and inspire each other in my
+            projects.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials" class="fade-in">
+      <h2>Testimonials</h2>
+      <div class="testimonial-container">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Working with Sir Simon has been an inspiring experience!"
+          </p>
+          <h4>Jane Doe</h4>
+          <span>Project Manager</span>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "A talented coder who brings creativity to every project."
+          </p>
+          <h4>John Smith</h4>
+          <span>Software Engineer</span>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Sir Simon has an impressive grasp on complex systems and backend
+            development."
+          </p>
+          <h4>Emily White</h4>
+          <span>Cybersecurity Expert</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/myzywnyn" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>Connect with me on <a href="#social-links">Social Media</a></p>
+      <p>© 2024 Sir Simon. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTop" title="Go to top">↑</button>
+    <script src="js/script_two.js"></script>
   </body>
 </html>
