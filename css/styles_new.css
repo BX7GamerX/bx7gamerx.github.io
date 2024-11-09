@@ -67,26 +67,68 @@ nav, footer, .intro-text, .about-text, .contact {
   background: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
-.profile-container {
-  z-index: 2; /* Brings profile info above overlay */
+/* Portfolio Section */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.portfolio-card {
+  background-color: #393e46; /* Second Color */
+  border-radius: 10px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  backdrop-filter: blur(5px);
-}
-
-.profile-picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid #f96d00;
   margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
-.profile-picture:hover {
-  transform: scale(1.1); /* Subtle zoom on hover */
+.portfolio-card:hover .project-image {
+  transform: scale(1.05);
 }
+
+.portfolio-card h3 {
+  color: #f2f2f2; /* Fourth Color */
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.portfolio-card p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.view-project {
+  color: #f2f2f2;
+  background-color: #f96d00; /* Third Color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.view-project:hover {
+  background-color: #e59500; /* Slightly darker orange on hover */
+}
+
 
 
 .intro-text {
