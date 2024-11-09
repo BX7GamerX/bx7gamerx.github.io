@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
   preloader.style.opacity = '0';
   setTimeout(() => preloader.style.display = 'none', 500); // Fade out after load
 });
-
+const navLinks = document.querySelector('.nav-links');
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -42,7 +42,7 @@ scrollToTopButton.addEventListener("click", () => {
 
 // Activate Navbar Link on Scroll
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+
 
 function activateLinkOnScroll() {
   let currentSection = "";
@@ -102,3 +102,11 @@ function checkVisibility() {
     }
   });
 }
+// Toggle mobile navigation menu
+const hamburger = document.querySelector('.hamburger');
+
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+

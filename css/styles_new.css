@@ -98,6 +98,7 @@ nav, footer, .intro-text, .about-text, .contact {
   border-radius: 8px;
   margin-bottom: 15px;
   transition: transform 0.3s ease-in-out;
+  border-color: #f96d00;
 }
 
 .portfolio-card:hover .project-image {
@@ -180,6 +181,7 @@ nav, footer, .intro-text, .about-text, .contact {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  border-color: #f96d00;
   margin-bottom: 20px;
   border: 3px solid #fff;
 }
@@ -340,63 +342,88 @@ nav a:hover,
 footer a:hover {
   text-shadow: 0 0 5px #fff;
 }
-
+/* Portfolio Section */
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
 }
 
 .portfolio-card {
-  background-color: #222831; /* Dark gray for portfolio cards */
-  border: 1px solid #333;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s, background-color 0.3s;
-  position: relative;
+  background-color: #393e46; /* Second Color */
   border-radius: 10px;
-}
-
-.portfolio-card h3 {
-  color: #f1f1f1;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.portfolio-card p {
-  color: #ddd;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.portfolio-card .view-project {
-  color: #f1f1f1;
-  background-color: #444;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-card:hover {
-  transform: translateY(-5px);
-  background-color: #333;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.portfolio-card .view-project:hover {
-  background-color: #f96d00; /* Vibrant orange on hover */
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
 }
+
+.portfolio-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.portfolio-card h3 {
+  color: #f2f2f2; /* Fourth Color */
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.portfolio-card p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.view-project {
+  color: #f2f2f2;
+  background-color: #f96d00; /* Third Color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.view-project:hover {
+  background-color: #e59500; /* Slightly darker orange on hover */
+}
+
 /* Experience Section Styling */
 #experience {
-    padding: 20px;
-    margin-top: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #eee;
-  }
+  padding: 2rem;
+  background: #222831;
+  color: #f2f2f2;
+}
+
+.experience-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #393e46;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  background: #f96d00;
+}
+
   
   #experience h2 {
     font-size: 2em;
@@ -859,4 +886,75 @@ button:hover {
 .fade-in-visible {
   opacity: 1;
   transform: translateY(0);
+}
+/* Mobile navigation styling */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222831;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+}
+/* GainChain Page Customizations */
+body, h2, p, a {
+  color: #f2f2f2; /* Light text for visibility */
+}
+
+.project-header {
+  padding: 1.5rem;
+  background-color: #222831;
+  text-align: center;
+}
+
+.view-github {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  color: #f2f2f2;
+  background-color: #f96d00;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.view-github:hover {
+  background-color: #e59500;
+}
+
+#project-intro, #project-details, #challenges, #future-plans {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #393e46;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #f2f2f2; /* Ensure light text */
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0.5rem 0;
 }

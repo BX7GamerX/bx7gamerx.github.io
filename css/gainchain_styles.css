@@ -1,0 +1,98 @@
+/* gainchain_styles.css */
+
+/* General styling for visibility and layout */
+body, h2, p, a {
+    color: #f2f2f2; /* Light text for visibility */
+    font-family: Arial, sans-serif;
+    background-color: #222831; /* Dark background */
+    margin: 0;
+    padding: 0;
+  }
+  
+  header.project-header {
+    padding: 1.5rem;
+    background-color: #222831;
+    text-align: center;
+  }
+  
+  header.project-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #f96d00;
+  }
+  
+  .back-home {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .back-home:hover {
+    color: #e59500;
+  }
+  
+  /* Introduction Section */
+  #project-intro, #project-details, #challenges, #future-plans {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #393e46; /* Darker background for sections */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  #project-intro h2,
+  #project-details h2,
+  #challenges h2,
+  #future-plans h2 {
+    color: #f96d00; /* Highlighted section headers */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  #project-intro p,
+  #project-details p,
+  #challenges p,
+  #future-plans p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    color: #f2f2f2; /* Light text for readability */
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0.5rem 0;
+    color: #f2f2f2;
+  }
+  
+  ul li {
+    margin: 0.5rem 0;
+  }
+  
+  /* GitHub link styling */
+  .view-github {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: #f2f2f2;
+    background-color: #f96d00;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .view-github:hover {
+    background-color: #e59500;
+  }
+  
+  /* Footer Styling */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222831;
+    color: #f2f2f2;
+    font-size: 0.9rem;
+  }
+  
