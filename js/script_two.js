@@ -78,3 +78,27 @@ document.querySelectorAll("a, button").forEach((element) => {
     document.body.classList.remove("hovering");
   });
 });
+// Toggle hamburger menu visibility
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+// Toggle hamburger menu visibility
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+
+function checkVisibility() {
+  const triggerBottom = window.innerHeight / 1.2;
+  const fadeInElements = document.querySelectorAll(".fade-in");
+
+  fadeInElements.forEach((element) => {
+    const boxTop = element.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      element.classList.add("fade-in-visible");
+    } else {
+      element.classList.remove("fade-in-visible");
+    }
+  });
+}

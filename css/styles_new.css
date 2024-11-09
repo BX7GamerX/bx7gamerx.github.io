@@ -12,25 +12,118 @@
 body {
   font-family: Arial, sans-serif;
   color: #ddd;
-  background-color: #1a1a1a;
   margin: 0;
   padding: 0;
+  background-color: #222831; /* First Color */
+  color: #f2f2f2; /* Fourth Color for general text */
 }
-/* Landing Section (Sir Simon Section) */
+nav, footer, .intro-text, .about-text, .contact {
+  background-color: #222831; /* First Color */
+}
+.portfolio-card, .skill-card, .experience-item, .testimonial-card {
+  background-color: #393e46; /* Second Color */
+}
 
-/* Landing Section Styling */
+/* Landing Section */
 
-.landing{
-  background-image: url("assets/header_pic.jpg") no-repeat center center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #fff;
-  text-align: bottom;
-  position: relative;
-  height: 100vh;
-  min-height: 100vh; /* Adjusts to fit viewport */
+.landing {
+  background: url("https://c4.wallpaperflare.com/wallpaper/608/451/652/5bd128d2d108e-wallpaper-preview.jpg") no-repeat center center / cover;
+  min-height: 100vh;
   width: 100%;
+  color: #f2f2f2; /* Fourth Color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  color: #f96d00; /* Third Color */
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: slideInFromBottom 1s ease-out forwards;
+}
+.landing-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #f2f2f2;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.profile-container {
+  z-index: 2; /* Brings profile info above overlay */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #f96d00;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.1); /* Subtle zoom on hover */
+}
+
+
+.intro-text {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(34, 40, 49, 0.8); /* Slightly dark background */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease-out;
+}
+.intro-text h1 {
+  font-size: 2.5rem;
+  color: #f2f2f2;
+}
+.nav-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700; /* Gold color on hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
 }
 
 .profile-container {
@@ -53,23 +146,6 @@ body {
   margin-bottom: 20px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
 
 
 
@@ -146,28 +222,34 @@ form button:hover {
 
 .about-text {
   max-width: 800px;
+  padding: 20px;
+  background: rgba(34, 40, 49, 0.8);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-text:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .about-text h2 {
+  color: #f96d00; /* Highlight color */
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.about-text h3 {
-  font-size: 1.5rem;
-  margin-top: 20px;
-}
-
 .about-text p {
   font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #f2f2f2;
 }
+
 
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #111;
+
 }
 
 .skills-container {
@@ -429,8 +511,7 @@ footer a:hover {
 }
 
 footer {
-  padding: 2rem 0;
-  background-color: #111;
+  padding: 1 rem ;
   color: #f1f1f1;
   text-align: center;
 }
@@ -571,6 +652,27 @@ nav a.active {
   }
 }
 
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .portfolio-item {
   position: relative;
   background-color: #222831; /* Dark background for portfolio items */
@@ -617,7 +719,7 @@ nav a.active {
 #contact {
   padding: 50px;
   text-align: center;
-  background-color: #222831; /* Dark gray background for contact section */
+ /* Dark gray background for contact section */
   color: #fff;
 }
 
@@ -627,7 +729,7 @@ nav a.active {
 }
 
 form {
-  max-width: 500px;
+  max-width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -658,18 +760,44 @@ button:hover {
   background-color: #e59500; /* Darker orange on hover */
 }
 
-/* Responsiveness */
+/* Hamburger Menu for Narrow Screens */
 @media (max-width: 768px) {
-  nav {
+  .nav-links {
+    display: none; /* Hide navbar links */
     flex-direction: column;
     text-align: center;
+    background: #222831;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 10px;
   }
 
-  .skills-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .nav-links.active {
+    display: flex;
   }
+
+  /* Hamburger icon style */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .profile-picture, .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Responsive Skills and Portfolio Sections */
+.skills-container, .portfolio-container, .thoughts-container, .testimonial-container {
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 .portfolio-item img {
@@ -678,4 +806,14 @@ button:hover {
 
 .portfolio-item img:hover {
   transform: scale(1.05);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
