@@ -57,6 +57,7 @@ nav, footer, .intro-text, .about-text, .contact {
   font-style: italic;
 }
 
+
 .landing::before {
   content: "";
   position: absolute;
