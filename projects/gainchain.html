@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gain Chain AI - A neural network recommendation system built on the Internet Computer Protocol | Simon's Portfolio" />
+    <meta property="og:title" content="Gain Chain AI | Neural Network on ICP" />
+    <meta property="og:description" content="Explore Gain Chain AI, a high-performance recommendation system leveraging neural networks and blockchain technology" />
+    <meta property="og:image" content="../assets/gainchain.jpeg" />
+    <meta property="og:url" content="https://bx7gamerx.github.io/projects/gainchain.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <title>Gain Chain AI | Simon's Portfolio</title>
+    <link rel="icon" href="../assets/github_profile.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/styles_new.css" />
+    <link rel="stylesheet" href="../css/theme_styles.css" />
+    <link rel="stylesheet" href="../css/gainchain_styles.css" />
+    <link rel="stylesheet" href="../css/custom_elements.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+    <div class="custom-cursor"></div>
+
+    <header class="project-header">
+      <h1>Gain Chain AI</h1>
+      <p>Neural Network Recommendation System on ICP</p>
+      <a href="../index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </header>
+
+    <section id="project-intro">
+      <h2>Project Overview</h2>
+      <div class="project-meta">
+        <span class="project-tag">Machine Learning</span>
+        <span class="project-tag">Blockchain</span>
+        <span class="project-tag">Neural Networks</span>
+        <span class="project-tag">C++</span>
+        <span class="project-tag">Rust</span>
+        <span class="project-tag">ICP</span>
+      </div>
+      <p>
+        Gain Chain AI is a high-performance neural network recommendation system designed for a decentralized social media platform built on the Internet Computer Protocol (ICP). As the architect and back-end developer, I engineered this system to deliver personalized content while maintaining user privacy and achieving exceptional performance.
+      </p>
+      <p>
+        The system processes user interactions and content characteristics to generate recommendations that are both relevant and engaging, all while operating within the constraints of a decentralized infrastructure.
+      </p>
+      <a href="https://github.com/BX7GamerX/recomendation-neural-network" target="_blank" class="view-github">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </section>
+
+    <section id="project-details">
+      <h2>Technical Details</h2>
+      
+      <div class="subsection">
+        <h3>Architecture</h3>
+        <p>
+          The architecture consists of three main components:
+        </p>
+        <ul>
+          <li>A custom C++ neural network core optimized for performance</li>
+          <li>Rust integration layer for blockchain communication</li>
+          <li>Decentralized data processing pipeline for privacy preservation</li>
+        </ul>
+        
+        <div class="code-snippet">
+          <h4>Neural Network Core Structure</h4>
+          <pre><code class="cpp">
+// Core architecture of the recommendation engine
+class NeuralRecommender {
+private:
+    // Embedding layers for user and content representations
+    EmbeddingLayer userEmbeddings;
+    EmbeddingLayer contentEmbeddings;
+    
+    // Multi-head attention for capturing complex relationships
+    MultiHeadAttention attentionModule;
+    
+    // Feed-forward network for final prediction
+    std::vector&lt;DenseLayer&gt; ffNetwork;
+    
+    // Optimization parameters
+    float learningRate;
+    Optimizer optimizer;
+
+public:
+    NeuralRecommender(int userDim, int contentDim, int hiddenDim) {
+        // Initialize embedding dimensions
+        userEmbeddings = EmbeddingLayer(NUM_USERS, userDim);
+        contentEmbeddings = EmbeddingLayer(NUM_CONTENT, contentDim);
+        
+        // Initialize attention module
+        attentionModule = MultiHeadAttention(userDim, 8);
+        
+        // Setup feed-forward network
+        ffNetwork.push_back(DenseLayer(userDim + contentDim, hiddenDim));
+        ffNetwork.push_back(DenseLayer(hiddenDim, hiddenDim / 2));
+        ffNetwork.push_back(DenseLayer(hiddenDim / 2, 1));
+        
+        // Set optimization parameters
+        learningRate = 0.001;
+        optimizer = Optimizer::ADAM;
+    }
+    
+    // Forward pass to generate recommendations
+    std::vector&lt;float&gt; predict(int userId, std::vector&lt;int&gt; contentIds) {
+        // Implementation details
+    }
+};
+          </code></pre>
+        </div>
+      </div>
+      
+      <div class="solution-highlight">
+        <h3>Performance Optimization</h3>
+        <p>
+          The system achieves 3× better performance than previous implementations through:
+        </p>
+        <ul>
+          <li>Custom SIMD-accelerated matrix operations</li>
+          <li>Efficient memory management with custom allocators</li>
+          <li>Multi-threaded execution for parallel processing</li>
+          <li>Optimized C++ code with minimal dynamic allocations</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="challenges">
+      <h2>Technical Challenges</h2>
+      
+      <div class="subsection">
+        <h3>Blockchain Integration</h3>
+        <p>
+          Integrating ML models with blockchain infrastructure presented several unique challenges:
+        </p>
+        <ul>
+          <li>Developing a secure cross-language bridge between C++ ML models and Rust blockchain code</li>
+          <li>Ensuring efficient serialization of model data for blockchain storage</li>
+          <li>Implementing privacy-preserving recommendation algorithms that operate on encrypted data</li>
+          <li>Designing a decentralized model update protocol that maintains consistency across nodes</li>
+        </ul>
+      </div>
+      
+      <div class="subsection">
+        <h3>Performance Optimization</h3>
+        <p>
+          Achieving high performance while working within blockchain constraints required innovative solutions:
+        </p>
+        <ul>
+          <li>Created custom quantization techniques to reduce model size by 70% with minimal accuracy loss</li>
+          <li>Developed specialized caching strategies to minimize on-chain data access</li>
+          <li>Implemented hybrid on-chain/off-chain computation to optimize for performance and cost</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="future-plans">
+      <h2>Future Development</h2>
+      <p>
+        The Gain Chain AI project continues to evolve with several planned enhancements:
+      </p>
+      <ul>
+        <li>Integration of transformer-based models for improved contextual understanding</li>
+        <li>Implementation of federated learning to further enhance privacy</li>
+        <li>Development of multi-modal recommendation capabilities (text, image, video)</li>
+        <li>Creation of an open API for third-party developers to build on the platform</li>
+      </ul>
+    </section>
+
+    <section id="tech-stack">
+      <h2>Technology Stack</h2>
+      
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h3>C++</h3>
+          <p>Core neural network implementation with performance optimizations</p>
+        </div>
+        
+        <div class="tech-item">
+          <h3>Rust</h3>
+          <p>Blockchain integration and secure data handling</p>
+        </div>
+        
+        <div class="tech-item">
+          <h3>Internet Computer Protocol</h3>
+          <p>Decentralized infrastructure for the platform</p>
+        </div>
+        
+        <div class="tech-item">
+          <h3>SIMD</h3>
+          <p>Low-level optimization for neural network operations</p>
+        </div>
+        
+        <div class="tech-item">
+          <h3>Custom NN Architecture</h3>
+          <p>Specialized neural network design for recommendations</p>
+        </div>
+        
+        <div class="tech-item">
+          <h3>Multi-threading</h3>
+          <p>Parallel processing for improved performance</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2024 Simon | Gain Chain AI</p>
+    </footer>
+
+    <button id="scrollToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="../js/script_new.js"></script>
+    <script src="../js/theme-switcher.js"></script>
+    <script src="../js/animation.js"></script>
+  </body>
+</html>

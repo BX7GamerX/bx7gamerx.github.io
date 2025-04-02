@@ -1,0 +1,169 @@
+/**
+ * Theme switching styles for Simon's portfolio site
+ * Controls the light and dark theme variables and transitions
+ */
+
+:root {
+  /* Base colors that don't change with theme */
+  --primary-color: #0ebeff;
+  --primary-dark: #0ca8df;
+  --primary-light: rgba(14, 190, 255, 0.2);
+  --accent-color: #6a11cb;
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  --transition: all 0.3s ease;
+  
+  /* Default dark theme variables */
+  --bg-dark: #161616;
+  --bg-darker: #0f0f0f;
+  --bg-medium: #222831;
+  --bg-light: #393e46;
+  --text-light: #f2f2f2;
+  --text-muted: #aaaaaa;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply smooth transitions when switching themes */
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Dark theme variables - these are the defaults */
+body.dark-theme {
+  --bg-dark: #161616;
+  --bg-darker: #0f0f0f;
+  --bg-medium: #222831;
+  --bg-light: #393e46;
+  --text-light: #f2f2f2;
+  --text-muted: #aaaaaa;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  
+  color-scheme: dark;
+}
+
+/* Light theme variables */
+body.light-theme {
+  --bg-dark: #f5f5f5;
+  --bg-darker: #e8e8e8;
+  --bg-medium: #ffffff;
+  --bg-light: #f0f0f0;
+  --text-light: #333333;
+  --text-muted: #666666;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+  color-scheme: light;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: rgba(14, 190, 255, 0.1);
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 190, 255, 0.05);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.theme-toggle:hover::before {
+  transform: scale(1.5);
+}
+
+.theme-toggle:hover {
+  color: var(--primary-color);
+}
+
+.theme-toggle i {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.theme-toggle:hover i {
+  transform: rotate(30deg);
+}
+
+/* Specific styles for light theme */
+body.light-theme .main-header {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .social-links a {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .tech-icon {
+  background: rgba(14, 190, 255, 0.1);
+}
+
+body.light-theme .landing-title {
+  text-shadow: none;
+}
+
+body.light-theme .skill-card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .timeline::before {
+  background: rgba(14, 190, 255, 0.3);
+}
+
+body.light-theme .code-snippet {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Adjustments for dark theme elements */
+body.dark-theme .form-group input,
+body.dark-theme .form-group textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .footer-bottom {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme toggle animation */
+.theme-toggle i {
+  animation: toggle-rotate 0.5s ease;
+}
+
+@keyframes toggle-rotate {
+  0% {
+    transform: rotate(0deg) scale(0);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Prefers color scheme media query for initial theme */
+@media (prefers-color-scheme: light) {
+  /* If system prefers light theme and no preference saved, use light */
+  body:not(.dark-theme):not(.light-theme) {
+    --bg-dark: #f5f5f5;
+    --bg-darker: #e8e8e8;
+    --bg-medium: #ffffff;
+    --bg-light: #f0f0f0;
+    --text-light: #333333;
+    --text-muted: #666666;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+}

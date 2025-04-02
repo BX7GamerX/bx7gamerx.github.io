@@ -2,31 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Sir Simon's Portfolio - Showcasing projects, skills, and experiences in tech, gaming, and aviation."
-    />
-    <meta property="og:title" content="Sir Simon's Portfolio" />
-    <meta
-      property="og:description"
-      content="Explore my projects and skills in tech, gaming, and aviation!"
-    />
-    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1854531121016442890/rGxcsURp_400x400.jpg" />
-    <meta property="og:url" content="Simon's Portfolio" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sir Simon's Portfolio" />
-    <meta
-      name="twitter:description"
-      content="Explore my projects and skills in tech, gaming, and aviation!"
-    />
-    <meta name="twitter:image" content="assets/github_profile.png" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sir Simon's Portfolio</title>
-    <link rel="icon" href=
-"assets/github_profile.png"
-        type="image/x-icon" />
+    <meta name="description" content="Simon - Machine Learning Engineer & Blockchain Developer | Portfolio showcasing Gain Chain AI, machine learning projects, and blockchain solutions" />
+    <meta property="og:title" content="Simon | ML Engineer & Blockchain Developer" />
+    <meta property="og:description" content="Explore my Gain Chain AI project and other work in machine learning and blockchain technology" />
+    <meta property="og:image" content="assets/github_profile.png" />
+    <meta property="og:url" content="https://bx7gamerx.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <title>Simon | ML Engineer & Blockchain Developer</title>
+    <link rel="icon" href="assets/github_profile.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/styles_new.css" />
+    <link rel="stylesheet" href="css/theme_styles.css" />
+    <link rel="stylesheet" href="css/custom_elements.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <div id="preloader">
@@ -34,392 +23,526 @@
     </div>
     <div class="custom-cursor"></div>
 
-    <!-- Sir Simon Section (Landing Section) -->
-    <section id="sir-simon" class="landing">
-      <div class="profile-container">
-        <img
-          src="assets/him_dp.jpeg"
-          alt="Sir Simon Profile Picture"
-          class="profile-picture"
-        />
-        <div class="intro-text">
-          <h1 class="landing-title">Welcome to Sir Simon's Portfolio</h1>
-          <p class="landing-subtitle">
-            Exploring the intersection of code, creativity, and innovation
-          </p>
-          <nav>
-            <ul class="nav-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+    <!-- Landing Section -->
+    <section id="home" class="landing">
+      <div id="particles-js"></div>
+      
+      <div class="landing-content">
+        <div class="profile-container">
+          <img src="assets/him_dp.jpeg" alt="Simon's Profile" class="profile-picture" />
+          
+          <div class="intro-text">
+            <span class="greeting">Hello, I'm Simon</span>
+            <h1 class="landing-title">Machine Learning Engineer & Blockchain Developer</h1>
+            <p class="landing-subtitle">Architect and Back-End Developer for Gain Chain AI - Building intelligent systems at the intersection of neural networks and blockchain technology</p>
+            
+            <div class="tech-icons">
+              <span class="tech-icon" title="C++"><i class="fab fa-cuttlefish"></i><i class="fas fa-plus"></i><i class="fas fa-plus"></i></span>
+              <span class="tech-icon" title="Python"><i class="fab fa-python"></i></span>
+              <span class="tech-icon" title="Machine Learning"><i class="fas fa-brain"></i></span>
+              <span class="tech-icon" title="Rust"><i class="fab fa-rust"></i></span>
+            </div>
+            
+            <div class="landing-cta">
+              <a href="#portfolio" class="cta-button primary">View Projects</a>
+              <a href="projects/gainchain.html" class="cta-button secondary">Gain Chain AI Demo</a>
+            </div>
+            
+            <div class="social-links">
+              <a href="https://github.com/BX7GamerX" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/simon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://x.com/bx7_gamer" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div class="arrow">
+          <span></span>
         </div>
       </div>
     </section>
 
+    <header class="main-header">
+      <div class="container">
+        <a href="#" class="logo">Simon</a>
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- About Section -->
     <section id="about">
-      <div class="about-container">
-        <div class="profile">
-          <img
-            src="assets/him_dp.jpeg"
-            alt="Sir Simon's profile picture"
-            class="profile-img"
-          />
-        </div>
-        <div class="about-text">
+      <div class="container">
+        <div class="section-header">
           <h2>About Me</h2>
-          <p>
-            Hello, I'm <strong>Sir Simon</strong>, a passionate
-            <strong>Computer Science</strong> enthusiast, a
-            <strong>programming geek</strong>, and a creative mind with a
-            diverse set of interests ranging from <strong>aviation</strong> to
-            <strong>gaming</strong> and even <strong>pencil art</strong>. I’m
-            constantly evolving, learning, and exploring new technologies, and
-            my goal is to make meaningful contributions to the world of
-            technology, whether it’s through innovative
-            <strong>backend development</strong>, <strong>AI</strong>, or
-            <strong>blockchain</strong> projects.
-          </p>
-
-          <h3>My Journey in Technology</h3>
-          <p>
-            I am currently expanding my skills in <strong>C++</strong>,
-            <strong>Python</strong>, <strong>Rust</strong>, and web development
-            technologies such as <strong>HTML</strong>, <strong>CSS</strong>,
-            and <strong>JavaScript</strong>. I’m particularly intrigued by the
-            intersection of <strong>AI</strong> and
-            <strong>blockchain</strong> and how they can be leveraged to build
-            decentralized systems that are more efficient and secure.
-          </p>
-          <p>
-            In my recent projects, I’ve worked on <strong>GainChain</strong>, a
-            decentralized social media platform on the
-            <strong>Internet Computer (ICP)</strong> blockchain, where I
-            contribute as a <strong>backend developer</strong>. In this project,
-            I’ve also implemented a <strong>recommendation system</strong> using
-            a <strong>C++ neural network</strong> that analyzes social media
-            content and recommends relevant posts. This neural network is
-            integrated into the backend architecture, which aims to offer users
-            a more personalized experience.
-          </p>
-          <p>
-            Another project close to my heart is <strong>SpadeChain</strong>, a
-            tool and infrastructure platform I’m building for
-            <strong>blockchain</strong> and <strong>AI</strong> developers. It's
-            designed to simplify the development of decentralized applications
-            (dApps) and AI models, providing essential resources for creators in
-            these fields.
-          </p>
-
-          <h3>My Creative Side</h3>
-          <p>
-            When I’m not coding or thinking about system architecture, I love to
-            immerse myself in <strong>aviation</strong>—an industry that has
-            always fascinated me. I enjoy reading about the latest technological
-            advancements in aircraft and the aviation sector. I’m also a
-            <strong>gamer</strong>, finding enjoyment in exploring virtual
-            worlds and tackling complex challenges.
-          </p>
-          <p>
-            I’ve also dabbled in <strong>pencil art</strong>, creating sketches
-            and designs that express my creativity. Whether it’s drawing people,
-            animals, or abstract concepts, art allows me to channel my
-            imagination in a different way and brings balance to my tech-heavy
-            routine.
-          </p>
-
-          <h3>Current Focus</h3>
-          <p>
-            At the moment, I’m focused on refining my
-            <strong>full-stack development</strong> skills and am working on a
-            <strong>portfolio website</strong> where I showcase my skills,
-            projects, and creative pursuits. This website serves as both a
-            <strong>digital portfolio</strong> and an ongoing project where I
-            implement the latest trends in web development. I aim to blend
-            <strong>minimalism</strong> and
-            <strong>user-centric design</strong> to create an intuitive, elegant
-            interface.
-          </p>
-          <p>
-            In the future, I hope to continue building scalable
-            <strong>AI models</strong> and
-            <strong>blockchain applications</strong> while also exploring new
-            realms of <strong>3D animation</strong> and
-            <strong>virtual reality</strong>.
-          </p>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="about-container">
+          <div class="about-image">
+            <img src="assets/him_dp.jpeg" alt="Simon's profile" class="profile-img" />
+            <div class="tech-badges">
+              <span class="tech-badge">ML Architect</span>
+              <span class="tech-badge">Blockchain Dev</span>
+              <span class="tech-badge">Rust</span>
+              <span class="tech-badge">C++</span>
+            </div>
+          </div>
+          
+          <div class="about-text">
+            <p>
+              I'm a <strong>Machine Learning Engineer</strong> with a focus on building high-performance neural networks and blockchain integration. I specialize in developing intelligent systems that operate across decentralized infrastructure.
+            </p>
+            
+            <p>
+              As the <strong>Architect and Back-End Developer</strong> for <strong>Gain Chain AI</strong>, I've developed a cutting-edge neural network-based recommendation system built on the Internet Computer Protocol (ICP). My C++ implementation achieves 3× better performance than previous versions through advanced optimization techniques.
+            </p>
+            
+            <p>
+              I'm passionate about transformer architectures, federated learning, and building systems that enhance user experience while maintaining privacy. My work bridges the gap between cutting-edge machine learning algorithms and practical, production-ready applications.
+            </p>
+            
+            <div class="interests">
+              <h3>Professional Focus</h3>
+              <ul>
+                <li><i class="fas fa-network-wired"></i> Neural network optimization</li>
+                <li><i class="fas fa-link"></i> Blockchain-integrated AI systems</li>
+                <li><i class="fas fa-shield-alt"></i> Privacy-preserving ML</li>
+              </ul>
+            </div>
+            
+            <div class="current-focus">
+              <h3>Currently Building:</h3>
+              <ul>
+                <li>Next generation of the Gain Chain AI recommendation engine</li>
+                <li>Advanced transformer models for blockchain data analysis</li>
+                <li>Decentralized federated learning framework</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="fade-in">
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <div class="skill-card">
-          <img src="assets/cpp.png" alt="C++" />
-          <h3>C++</h3>
+      <div class="container">
+        <div class="section-header">
+          <h2>Technical Skills</h2>
+          <div class="section-divider"></div>
         </div>
-        <div class="skill-card">
-          <img src="assets/python.png" alt="Python" />
-          <h3>Python</h3>
-        </div>
-        <div class="skill-card">
-          <img src="assets/html5.png" alt="HTML/CSS" />
-          <h3>HTML/CSS</h3>
-        </div>
-        <div class="skill-card">
-          <img src="assets/javascript.png" alt="JavaScript" />
-          <h3>JavaScript</h3>
-        </div>
-        <div class="skill-card">
-          <img src="assets/rust.png" alt="Rust" />
-          <h3>Rust</h3>
-        </div>
-        <div class="skill-card">
-          <img src="assets/blockchain_dev.png" alt="Blockchain Development" />
-          <h3>Blockchain Development</h3>
-        </div>
-        <div class="skill-card">
-          <img src="assets/ml.png" alt="Machine Learning & Neural Networks" />
-          <h3>Machine Learning & Neural Networks</h3>
-        </div>
-        <div class="skill-card">
-          <img src="assets/backend.png" alt="Backend Development" />
-          <h3>Backend Development</h3>
-        </div>
-        <div class="skill-card">
-          <img src="assets/web dev.png" alt="Web Development" />
-          <h3>Web Development</h3>
+        
+        <div class="skills-container">
+          <!-- Programming Languages -->
+          <div class="skills-category">
+            <h3>Languages</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <img src="assets/cpp.png" alt="C++" />
+                <h4>C++</h4>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-card">
+                <img src="assets/python.png" alt="Python" />
+                <h4>Python</h4>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-card">
+                <img src="assets/rust.png" alt="Rust" />
+                <h4>Rust</h4>
+                <div class="skill-level intermediate"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- ML Technologies -->
+          <div class="skills-category">
+            <h3>ML & Data</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <img src="assets/pytorch.png" alt="PyTorch" />
+                <h4>PyTorch</h4>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-card">
+                <img src="assets/tensorflow.png" alt="TensorFlow" />
+                <h4>TensorFlow</h4>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-card">
+                <img src="assets/ml.png" alt="Neural Networks" />
+                <h4>Neural Networks</h4>
+                <div class="skill-level advanced"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Technologies -->
+          <div class="skills-category">
+            <h3>Technologies</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <img src="assets/blockchain_dev.png" alt="Blockchain" />
+                <h4>Blockchain</h4>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-card">
+                <img src="assets/icp.png" alt="ICP" />
+                <h4>Internet Computer</h4>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-card">
+                <img src="assets/docker.png" alt="Docker" />
+                <h4>Docker</h4>
+                <div class="skill-level intermediate"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="fade-in">
-      <h2>My Projects</h2>
-      <div class="portfolio-container">
-        <!-- Project 1 -->
-        <div class="portfolio-card">
-          <img
-            src="assets/gainchain.jpeg"
-            alt="GainChain"
-            class="project-image"
-          />
-          <h3>GainChain</h3>
-          <p>
-            A decentralized social media platform built on Internet Computer
-            Protocol, where I focused on backend development.
-          </p>
-          <a
-            href="gainchain.html"
-            target="_blank"
-            class="view-project"
-          >
-            View Project
-          </a>
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Projects</h2>
+          <div class="section-divider"></div>
         </div>
-
-        <!-- Project 2 -->
-        <div class="portfolio-card">
-          <img
-            src="assets/nnp.png"
-            alt="Recommendation Neural Network"
-            class="project-image"
-          />
-          <h3>Recommendation Neural Network</h3>
-          <p>
-            A C++ neural network model integrated with Rust, designed for social
-            media content recommendations.
-          </p>
-          <a
-            href="https://github.com/BX7GamerX/recomendation-neural-network"
-            target="_blank"
-            class="view-project"
-          >
-            View Project
-          </a>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="portfolio-card">
-          <img
-            src="assets/lingoleap_logo_dark.png"
-            alt="Language Quiz App"
-            class="project-image"
-          />
-          <h3>Language Quiz App</h3>
-          <p>
-            An interactive quiz application focused on language learning. Built
-            with attention to UI/UX and responsiveness.
-          </p>
-          <a
-            href="https://github.com/BX7GamerX/language-quiz-app"
-            target="_blank"
-            class="view-project"
-          >
-            View Project
-          </a>
+        
+        <div class="portfolio-container">
+          <!-- GainChain Featured Project -->
+          <div class="portfolio-card featured-project">
+            <div class="featured-badge">Primary Project</div>
+            <img src="assets/gainchain.jpeg" alt="Gain Chain AI Architecture" class="project-image" />
+            <h3>Gain Chain AI</h3>
+            <p>
+              A neural network recommendation system for a decentralized social platform built on the Internet Computer Protocol. 
+              As the Architect and Back-End Developer, I designed and implemented the ML engine using C++ with Rust integration, 
+              achieving 3× better performance through custom optimization techniques.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Neural Networks</span>
+              <span class="tech-tag">Rust</span>
+              <span class="tech-tag">ICP</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/gainchain.html" class="view-project">View Demo</a>
+              <a href="https://github.com/BX7GamerX/recomendation-neural-network" target="_blank" class="github-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Other projects -->
+          <div class="portfolio-card">
+            <img src="assets/transformer_model.jpg" alt="Transformer Model Architecture" class="project-image" />
+            <h3>Attention-based Neural Architecture</h3>
+            <p>
+              Custom transformer architecture for multi-label classification with state-of-the-art accuracy and efficient resource utilization.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Transformers</span>
+            </div>
+            <a href="projects/transformer.html" class="view-project">View Project</a>
+          </div>
+          
+          <div class="portfolio-card">
+            <img src="assets/time_series.jpg" alt="Time Series Forecasting" class="project-image" />
+            <h3>Time Series Forecasting</h3>
+            <p>
+              Hybrid LSTM-Transformer model for financial time series forecasting with
+              robust uncertainty quantification and improved prediction accuracy.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Time Series</span>
+            </div>
+            <a href="projects/timeseries.html" class="view-project">View Project</a>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience">
-      <h2>Experience</h2>
+      <div class="container">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <div class="section-divider"></div>
+        </div>
 
-      <div class="experience-item">
-        <h3>Backend Developer - GainChain</h3>
-        <p><em>October 2024 - Present</em></p>
-        <p>
-          Working as a backend developer on GainChain, a decentralized social
-          media platform on the Internet Computer (ICP) blockchain. My work here
-          involves:
-        </p>
-        <ul>
-          <li>
-            Developing the backend infrastructure in Rust for secure,
-            blockchain-based social media features.
-          </li>
-          <li>
-            Collaborating with a team to implement blockchain authentication and
-            transaction systems.
-          </li>
-          <li>
-            Optimizing backend components for data efficiency and high
-            performance.
-          </li>
-        </ul>
-      </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="date">Oct 2023 - Present</span>
+              <h3>ML Backend Lead - GainChain</h3>
+              <p>
+                Leading the machine learning backend development for a decentralized social media platform 
+                on the Internet Computer (ICP) blockchain.
+              </p>
+              <ul class="achievements">
+                <li>
+                  Architected and implemented a C++ neural network recommendation system with 3× performance improvement
+                </li>
+                <li>
+                  Developed cross-language integration between C++ ML models and Rust blockchain infrastructure
+                </li>
+                <li>
+                  Created ML systems that operate on encrypted data without compromising privacy
+                </li>
+              </ul>
+            </div>
+          </div>
 
-      <div class="experience-item">
-        <h3>Software Developer - SpadeChain</h3>
-        <p><em>September 2024 - October 2024</em></p>
-        <p>
-          Contributed to SpadeChain, an essential tools provider for blockchain
-          and AI projects. Responsibilities included:
-        </p>
-        <ul>
-          <li>
-            Working with similar tech stacks as GainChain, primarily in Rust,
-            focusing on decentralized infrastructure.
-          </li>
-          <li>
-            Providing backend support and implementing scalable database
-            solutions.
-          </li>
-          <li>
-            Assisting in cross-project collaborations between GainChain and
-            SpadeChain for shared development efficiency.
-          </li>
-        </ul>
-      </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="date">Sept 2023 - Oct 2023</span>
+              <h3>Software Developer - SpadeChain</h3>
+              <p>
+                Contributed to essential tools for blockchain and AI projects with focus on decentralized infrastructure.
+              </p>
+              <ul class="achievements">
+                <li>
+                  Implemented Rust-based backend systems for blockchain applications
+                </li>
+                <li>
+                  Designed scalable database solutions for decentralized platforms
+                </li>
+                <li>
+                  Collaborated on cross-project initiatives between GainChain and SpadeChain
+                </li>
+              </ul>
+            </div>
+          </div>
 
-      <div class="experience-item">
-        <h3>Freelance Developer - Various Projects</h3>
-        <p><em>2023 - Present</em></p>
-        <p>Developed and deployed various projects, including:</p>
-        <ul>
-          <li>
-            A C++ neural network recommendation system designed for
-            cross-integration with Rust projects.
-          </li>
-          <li>
-            Web development projects in HTML, CSS, JavaScript, and Python,
-            including static sites and interactive elements.
-          </li>
-          <li>
-            Collaborated with front-end developers and cybersecurity experts to
-            enhance project functionality and security.
-          </li>
-        </ul>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="date">2022 - Present</span>
+              <h3>Freelance ML Engineer</h3>
+              <p>
+                Developed various machine learning and blockchain projects for clients.
+              </p>
+              <ul class="achievements">
+                <li>
+                  Built neural network systems optimized for production environments
+                </li>
+                <li>
+                  Created web applications with AI capabilities using Python, JavaScript, and HTML/CSS
+                </li>
+                <li>
+                  Collaborated with multidisciplinary teams on complex technical challenges
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Blog/Insights Section -->
     <section id="blog" class="fade-in">
-      <h2>Blog / Thoughts</h2>
-      <div class="thoughts-container">
-        <div class="thought-card">
-          <img src="path/to/your-artwork1.jpg" loading="lazy" alt="Artwork 1" />
-          <h3>The Journey of Coding</h3>
-          <p>
-            Thoughts on my journey through programming and the challenges I’ve
-            overcome.
-          </p>
-          <a href="#" class="read-more">Read More</a>
+      <div class="container">
+        <div class="section-header">
+          <h2>Blog & Insights</h2>
+          <div class="section-divider"></div>
         </div>
-        <div class="thought-card">
-          <img src="path/to/your-artwork2.jpg" loading="lazy" alt="Artwork 2" />
-          <h3>Art & Inspiration</h3>
-          <p>
-            A piece reflecting my creative side and inspirations from life and
-            coding.
-          </p>
-          <a href="#" class="read-more">Read More</a>
+        
+        <div class="thoughts-container">
+          <div class="thought-card">
+            <div class="thought-image">
+              <img src="assets/transformer_attention.jpg" loading="lazy" alt="Transformer Attention Visualization" />
+            </div>
+            <div class="thought-content">
+              <h3>Visualizing Attention Mechanisms</h3>
+              <p>
+                Exploring techniques to interpret what transformer models are learning through attention visualization and how it applies to complex ML tasks.
+              </p>
+              <a href="thoughts.html" class="read-more">Read Article</a>
+            </div>
+          </div>
+          
+          <div class="thought-card">
+            <div class="thought-image">
+              <img src="assets/model_training.jpg" loading="lazy" alt="Training Curves" />
+            </div>
+            <div class="thought-content">
+              <h3>Effective Training Strategies</h3>
+              <p>
+                Practical tips for training large neural networks with limited computational resources while maintaining performance.
+              </p>
+              <a href="thoughts.html" class="read-more">Read Article</a>
+            </div>
+          </div>
+          
+          <div class="thought-card">
+            <div class="thought-image">
+              <img src="assets/deployment_pipeline.jpg" loading="lazy" alt="Deployment Pipeline" />
+            </div>
+            <div class="thought-content">
+              <h3>ML Deployment Patterns</h3>
+              <p>
+                Best practices for deploying ML models in production environments with comprehensive monitoring and scaling.
+              </p>
+              <a href="thoughts.html" class="read-more">Read Article</a>
+            </div>
+          </div>
         </div>
-        <div class="thought-card">
-          <img src="path/to/your-artwork3.jpg" loading="lazy" alt="Artwork 3" />
-          <h3>The Intersection of Art & Code</h3>
-          <p>
-            Exploring how coding and art intersect and inspire each other in my
-            projects.
-          </p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-    </section>
-    <section id="testimonials" class="fade-in">
-      <h2>Testimonials</h2>
-      <div class="testimonial-container">
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "Working with Sir Simon has been an inspiring experience!"
-          </p>
-          <h4>Jane Doe</h4>
-          <span>Project Manager</span>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "A talented coder who brings creativity to every project."
-          </p>
-          <h4>John Smith</h4>
-          <span>Software Engineer</span>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">
-            "Sir Simon has an impressive grasp on complex systems and backend
-            development."
-          </p>
-          <h4>Emily White</h4>
-          <span>Cybersecurity Expert</span>
+        
+        <div class="view-all-thoughts">
+          <a href="thoughts.html" class="button-outline">
+            <i class="fas fa-book"></i> View All Articles
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="fade-in">
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/myzywnyn" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
+      <div class="container">
+        <div class="section-header">
+          <h2>Get In Touch</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Interested in collaborating on ML or blockchain projects? Let's connect!</p>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>simonbwire95@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-details">
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/BX7GamerX" target="_blank">BX7GamerX</a></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-details">
+                <h3>LinkedIn</h3>
+                <p><a href="https://linkedin.com/in/simon" target="_blank">Simon</a></p>
+              </div>
+            </div>
+          </div>
+          
+          <form action="https://formspree.io/f/myzywnyn" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-      <p>Connect with me on <a href="#social-links">Social Media</a></p>
-      <p>© 2024 Sir Simon. All rights reserved.</p>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>Simon</h2>
+            <p>Architect and Back-End Developer for Gain Chain AI</p>
+          </div>
+          
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#portfolio">Projects</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-social">
+            <h3>Connect</h3>
+            <div class="social-icons">
+              <a href="https://github.com/BX7GamerX" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/simon" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://x.com/bx7_gamer" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>© 2024 Simon. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
-    <button id="scrollToTop" title="Go to top">↑</button>
-    <script src="js/script_two.js"></script>
+    <button id="scrollToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/script_new.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/animation.js"></script>
   </body>
 </html>

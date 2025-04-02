@@ -1,0 +1,224 @@
+/* Project Page Styles */
+
+.project-banner {
+  background: linear-gradient(to right, var(--bg-darker), var(--bg-dark));
+  padding: 100px 0 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.project-banner h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link i {
+  margin-right: 8px;
+}
+
+.back-link:hover {
+  color: var(--primary-color);
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(14, 190, 255, 0.1);
+  color: var(--primary-color);
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.github-button:hover {
+  background: rgba(14, 190, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.project-content {
+  max-width: 900px;
+  margin: 0 auto 80px;
+}
+
+.project-section {
+  margin-bottom: 60px;
+}
+
+.project-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  position: relative;
+  display: inline-block;
+}
+
+.project-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+.project-section h3 {
+  font-size: 1.4rem;
+  margin: 30px 0 15px;
+  color: var(--primary-color);
+}
+
+.project-section p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.project-img-container {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.project-img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img-caption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.challenge-item {
+  background: var(--bg-medium);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-item h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.solution {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.solution h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.result-item {
+  background: var(--bg-medium);
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.result-item:hover {
+  transform: translateY(-5px);
+}
+
+.result-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.result-item p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.code-snippet {
+  margin: 30px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.code-snippet h4 {
+  background: var(--bg-darker);
+  color: var(--primary-color);
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-snippet pre {
+  margin: 0;
+  padding: 0;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.code-snippet code {
+  padding: 20px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+@media (max-width: 768px) {
+  .project-banner h1 {
+    font-size: 2.2rem;
+  }
+  
+  .project-navigation {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
