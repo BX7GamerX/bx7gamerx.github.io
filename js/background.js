@@ -1,287 +1,209 @@
-// Interactive Node Background Animation
+// Modern minimalist interactive background
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the background when the DOM is loaded
-    initNetworkBackground();
-});
-
-function initNetworkBackground() {
-    const container = document.querySelector('.network-background');
-    if (!container) return;
-
-    // Configuration
-    const config = {
-        nodeCount: window.innerWidth < 768 ? 20 : window.innerWidth < 1200 ? 40 : 60,
-        connectionDistance: window.innerWidth < 768 ? 150 : 200,
-        nodeSpeed: 0.5,
-        responsive: true,
-        mouseInteraction: true,
-        mouseRadius: 150,
-        colors: {
-            primary: getComputedStyle(document.documentElement).getPropertyValue('--accent-neon-cyan').trim(),
-            secondary: getComputedStyle(document.documentElement).getPropertyValue('--accent-neon-purple').trim()
-        }
-    };
-
-    // State
-    const nodes = [];
-    const connections = [];
-    let mousePosition = { x: null, y: null };
-    let animationFrameId = null;
-    let resizeTimer;
-
-    // Create nodes container
-    const nodesContainer = document.createElement('div');
-    nodesContainer.classList.add('nodes-container');
-    container.appendChild(nodesContainer);
-
-    // Initialize nodes
-    function createNodes() {
-        // Clear existing nodes
-        nodesContainer.innerHTML = '';
-        nodes.length = 0;
-        connections.length = 0;
-
-        for (let i = 0; i < config.nodeCount; i++) {
-            const node = document.createElement('div');
-            node.classList.add('node');
-            
-            // Randomize some nodes to have accent color
-            if (Math.random() > 0.7) {
-                node.classList.add('accent');
-            }
-            
-            // Randomize a few nodes to be highlighted (slightly larger)
-            if (Math.random() > 0.8) {
-                node.classList.add('highlight');
-            }
-            
-            // Set random position
-            const nodeData = {
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-                speedX: (Math.random() - 0.5) * config.nodeSpeed,
-                speedY: (Math.random() - 0.5) * config.nodeSpeed,
-                element: node
-            };
-            
-            node.style.left = `${nodeData.x}px`;
-            node.style.top = `${nodeData.y}px`;
-            
-            nodes.push(nodeData);
-            nodesContainer.appendChild(node);
+    const canvas = document.createElement('canvas');
+    canvas.classList.add('network-canvas');
+    
+    const backgroundContainer = document.createElement('div');
+    backgroundContainer.classList.add('network-background');
+    backgroundContainer.appendChild(canvas);
+    
+    // Add background glow elements
+    const glow1 = document.createElement('div');
+    glow1.classList.add('bg-glow', 'glow-1');
+    
+    const glow2 = document.createElement('div');
+    glow2.classList.add('bg-glow', 'glow-2');
+    
+    // Add noise texture overlay
+    const overlay = document.createElement('div');
+    overlay.classList.add('background-overlay');
+    
+    // Append all elements to body
+    document.body.appendChild(backgroundContainer);
+    document.body.appendChild(glow1);
+    document.body.appendChild(glow2);
+    document.body.appendChild(overlay);
+    
+    // Set up the canvas
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    
+    // Configure for retina displays
+    const pixelRatio = window.devicePixelRatio || 1;
+    canvas.width = width * pixelRatio;
+    canvas.height = height * pixelRatio;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.scale(pixelRatio, pixelRatio);
+    
+    // Particles configuration
+    const particleCount = Math.min(Math.floor(width * height / 10000), 100); // Reduced count for minimalist look
+    const connectionDistance = Math.min(width, height) * 0.15; // Shorter connections
+    const particleRadius = 2; // Smaller particles
+    
+    // Color configuration
+    let primaryColor, secondaryColor;
+    updateColors();
+    
+    // Particles array
+    const particles = [];
+    
+    // Initialize particles
+    function initParticles() {
+        particles.length = 0;
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                size: Math.random() * particleRadius + 1,
+                speedX: (Math.random() - 0.5) * 0.5, // Slower movement
+                speedY: (Math.random() - 0.5) * 0.5,
+                opacity: Math.random() * 0.3 + 0.2, // More subtle opacity
+            });
         }
     }
-
-    // Update node positions
-    function updateNodes() {
-        nodes.forEach((node, index) => {
-            // Move node
-            node.x += node.speedX;
-            node.y += node.speedY;
-            
-            // Bounce off edges
-            if (node.x < 0 || node.x > window.innerWidth) {
-                node.speedX *= -1;
-                node.x = Math.max(0, Math.min(node.x, window.innerWidth));
-            }
-            
-            if (node.y < 0 || node.y > window.innerHeight) {
-                node.speedY *= -1;
-                node.y = Math.max(0, Math.min(node.y, window.innerHeight));
-            }
-            
-            // Update position
-            node.element.style.transform = `translate(${node.x}px, ${node.y}px)`;
-            
-            // Add mouse interaction
-            if (config.mouseInteraction && mousePosition.x !== null && mousePosition.y !== null) {
-                const dx = mousePosition.x - node.x;
-                const dy = mousePosition.y - node.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < config.mouseRadius) {
-                    // Push node away from mouse with increasing force as it gets closer
-                    const force = (config.mouseRadius - distance) / config.mouseRadius;
-                    node.speedX -= dx * force * 0.02;
-                    node.speedY -= dy * force * 0.02;
-                    
-                    // Limit speed
-                    const maxSpeed = 2;
-                    const currentSpeed = Math.sqrt(node.speedX * node.speedX + node.speedY * node.speedY);
-                    if (currentSpeed > maxSpeed) {
-                        node.speedX = (node.speedX / currentSpeed) * maxSpeed;
-                        node.speedY = (node.speedY / currentSpeed) * maxSpeed;
-                    }
-                }
-            }
-            
-            // Apply slight friction to prevent excessive speeds
-            node.speedX *= 0.99;
-            node.speedY *= 0.99;
-        });
-    }
-
-    // Draw connections between nodes
-    function drawConnections() {
-        // Remove old connections
-        connections.forEach(conn => {
-            if (conn.element && conn.element.parentNode) {
-                conn.element.parentNode.removeChild(conn.element);
-            }
-        });
-        connections.length = 0;
-        
-        // Create new connections
-        for (let i = 0; i < nodes.length; i++) {
-            for (let j = i + 1; j < nodes.length; j++) {
-                const node1 = nodes[i];
-                const node2 = nodes[j];
-                
-                const dx = node2.x - node1.x;
-                const dy = node2.y - node1.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < config.connectionDistance) {
-                    // Create connection element if it doesn't exist
-                    const connection = document.createElement('div');
-                    connection.classList.add('connection');
-                    
-                    // Calculate position and dimensions
-                    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-                    connection.style.width = `${distance}px`;
-                    connection.style.left = `${node1.x}px`;
-                    connection.style.top = `${node1.y}px`;
-                    connection.style.transform = `rotate(${angle}deg)`;
-                    
-                    // Fade out connections that are further away
-                    const opacity = 1 - (distance / config.connectionDistance);
-                    connection.style.opacity = opacity * 0.2;
-                    
-                    // Store connection data
-                    connections.push({
-                        from: i,
-                        to: j,
-                        element: connection
-                    });
-                    
-                    // Add to container
-                    nodesContainer.appendChild(connection);
-                }
-            }
-        }
-    }
-
-    // Mouse move handler
-    function handleMouseMove(e) {
-        if (!config.mouseInteraction) return;
-        
-        mousePosition.x = e.clientX;
-        mousePosition.y = e.clientY;
-        
-        // Create ripple effect on click (optional)
-        if (e.type === 'click') {
-            createRipple(e.clientX, e.clientY);
-        }
-    }
-
-    // Create ripple effect
-    function createRipple(x, y) {
-        const ripple = document.createElement('div');
-        ripple.classList.add('mouse-ripple');
-        ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
-        
-        nodesContainer.appendChild(ripple);
-        
-        let size = 0;
-        let opacity = 1;
-        
-        const expandRipple = () => {
-            if (size >= config.mouseRadius * 2) {
-                nodesContainer.removeChild(ripple);
-                return;
-            }
-            
-            size += 5;
-            opacity -= 0.02;
-            
-            ripple.style.width = `${size}px`;
-            ripple.style.height = `${size}px`;
-            ripple.style.marginLeft = `${-size/2}px`;
-            ripple.style.marginTop = `${-size/2}px`;
-            ripple.style.opacity = opacity;
-            
-            requestAnimationFrame(expandRipple);
-        };
-        
-        requestAnimationFrame(expandRipple);
-    }
-
-    // Handle window resize
-    function handleResize() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            if (config.responsive) {
-                // Update configuration based on screen size
-                config.nodeCount = window.innerWidth < 768 ? 20 : window.innerWidth < 1200 ? 40 : 60;
-                config.connectionDistance = window.innerWidth < 768 ? 150 : 200;
-                
-                // Recreate nodes based on new config
-                createNodes();
-            }
-        }, 250);
-    }
-
+    
     // Animation loop
     function animate() {
-        updateNodes();
-        drawConnections();
-        animationFrameId = requestAnimationFrame(animate);
-    }
-
-    // Clean up function
-    function cleanup() {
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
+        ctx.clearRect(0, 0, width, height);
+        
+        // Update and draw particles
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            
+            // Move particles
+            p.x += p.speedX;
+            p.y += p.speedY;
+            
+            // Boundary check with bounce
+            if (p.x < 0 || p.x > width) p.speedX *= -1;
+            if (p.y < 0 || p.y > height) p.speedY *= -1;
+            
+            // Draw particle
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = primaryColor.replace('1)', `${p.opacity})`);
+            ctx.fill();
         }
         
-        window.removeEventListener('resize', handleResize);
-        document.removeEventListener('mousemove', handleMouseMove);
-        document.removeEventListener('click', handleMouseMove);
+        // Draw connections
+        ctx.lineWidth = 0.5; // Thinner lines
         
-        if (container) {
-            container.innerHTML = '';
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const p1 = particles[i];
+                const p2 = particles[j];
+                
+                const dx = p1.x - p2.x;
+                const dy = p1.y - p2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < connectionDistance) {
+                    const opacity = (1 - distance / connectionDistance) * 0.2; // More subtle connections
+                    ctx.beginPath();
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    
+                    // Gradient line for more depth
+                    const gradient = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
+                    gradient.addColorStop(0, primaryColor.replace('1)', `${opacity})`));
+                    gradient.addColorStop(1, secondaryColor.replace('1)', `${opacity})`));
+                    
+                    ctx.strokeStyle = gradient;
+                    ctx.stroke();
+                }
+            }
+        }
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Handle mouse movement for interactivity
+    let mouseX = null;
+    let mouseY = null;
+    let interactiveParticle = null;
+    
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Create interactive particle if it doesn't exist
+        if (!interactiveParticle) {
+            interactiveParticle = {
+                x: mouseX,
+                y: mouseY,
+                size: particleRadius * 2, // Slightly larger than regular particles
+                opacity: 0.5
+            };
+            particles.push(interactiveParticle);
+        } else {
+            // Update interactive particle position with smooth interpolation
+            interactiveParticle.x += (mouseX - interactiveParticle.x) * 0.1;
+            interactiveParticle.y += (mouseY - interactiveParticle.y) * 0.1;
+        }
+    });
+    
+    // Handle resize
+    window.addEventListener('resize', function() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        
+        canvas.width = width * pixelRatio;
+        canvas.height = height * pixelRatio;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        ctx.scale(pixelRatio, pixelRatio);
+        
+        initParticles();
+    });
+    
+    // Handle theme changes
+    function updateColors() {
+        const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+        if (theme === 'dark') {
+            primaryColor = 'rgba(0, 229, 255, 1)';
+            secondaryColor = 'rgba(184, 46, 255, 1)';
+        } else {
+            primaryColor = 'rgba(0, 153, 204, 1)';
+            secondaryColor = 'rgba(136, 0, 204, 1)';
         }
     }
-
-    // Initialize
-    function init() {
-        cleanup(); // Clean up existing instance if any
-        createNodes();
-        
-        // Add event listeners
-        window.addEventListener('resize', handleResize);
-        document.addEventListener('mousemove', handleMouseMove);
-        document.addEventListener('click', handleMouseMove);
-        
-        // Start animation loop
-        animate();
-    }
-
-    // Start the background
-    init();
-
-    // Return cleanup function for potential future use
-    return cleanup;
-}
-
-// Theme change handler to update node colors
-document.addEventListener('themeChanged', function(e) {
-    // Wait a moment for CSS variables to update
-    setTimeout(() => {
-        const nodes = document.querySelectorAll('.node');
-        nodes.forEach(node => {
-            node.style.transition = 'background-color 0.5s ease';
+    
+    // Monitor theme changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'data-theme') {
+                updateColors();
+            }
         });
-    }, 100);
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true
+    });
+    
+    // Handle scroll to reduce background intensity during reading
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const scrollPercentage = Math.min(scrollY / (maxScroll * 0.3), 1);
+        
+        // Add/remove classes based on scroll position
+        if (scrollY > 100) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+        
+        if (scrollPercentage > 0.5) {
+            document.body.classList.add('focused-content');
+        } else {
+            document.body.classList.remove('focused-content');
+        }
+    });
+    
+    // Start the animation
+    initParticles();
+    animate();
 });

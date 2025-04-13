@@ -1,167 +1,103 @@
 /* UI Components and Interactive elements */
 
-/* Theme Toggle Button */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: var(--bg-dark-secondary);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 100;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all var(--transition-speed);
-}
+/* Modern minimalist components */
 
-.theme-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
-}
-
-.theme-toggle i {
-    font-size: 1.2rem;
-    color: var(--accent-neon-cyan);
-    transition: all var(--transition-speed);
-}
-
-/* Loading Overlay */
-.loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.loading-overlay.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader {
-    position: relative;
-    width: 120px;
-    height: 120px;
-}
-
-.loader-circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 4px solid transparent;
-    border-top-color: var(--accent-neon-cyan);
-    border-radius: 50%;
-    animation: spin 1.5s linear infinite;
-}
-
-.loader-inner-circle {
-    position: absolute;
-    width: 70%;
-    height: 70%;
-    top: 15%;
-    left: 15%;
-    border: 4px solid transparent;
-    border-top-color: var(--accent-neon-purple);
-    border-radius: 50%;
-    animation: spin 1s linear infinite reverse;
-}
-
-.loading-text {
-    margin-top: 20px;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    color: var(--primary-color);
-    animation: pulse 1.5s infinite;
-}
-
-/* Custom Cursor */
+/* Custom Cursor - More subtle and refined */
 .custom-cursor {
     position: fixed;
-    width: 20px;
-    height: 20px;
+    width: 16px; /* Smaller for minimalism */
+    height: 16px;
     border-radius: 50%;
     background-color: var(--accent-neon-cyan);
     pointer-events: none;
     mix-blend-mode: difference;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease, background-color 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3); /* Reduced glow */
+    opacity: 0.8; /* Slightly transparent by default */
 }
 
-.cursor-trail {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--accent-neon-cyan);
-    pointer-events: none;
-    z-index: 9998;
-    opacity: 0.5;
-    transform: translate(-50%, -50%);
+/* Modern hover effect for cursor */
+.cursor-hover {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 229, 255, 0.15);
+    border: 1px solid var(--accent-neon-cyan);
 }
 
-/* Audio Control Button */
-.audio-control {
+/* Theme Toggle Button - Modern floating button */
+.theme-toggle {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
+    top: 20px;
+    right: 20px;
     width: 40px;
     height: 40px;
-    background-color: var(--bg-dark-secondary);
+    background-color: rgba(18, 25, 38, 0.7); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Modern frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 229, 255, 0.25);
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
+    color: var(--accent-neon-cyan);
+    transition: all var(--transition-speed);
+}
+
+/* Audio Control Button - Matches theme toggle style */
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(18, 25, 38, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all var(--transition-speed);
     opacity: 0.7;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .audio-control:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 1;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-}
-
-.audio-control.ready::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: #0f0;
-    border-radius: 50%;
-    bottom: 5px;
-    right: 5px;
+    box-shadow: 0 5px 20px rgba(0, 229, 255, 0.25);
 }
 
 .audio-control i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--accent-neon-cyan);
 }
 
-/* Audio Visualizer */
+/* Audio Visualizer - More minimal and elegant */
 .audio-visualizer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 30px;
+    height: 24px; /* Smaller height */
     display: none; /* Initially hidden */
     z-index: 90;
     pointer-events: none;
@@ -180,21 +116,13 @@
     justify-content: space-between;
 }
 
-/* Particles Background */
-.particles-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-/* Custom Tooltip */
+/* Custom Tooltip - More elegant */
 .custom-tooltip {
     position: fixed;
     padding: 6px 12px;
-    background-color: var(--card-bg);
+    background-color: rgba(18, 25, 38, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--text-color);
     border-radius: 4px;
     font-size: 0.8rem;
@@ -205,7 +133,7 @@
     transition: opacity 0.3s, transform 0.3s;
     box-shadow: 0 2px 10px var(--shadow-color);
     text-align: center;
-    border-left: 3px solid var(--primary-color);
+    border-left: 2px solid var(--primary-color);
     min-width: 80px;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -218,195 +146,283 @@
 
 .tooltip-arrow {
     position: absolute;
-    bottom: -5px;
+    bottom: -4px;
     left: 50%;
-    margin-left: -5px;
+    margin-left: -4px;
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid var(--card-bg);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(18, 25, 38, 0.85);
 }
 
-/* Skill Modal */
-.skill-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+/* Skill Icons - Modern and minimal */
+.skill-icon {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.skill-modal.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.skill-modal-content {
-    width: 90%;
-    max-width: 600px;
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    padding: var(--spacing-md);
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-}
-
-.skill-modal.show .skill-modal-content {
+    gap: var(--spacing-xs);
     transform: translateY(0);
-}
-
-.skill-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-sm);
-    padding-bottom: var(--spacing-xs);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.skill-modal-header h3 {
-    font-size: 1.5rem;
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.skill-modal-close {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
+    transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
+    padding: var(--spacing-sm);
+    width: 110px; /* Slightly smaller */
+    height: 110px; /* Slightly smaller */
+    justify-content: center;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.skill-icon:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 229, 255, 0.08);
+}
+
+/* Cleaner underline effect */
+.skill-icon::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-neon-cyan), var(--accent-neon-purple));
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.skill-icon:hover::after {
+    width: 40%;
+}
+
+.skill-icon img {
+    width: 48px; /* Slightly smaller for minimalism */
+    height: 48px;
     transition: all var(--transition-speed);
+    filter: grayscale(20%) opacity(0.9); /* Slightly muted by default */
+    object-fit: contain;
 }
 
-.skill-modal-close:hover {
-    color: var(--accent-neon-cyan);
-    transform: rotate(90deg);
+.skill-icon:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%) opacity(1); /* Full color on hover */
 }
 
-.experience-bar {
-    height: 8px;
-    width: 100%;
-    background-color: var(--bg-dark);
-    border-radius: 4px;
-    margin-bottom: 5px;
+.skill-icon span {
+    font-size: 0.9rem; /* Smaller text */
+    font-weight: 500;
+    margin-top: var(--spacing-xs);
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Button animations - Subtle interactions */
+.btn-animated {
+    position: relative;
     overflow: hidden;
 }
 
-.experience-fill {
+.btn-animated::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
     height: 100%;
-    background: var(--gradient-accent);
-    border-radius: 4px;
-    transition: width 1s ease;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.7s;
 }
 
-.skill-projects {
-    margin-top: var(--spacing-sm);
+.btn-animated:hover::before {
+    left: 100%;
 }
 
-.skill-projects h4 {
-    margin-bottom: 10px;
-    color: var(--accent-neon-cyan);
+/* Cards - Modern minimalist style */
+.modern-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    position: relative;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-.skill-projects ul {
-    list-style-position: inside;
-    padding-left: var(--spacing-sm);
+.modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 229, 255, 0.1);
 }
 
-/* Project Modal */
-.project-modal {
-    display: none;
-    position: fixed;
+/* Modern card hover effect */
+.modern-card::after {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    overflow-y: auto;
+    background: linear-gradient(
+        45deg,
+        transparent 98%,
+        var(--accent-neon-cyan) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-.modal-content {
-    background-color: var(--card-bg);
-    width: 90%;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    position: relative;
+.modern-card:hover::after {
+    opacity: 0.5;
 }
 
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--bg-dark);
-    border-radius: 50%;
+/* Social Media Links - Modern style */
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.social-links a {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    width: 36px; /* Smaller */
+    height: 36px; /* Smaller */
+    border-radius: 50%;
+    background-color: rgba(18, 25, 38, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: var(--text-color);
     transition: all var(--transition-speed);
-    z-index: 1001;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.close-modal:hover {
-    transform: rotate(90deg);
-    background-color: var(--accent-neon-cyan);
+.social-links a:hover {
+    transform: translateY(-3px); /* Reduced movement */
+    background: var(--gradient-accent);
+    color: var(--bg-dark);
 }
 
-.close-modal i {
-    color: var(--text-light);
-    font-size: 1.2rem;
+.social-links a i {
+    font-size: 0.9rem; /* Smaller icons */
 }
 
-/* Animation Helper Classes */
-.pulse {
-    animation: pulse-animation 1s ease-in-out;
+/* Tag styling - Minimalist tags */
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    background-color: rgba(0, 229, 255, 0.07);
+    color: var(--accent-neon-cyan);
+    margin-right: 8px;
+    margin-bottom: 8px;
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(0, 229, 255, 0.1);
 }
 
-.floating-icon {
-    animation: floatIcon 6s ease-in-out infinite;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.tag:hover {
+    background-color: rgba(0, 229, 255, 0.15);
+    transform: translateY(-2px);
 }
 
-/* Media Queries for components */
+/* Floating animation - More subtle */
+.floating {
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Reduced movement */
+    }
+}
+
+/* Scroll-triggered animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered reveal for multiple elements */
+.stagger-reveal > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-reveal.active > *:nth-child(1) { transition-delay: 0s; }
+.stagger-reveal.active > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-reveal.active > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger-reveal.active > *:nth-child(4) { transition-delay: 0.3s; }
+.stagger-reveal.active > *:nth-child(5) { transition-delay: 0.4s; }
+
+.stagger-reveal.active > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Minimalist divider */
+.divider {
+    width: 40px;
+    height: 3px;
+    background: var(--gradient-accent);
+    margin: var(--spacing-md) auto;
+    border-radius: 2px;
+}
+
+.divider-sm {
+    width: 30px;
+    height: 2px;
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .modern-card {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .social-links a {
+    background-color: rgba(238, 241, 248, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .skill-icon {
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    .custom-cursor, .cursor-trail {
-        display: none;
+    .skill-icon {
+        width: 90px;
+        height: 90px;
+        padding: 10px;
     }
     
-    .theme-toggle, .audio-control {
+    .skill-icon img {
         width: 40px;
         height: 40px;
     }
     
-    .audio-control {
-        bottom: 20px;
-        left: 20px;
-    }
-    
-    .theme-toggle {
-        top: 20px;
-        right: 20px;
-    }
-    
-    .theme-toggle i, .audio-control i {
-        font-size: 1.2rem;
+    .social-links a {
+        width: 32px;
+        height: 32px;
     }
 }
