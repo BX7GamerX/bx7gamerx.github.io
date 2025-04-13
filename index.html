@@ -1,548 +1,685 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Simon - Machine Learning Engineer & Blockchain Developer | Portfolio showcasing Gain Chain AI, machine learning projects, and blockchain solutions" />
-    <meta property="og:title" content="Simon | ML Engineer & Blockchain Developer" />
-    <meta property="og:description" content="Explore my Gain Chain AI project and other work in machine learning and blockchain technology" />
-    <meta property="og:image" content="assets/github_profile.png" />
-    <meta property="og:url" content="https://bx7gamerx.github.io/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    
-    <title>Simon | ML Engineer & Blockchain Developer</title>
-    <link rel="icon" href="assets/github_profile.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/styles_new.css" />
-    <link rel="stylesheet" href="css/theme_styles.css" />
-    <link rel="stylesheet" href="css/custom_elements.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  </head>
-  <body>
-    <div id="preloader">
-      <div class="loader"></div>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sir Simon - Lead Backend Developer</title>
+    <!-- Updated CSS imports -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Updated Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Particles.js for background effects -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Typed.js for typing animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- CountUp.js for animated number counting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
+    <!-- Three.js for 3D animations -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <!-- AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Howler.js for audio -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-inner-circle"></div>
+        </div>
+        <div class="loading-text">Loading Experience</div>
     </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Custom Cursor Elements -->
     <div class="custom-cursor"></div>
+    
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+    
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <i class="fas fa-volume-mute"></i>
+    </div>
+    
+    <!-- Audio Visualizer -->
+    <div class="audio-visualizer">
+        <div class="audio-visualizer-bars"></div>
+    </div>
+    
+    <!-- Custom Tooltip Container -->
+    <div class="custom-tooltip">
+        <span class="tooltip-text"></span>
+        <div class="tooltip-arrow"></div>
+    </div>
+    
+    <!-- Particles Container for Background Effect -->
+    <div id="particles-js" class="particles-container"></div>
 
-    <!-- Landing Section -->
-    <section id="home" class="landing">
-      <div id="particles-js"></div>
-      
-      <div class="landing-content">
-        <div class="profile-container">
-          <img src="assets/him_dp.jpeg" alt="Simon's Profile" class="profile-picture" />
-          
-          <div class="intro-text">
-            <span class="greeting">Hello, I'm Simon</span>
-            <h1 class="landing-title">Machine Learning Engineer & Blockchain Developer</h1>
-            <p class="landing-subtitle">Architect and Back-End Developer for Gain Chain AI - Building intelligent systems at the intersection of neural networks and blockchain technology</p>
-            
-            <div class="tech-icons">
-              <span class="tech-icon" title="C++"><i class="fab fa-cuttlefish"></i><i class="fas fa-plus"></i><i class="fas fa-plus"></i></span>
-              <span class="tech-icon" title="Python"><i class="fab fa-python"></i></span>
-              <span class="tech-icon" title="Machine Learning"><i class="fas fa-brain"></i></span>
-              <span class="tech-icon" title="Rust"><i class="fab fa-rust"></i></span>
-            </div>
-            
-            <div class="landing-cta">
-              <a href="#portfolio" class="cta-button primary">View Projects</a>
-              <a href="projects/gainchain.html" class="cta-button secondary">Gain Chain AI Demo</a>
-            </div>
-            
-            <div class="social-links">
-              <a href="https://github.com/BX7GamerX" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://linkedin.com/in/simon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="https://x.com/bx7_gamer" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
-            </div>
-          </div>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <span class="logo-text">Sir<span class="accent">Simon</span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#resume" class="nav-link">Resume</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
         </div>
-      </div>
-      
-      <div class="scroll-indicator">
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-        <div class="arrow">
-          <span></span>
-        </div>
-      </div>
-    </section>
-
-    <header class="main-header">
-      <div class="container">
-        <a href="#" class="logo">Simon</a>
-        <nav class="main-nav">
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="theme-toggle" id="theme-toggle">
-            <i class="fas fa-moon"></i>
-          </div>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
-      </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>About Me</h2>
-          <div class="section-divider"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="accent">Sir Simon</span></h1>
+                    <h2 class="typed-text"></h2>
+                    <p>Lead Backend Developer at Gain Chain AI, specializing in Rust and Python with a passion for innovative solutions.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/bx7gamerx" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/sirsimon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:contact@sirsimon.dev"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/face-reveal-v0-t2y2jj75rnid1.png" alt="Sir Simon - Portrait" class="floating">
+                </div>
+            </div>
         </div>
-        
-        <div class="about-container">
-          <div class="about-image">
-            <img src="assets/him_dp.jpeg" alt="Simon's profile" class="profile-img" />
-            <div class="tech-badges">
-              <span class="tech-badge">ML Architect</span>
-              <span class="tech-badge">Blockchain Dev</span>
-              <span class="tech-badge">Rust</span>
-              <span class="tech-badge">C++</span>
-            </div>
-          </div>
-          
-          <div class="about-text">
-            <p>
-              I'm a <strong>Machine Learning Engineer</strong> with a focus on building high-performance neural networks and blockchain integration. I specialize in developing intelligent systems that operate across decentralized infrastructure.
-            </p>
-            
-            <p>
-              As the <strong>Architect and Back-End Developer</strong> for <strong>Gain Chain AI</strong>, I've developed a cutting-edge neural network-based recommendation system built on the Internet Computer Protocol (ICP). My C++ implementation achieves 3× better performance than previous versions through advanced optimization techniques.
-            </p>
-            
-            <p>
-              I'm passionate about transformer architectures, federated learning, and building systems that enhance user experience while maintaining privacy. My work bridges the gap between cutting-edge machine learning algorithms and practical, production-ready applications.
-            </p>
-            
-            <div class="interests">
-              <h3>Professional Focus</h3>
-              <ul>
-                <li><i class="fas fa-network-wired"></i> Neural network optimization</li>
-                <li><i class="fas fa-link"></i> Blockchain-integrated AI systems</li>
-                <li><i class="fas fa-shield-alt"></i> Privacy-preserving ML</li>
-              </ul>
-            </div>
-            
-            <div class="current-focus">
-              <h3>Currently Building:</h3>
-              <ul>
-                <li>Next generation of the Gain Chain AI recommendation engine</li>
-                <li>Advanced transformer models for blockchain data analysis</li>
-                <li>Decentralized federated learning framework</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="fade-in">
-      <div class="container">
-        <div class="section-header">
-          <h2>Technical Skills</h2>
-          <div class="section-divider"></div>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">My expertise spans across various programming languages and technologies</p>
+            
+            <div class="skills-container">
+                <div class="skill-categories">
+                    <div class="skill-category">
+                        <div class="skill-category-header">
+                            <h3>Programming Languages</h3>
+                            <img src="assets/code.png" alt="Programming">
+                        </div>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-name">Rust</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-level" data-percent="95"></div>
+                                </div>
+                                <div class="skill-percent">95%</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">Python</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-level" data-percent="90"></div>
+                                </div>
+                                <div class="skill-percent">90%</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-level" data-percent="85"></div>
+                                </div>
+                                <div class="skill-percent">85%</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">C++</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-level" data-percent="80"></div>
+                                </div>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-category-header">
+                            <h3>Frameworks & Technologies</h3>
+                            <img src="assets/web_dev.png" alt="Technologies">
+                        </div>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-name">Machine Learning</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-level" data-percent="90"></div>
+                                </div>
+                                <div class="skill-percent">90%</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">Blockchain</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-level" data-percent="85"></div>
+                                </div>
+                                <div class="skill-percent">85%</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-name">Backend Development</div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-level" data-percent="95"></div>
+                                </div>
+                                <div class="skill-percent">95%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-icons">
+                    <div class="skill-icon">
+                        <img src="assets/rust.png" alt="Rust">
+                        <span>Rust</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="assets/python.png" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="assets/cpp.png" alt="C++">
+                        <span>C++</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="assets/javascript.png" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="assets/blockchain_dev.png" alt="Blockchain">
+                        <span>Blockchain</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="assets/ml.png" alt="Machine Learning">
+                        <span>Machine Learning</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="assets/backend.png" alt="Backend">
+                        <span>Backend</span>
+                    </div>
+                    <div class="skill-icon">
+                        <img src="assets/html5.png" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="skills-container">
-          <!-- Programming Languages -->
-          <div class="skills-category">
-            <h3>Languages</h3>
-            <div class="skills-grid">
-              <div class="skill-card">
-                <img src="assets/cpp.png" alt="C++" />
-                <h4>C++</h4>
-                <div class="skill-level advanced"></div>
-              </div>
-              <div class="skill-card">
-                <img src="assets/python.png" alt="Python" />
-                <h4>Python</h4>
-                <div class="skill-level advanced"></div>
-              </div>
-              <div class="skill-card">
-                <img src="assets/rust.png" alt="Rust" />
-                <h4>Rust</h4>
-                <div class="skill-level intermediate"></div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- ML Technologies -->
-          <div class="skills-category">
-            <h3>ML & Data</h3>
-            <div class="skills-grid">
-              <div class="skill-card">
-                <img src="assets/pytorch.png" alt="PyTorch" />
-                <h4>PyTorch</h4>
-                <div class="skill-level advanced"></div>
-              </div>
-              <div class="skill-card">
-                <img src="assets/tensorflow.png" alt="TensorFlow" />
-                <h4>TensorFlow</h4>
-                <div class="skill-level intermediate"></div>
-              </div>
-              <div class="skill-card">
-                <img src="assets/ml.png" alt="Neural Networks" />
-                <h4>Neural Networks</h4>
-                <div class="skill-level advanced"></div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Technologies -->
-          <div class="skills-category">
-            <h3>Technologies</h3>
-            <div class="skills-grid">
-              <div class="skill-card">
-                <img src="assets/blockchain_dev.png" alt="Blockchain" />
-                <h4>Blockchain</h4>
-                <div class="skill-level intermediate"></div>
-              </div>
-              <div class="skill-card">
-                <img src="assets/icp.png" alt="ICP" />
-                <h4>Internet Computer</h4>
-                <div class="skill-level intermediate"></div>
-              </div>
-              <div class="skill-card">
-                <img src="assets/docker.png" alt="Docker" />
-                <h4>Docker</h4>
-                <div class="skill-level intermediate"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="fade-in">
-      <div class="container">
-        <div class="section-header">
-          <h2>Featured Projects</h2>
-          <div class="section-divider"></div>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-value" id="projectsStat">24</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="clientsStat">18</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="yearsStat">5</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="commitsStat">1200</div>
+                    <div class="stat-label">Git Commits</div>
+                </div>
+            </div>
         </div>
-        
-        <div class="portfolio-container">
-          <!-- GainChain Featured Project -->
-          <div class="portfolio-card featured-project">
-            <div class="featured-badge">Primary Project</div>
-            <img src="assets/gainchain.jpeg" alt="Gain Chain AI Architecture" class="project-image" />
-            <h3>Gain Chain AI</h3>
-            <p>
-              A neural network recommendation system for a decentralized social platform built on the Internet Computer Protocol. 
-              As the Architect and Back-End Developer, I designed and implemented the ML engine using C++ with Rust integration, 
-              achieving 3× better performance through custom optimization techniques.
-            </p>
-            <div class="tech-tags">
-              <span class="tech-tag">C++</span>
-              <span class="tech-tag">Neural Networks</span>
-              <span class="tech-tag">Rust</span>
-              <span class="tech-tag">ICP</span>
-            </div>
-            <div class="project-links">
-              <a href="projects/gainchain.html" class="view-project">View Demo</a>
-              <a href="https://github.com/BX7GamerX/recomendation-neural-network" target="_blank" class="github-link">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Other projects -->
-          <div class="portfolio-card">
-            <img src="assets/transformer_model.jpg" alt="Transformer Model Architecture" class="project-image" />
-            <h3>Attention-based Neural Architecture</h3>
-            <p>
-              Custom transformer architecture for multi-label classification with state-of-the-art accuracy and efficient resource utilization.
-            </p>
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">PyTorch</span>
-              <span class="tech-tag">Transformers</span>
-            </div>
-            <a href="projects/transformer.html" class="view-project">View Project</a>
-          </div>
-          
-          <div class="portfolio-card">
-            <img src="assets/time_series.jpg" alt="Time Series Forecasting" class="project-image" />
-            <h3>Time Series Forecasting</h3>
-            <p>
-              Hybrid LSTM-Transformer model for financial time series forecasting with
-              robust uncertainty quantification and improved prediction accuracy.
-            </p>
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">TensorFlow</span>
-              <span class="tech-tag">Time Series</span>
-            </div>
-            <a href="projects/timeseries.html" class="view-project">View Project</a>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-      <div class="container">
-        <div class="section-header">
-          <h2>Experience</h2>
-          <div class="section-divider"></div>
+    <!-- Introduction Section -->
+    <section id="about" class="introduction">
+        <div class="container">
+            <div class="section-heading">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="intro-content">
+                <div class="intro-image">
+                    <img src="assets/full_pic.jpeg" alt="Sir Simon - Portrait">
+                </div>
+                <div class="intro-text">
+                    <p>I'm Sir Simon, a Lead Backend Developer with expertise in Rust and Python. My technical journey has been defined by tackling complex challenges and building robust solutions that power innovative applications.</p>
+                    <p>As the technical lead for Gain Chain AI, I architected and implemented a sophisticated backend system that drives the platform's AI capabilities. My work combines efficient algorithms, secure data handling, and scalable architecture to create performant solutions.</p>
+                    <p>Beyond coding, I explore the intersection of technology and creativity, finding inspiration in art and design that informs my technical approach.</p>
+                    <div class="tech-stack">
+                        <h3>Technical Expertise</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><img src="assets/rust.png" alt="Rust"><span>Rust</span></div>
+                            <div class="tech-icon"><img src="assets/python.png" alt="Python"><span>Python</span></div>
+                            <div class="tech-icon"><img src="assets/backend.png" alt="Backend Development"><span>Backend</span></div>
+                            <div class="tech-icon"><img src="assets/blockchain_dev.png" alt="Blockchain"><span>Blockchain</span></div>
+                            <div class="tech-icon"><img src="assets/ml.png" alt="Machine Learning"><span>ML</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="date">Oct 2023 - Present</span>
-              <h3>ML Backend Lead - GainChain</h3>
-              <p>
-                Leading the machine learning backend development for a decentralized social media platform 
-                on the Internet Computer (ICP) blockchain.
-              </p>
-              <ul class="achievements">
-                <li>
-                  Architected and implemented a C++ neural network recommendation system with 3× performance improvement
-                </li>
-                <li>
-                  Developed cross-language integration between C++ ML models and Rust blockchain infrastructure
-                </li>
-                <li>
-                  Created ML systems that operate on encrypted data without compromising privacy
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="date">Sept 2023 - Oct 2023</span>
-              <h3>Software Developer - SpadeChain</h3>
-              <p>
-                Contributed to essential tools for blockchain and AI projects with focus on decentralized infrastructure.
-              </p>
-              <ul class="achievements">
-                <li>
-                  Implemented Rust-based backend systems for blockchain applications
-                </li>
-                <li>
-                  Designed scalable database solutions for decentralized platforms
-                </li>
-                <li>
-                  Collaborated on cross-project initiatives between GainChain and SpadeChain
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="date">2022 - Present</span>
-              <h3>Freelance ML Engineer</h3>
-              <p>
-                Developed various machine learning and blockchain projects for clients.
-              </p>
-              <ul class="achievements">
-                <li>
-                  Built neural network systems optimized for production environments
-                </li>
-                <li>
-                  Created web applications with AI capabilities using Python, JavaScript, and HTML/CSS
-                </li>
-                <li>
-                  Collaborated with multidisciplinary teams on complex technical challenges
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Blog/Insights Section -->
-    <section id="blog" class="fade-in">
-      <div class="container">
-        <div class="section-header">
-          <h2>Blog & Insights</h2>
-          <div class="section-divider"></div>
-        </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-heading">
+                <h2>My Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="project-gallery">
+                <!-- Gain Chain AI Project Card -->
+                <div class="project-card" data-project="gainchain" data-tooltip="Click to view details">
+                    <div class="project-overlay">
+                        <h3>Gain Chain AI</h3>
+                        <p>An advanced AI platform using blockchain technology for secure data processing</p>
+                        <div class="project-overlay-links">
+                            <a href="#" class="view-details">View Details</a>
+                            <a href="https://github.com/bx7gamerx/gainchain" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-thumbnail">
+                        <img src="assets/gainchain.jpeg" alt="Gain Chain AI Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Gain Chain AI</h3>
+                        <p>Lead backend development using Rust and Python, architecting a scalable AI model infrastructure.</p>
+                        <div class="project-tech">
+                            <span>Rust</span>
+                            <span>Python</span>
+                            <span>AI</span>
+                            <span>Blockchain</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details">View Details</a>
+                            <a href="https://github.com/bx7gamerx/gainchain" target="_blank" class="github-link">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kilo Delivery App Project Card -->
+                <div class="project-card" data-project="kilo" data-tooltip="Click to view details">
+                    <div class="project-overlay">
+                        <h3>Kilo – Delivery App</h3>
+                        <p>A modern delivery application with an intuitive interface and robust backend</p>
+                        <div class="project-overlay-links">
+                            <a href="#" class="view-details">View Details</a>
+                            <a href="https://github.com/bx7gamerx/kilo-app" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-thumbnail">
+                        <img src="assets/web_dev.png" alt="Kilo Delivery App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Kilo – Delivery App</h3>
+                        <p>A complete delivery application solution with a finished front end interface and robust backend infrastructure.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                            <span>Backend API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-details">View Details</a>
+                            <a href="https://github.com/bx7gamerx/kilo-app" target="_blank" class="github-link">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Simulator Card -->
+                <div class="project-card simulator-card" data-tooltip="Click to launch interactive demo">
+                    <div class="project-overlay">
+                        <h3>Interactive Model Demo</h3>
+                        <p>Explore my AI model architecture through an interactive simulation</p>
+                        <div class="project-overlay-links">
+                            <a href="#" class="view-demo">Launch Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-thumbnail">
+                        <div class="interactive-demo">
+                            <div class="simulator-container">
+                                <!-- Interactive simulator will be loaded here via JavaScript -->
+                                <div class="simulator-placeholder">
+                                    <h3>Interactive Model Simulator</h3>
+                                    <p>Experience how my backend architecture works in real-time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Model Demo</h3>
+                        <p>Explore how my AI model architecture works through this interactive simulation.</p>
+                        <a href="#" class="view-demo">Launch Demo</a>
+                    </div>
+                </div>
+            </div>
         
-        <div class="thoughts-container">
-          <div class="thought-card">
-            <div class="thought-image">
-              <img src="assets/transformer_attention.jpg" loading="lazy" alt="Transformer Attention Visualization" />
+            <!-- Project Detail Modal (Hidden by default) -->
+            <div class="project-modal" id="projectModal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div id="modalContent">
+                        <!-- Project details will be loaded here dynamically -->
+                    </div>
+                </div>
             </div>
-            <div class="thought-content">
-              <h3>Visualizing Attention Mechanisms</h3>
-              <p>
-                Exploring techniques to interpret what transformer models are learning through attention visualization and how it applies to complex ML tasks.
-              </p>
-              <a href="thoughts.html" class="read-more">Read Article</a>
-            </div>
-          </div>
-          
-          <div class="thought-card">
-            <div class="thought-image">
-              <img src="assets/model_training.jpg" loading="lazy" alt="Training Curves" />
-            </div>
-            <div class="thought-content">
-              <h3>Effective Training Strategies</h3>
-              <p>
-                Practical tips for training large neural networks with limited computational resources while maintaining performance.
-              </p>
-              <a href="thoughts.html" class="read-more">Read Article</a>
-            </div>
-          </div>
-          
-          <div class="thought-card">
-            <div class="thought-image">
-              <img src="assets/deployment_pipeline.jpg" loading="lazy" alt="Deployment Pipeline" />
-            </div>
-            <div class="thought-content">
-              <h3>ML Deployment Patterns</h3>
-              <p>
-                Best practices for deploying ML models in production environments with comprehensive monitoring and scaling.
-              </p>
-              <a href="thoughts.html" class="read-more">Read Article</a>
-            </div>
-          </div>
         </div>
-        
-        <div class="view-all-thoughts">
-          <a href="thoughts.html" class="button-outline">
-            <i class="fas fa-book"></i> View All Articles
-          </a>
+    </section>
+
+    <!-- Resume / Experience Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Experience & Resume</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="resume-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Lead Backend Developer</h3>
+                            <h4>Gain Chain AI</h4>
+                            <div class="timeline-date">2023 - Present</div>
+                            <p>Architected and implemented the core backend systems using Rust and Python, focusing on AI model integration, data processing pipelines, and blockchain connectivity.</p>
+                            <ul>
+                                <li>Designed scalable microservices architecture</li>
+                                <li>Developed high-performance algorithms for data processing</li>
+                                <li>Implemented secure API endpoints and authentication systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Backend Engineer</h3>
+                            <h4>Kilo Delivery</h4>
+                            <div class="timeline-date">2022 - 2023</div>
+                            <p>Developed the backend infrastructure for a delivery application, focusing on routing algorithms, order management, and real-time tracking.</p>
+                            <ul>
+                                <li>Built RESTful APIs for mobile and web applications</li>
+                                <li>Implemented geospatial search functionality</li>
+                                <li>Created notification systems for real-time updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Software Developer</h3>
+                            <h4>Tech Solutions Inc.</h4>
+                            <div class="timeline-date">2020 - 2022</div>
+                            <p>Worked on various software development projects, focusing on backend systems and database optimization.</p>
+                            <ul>
+                                <li>Developed and maintained server-side applications</li>
+                                <li>Optimized database queries and structure</li>
+                                <li>Collaborated with frontend teams to integrate API services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-download">
+                    <p>Download my complete resume for more details about my experience and skills.</p>
+                    <a href="#" class="download-btn">Download CV (Coming Soon)</a>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-      <div class="container">
-        <div class="section-header">
-          <h2>Get In Touch</h2>
-          <div class="section-divider"></div>
-          <p class="section-subtitle">Interested in collaborating on ML or blockchain projects? Let's connect!</p>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Get in Touch</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/bx7gamerx" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/sirsimon" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:contact@sirsimon.dev" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        
-        <div class="contact-grid">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-details">
-                <h3>Email</h3>
-                <p>simonbwire95@gmail.com</p>
-              </div>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-github"></i>
-              </div>
-              <div class="contact-details">
-                <h3>GitHub</h3>
-                <p><a href="https://github.com/BX7GamerX" target="_blank">BX7GamerX</a></p>
-              </div>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-linkedin"></i>
-              </div>
-              <div class="contact-details">
-                <h3>LinkedIn</h3>
-                <p><a href="https://linkedin.com/in/simon" target="_blank">Simon</a></p>
-              </div>
-            </div>
-          </div>
-          
-          <form action="https://formspree.io/f/myzywnyn" method="POST" class="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" required />
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">
-              <span>Send Message</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <h2>Simon</h2>
-            <p>Architect and Back-End Developer for Gain Chain AI</p>
-          </div>
-          
-          <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#portfolio">Projects</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-social">
-            <h3>Connect</h3>
-            <div class="social-icons">
-              <a href="https://github.com/BX7GamerX" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://linkedin.com/in/simon" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="https://x.com/bx7_gamer" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Sir Simon</h2>
+                    <p>Lead Backend Developer</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h3>Follow Me</h3>
+                        <div class="social-icons">
+                            <a href="https://github.com/bx7gamerx" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/sirsimon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="copyright">
+                <p>&copy; 2025 Sir Simon. All rights reserved.</p>
+            </div>
         </div>
-        
-        <div class="footer-bottom">
-          <p>© 2024 Simon. All rights reserved.</p>
-        </div>
-      </div>
     </footer>
 
-    <button id="scrollToTop" title="Go to top">
-      <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/script_new.js"></script>
-    <script src="js/theme-switcher.js"></script>
-    <script src="js/animation.js"></script>
-  </body>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            new Typed('.typed-text', {
+                strings: ["Coding Reimagined: My Journey in Tech & Creativity", "Lead Backend Developer at Gain Chain AI"],
+                typeSpeed: 50,
+                backSpeed: 25,
+                loop: true
+            });
+
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+
+            // Animate stats on scroll into view
+            const statsSection = document.querySelector('.stats-section');
+            const options = {
+                threshold: 0.5
+            };
+            
+            const statsObserver = new IntersectionObserver(function(entries) {
+                if(entries[0].isIntersecting) {
+                    // Projects stat
+                    const projectsCounter = new CountUp('projectsStat', 0, 24, 0, 2.5, {
+                        useEasing: true,
+                        useGrouping: false
+                    });
+                    projectsCounter.start();
+                    
+                    // Clients stat
+                    const clientsCounter = new CountUp('clientsStat', 0, 18, 0, 2.5, {
+                        useEasing: true,
+                        useGrouping: false
+                    });
+                    clientsCounter.start();
+                    
+                    // Years stat
+                    const yearsCounter = new CountUp('yearsStat', 0, 5, 0, 2.5, {
+                        useEasing: true,
+                        useGrouping: false
+                    });
+                    yearsCounter.start();
+                    
+                    // Commits stat
+                    const commitsCounter = new CountUp('commitsStat', 0, 1200, 0, 2.5, {
+                        useEasing: true,
+                        useGrouping: true
+                    });
+                    commitsCounter.start();
+                    
+                    statsObserver.unobserve(statsSection);
+                }
+            }, options);
+            
+            statsObserver.observe(statsSection);
+
+            // Three.js Sphere Animation
+            function initThreeJSSphere() {
+                const container = document.getElementById('skills-3d-container');
+                if (!container) return;
+                
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, container.clientWidth/container.clientHeight, 0.1, 1000);
+                camera.position.z = 5;
+                
+                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                renderer.setClearColor(0x000000, 0);
+                container.appendChild(renderer.domElement);
+                
+                // Create sphere geometry
+                const geometry = new THREE.SphereGeometry(2, 32, 32);
+                
+                // Create material with wireframe
+                const material = new THREE.MeshBasicMaterial({
+                    color: 0x00ffff,
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.6
+                });
+                
+                const sphere = new THREE.Mesh(geometry, material);
+                scene.add(sphere);
+                
+                // Add points as "data nodes"
+                const pointsGeometry = new THREE.BufferGeometry();
+                const pointsCount = 100;
+                const positions = new Float32Array(pointsCount * 3);
+                
+                for (let i = 0; i < pointsCount; i++) {
+                    const phi = Math.acos(-1 + (2 * i) / pointsCount);
+                    const theta = Math.sqrt(pointsCount * Math.PI) * phi;
+                    
+                    positions[i * 3] = 2 * Math.cos(theta) * Math.sin(phi);
+                    positions[i * 3 + 1] = 2 * Math.sin(theta) * Math.sin(phi);
+                    positions[i * 3 + 2] = 2 * Math.cos(phi);
+                }
+                
+                pointsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                
+                const pointsMaterial = new THREE.PointsMaterial({
+                    color: 0xbf00ff,
+                    size: 0.05,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                
+                const points = new THREE.Points(pointsGeometry, pointsMaterial);
+                scene.add(points);
+                
+                // Animation loop
+                function animate() {
+                    requestAnimationFrame(animate);
+                    
+                    sphere.rotation.x += 0.001;
+                    sphere.rotation.y += 0.002;
+                    
+                    points.rotation.x = sphere.rotation.x;
+                    points.rotation.y = sphere.rotation.y;
+                    
+                    renderer.render(scene, camera);
+                }
+                
+                animate();
+                
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                });
+            }
+
+            initThreeJSSphere();
+        });
+    </script>
+</body>
 </html>
