@@ -141,12 +141,19 @@ code {
   color: var(--plasma-blue);
 }
 
+/* Main content stacking – keeps everything above the fixed particle canvas */
+main {
+  position: relative;
+  z-index: 1;
+}
+
 /* Section Base */
 section {
   padding: var(--space-4xl) var(--space-xl);
   max-width: var(--max-width);
   margin: 0 auto;
   scroll-margin-top: var(--header-height);
+  position: relative;
 }
 
 /* Reveal Animation */
