@@ -40,6 +40,8 @@ const HELP_TEXT = `Available commands:
   whoami                Display engineer profile
   clear                 Clear terminal output
 
+Hidden commands exist. Real engineers find them.
+
 Keyboard: Ctrl + \\ to toggle terminal`
 
 const WHOAMI = `> Simon B. Wandera
@@ -49,6 +51,46 @@ const WHOAMI = `> Simon B. Wandera
   Focus:    Web3 | Offline-First | Computational Biochemistry
   Status:   AVAILABLE_FOR_CONTRACTS
   Rate:     $100+/hr`
+
+const HOBBIES = `> cat /usr/simon/hobbies.txt
+
+  Compiling Rust takes time. I sketch pencil portraits and track
+  global aviation telemetry while waiting for the borrow checker
+  to forgive me.
+
+  When I'm not debugging memory layouts, I'm running spectral
+  analysis on East African bird songs — because pattern recognition
+  isn't just for genomes.
+
+  Also: strong opinions on pour-over coffee grind sizes.`
+
+const UPTIME = `> system.uptime
+
+  Architect Mode:    ACTIVE since 2021
+  Hackathons Won:    2 (ICP Global, UNODC Anti-Corruption)
+  Canisters Shipped: 14
+  Lines of Rust:     ~47,000
+  Bugs Squashed:     ERROR: integer overflow
+  Coffee Consumed:   ████████████████████ CRITICAL`
+
+const SUDO = `[sudo] password for simon: ********
+
+  Nice try. Root access requires a signed ICP canister call
+  with a valid Ed25519 key. No shortcuts.
+
+  However, you clearly have good instincts.
+  Type 'whoami' to see if we should talk.`
+
+const PHILOSOPHY = `> /etc/simon/philosophy.conf
+
+  [core]
+  principle_1 = "If it compiles, ship it. If it doesn't, the type system is saving you from yourself."
+  principle_2 = "Offline-first isn't a feature. It's a moral obligation in markets with 2G connectivity."
+  principle_3 = "Every abstraction has a cost. Measure it before you commit to it."
+
+  [controversial]
+  hot_take = "Most 'AI-powered' products are just SELECT * FROM products ORDER BY embedding <-> $query LIMIT 5"
+  proof    = "See: Hostara V4 — we replaced naive RAG with deterministic function calling and conversion doubled."`
 
 export function processCommand(input: string): CommandResult {
   const cmd = input.trim().toLowerCase()
@@ -65,7 +107,7 @@ export function processCommand(input: string): CommandResult {
     return { output: JSON.stringify(STACK, null, 2) }
   }
 
-  if (cmd === 'whoami') {
+  if (cmd === 'whoami' || cmd === 'execute whoami') {
     return { output: WHOAMI }
   }
 
@@ -90,6 +132,35 @@ export function processCommand(input: string): CommandResult {
 
   if (cmd === 'clear') {
     return { output: '__CLEAR__' }
+  }
+
+  // Easter egg commands
+  if (cmd === 'cat /usr/simon/hobbies.txt' || cmd === 'cat hobbies.txt' || cmd === 'hobbies') {
+    return { output: HOBBIES }
+  }
+
+  if (cmd === 'uptime' || cmd === 'system.uptime') {
+    return { output: UPTIME }
+  }
+
+  if (cmd.startsWith('sudo')) {
+    return { output: SUDO }
+  }
+
+  if (cmd === 'cat /etc/simon/philosophy.conf' || cmd === 'cat philosophy.conf' || cmd === 'philosophy') {
+    return { output: PHILOSOPHY }
+  }
+
+  if (cmd === 'ls' || cmd === 'ls -la') {
+    return {
+      output: `drwxr-xr-x  simon  staff  gain_chain.md
+-rw-r--r--  simon  staff  hobbies.txt
+-rw-r--r--  simon  staff  philosophy.conf
+-rwxr-xr-x  simon  staff  stack.json
+-rwxr-xr-x  simon  staff  diagnostics.sh
+
+Hint: try 'cat hobbies.txt' or 'cat philosophy.conf'`,
+    }
   }
 
   if (cmd === '') {
