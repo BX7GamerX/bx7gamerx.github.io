@@ -46,6 +46,7 @@ export function Hero() {
         </div>
 
         <div className={`hero-content ${showContent ? 'visible' : ''}`}>
+          <p className="hero-name mono text-teal">Simon B. Wandera</p>
           <h1 className="hero-headline">
             Constraint-Driven Systems Engineering.{' '}
             <span className="text-plasma">
@@ -67,6 +68,9 @@ export function Hero() {
             </GlowButton>
             <GlowButton href="#initialize-contact" variant="blue">
               [ Initialize_Contact ]
+            </GlowButton>
+            <GlowButton href="/simon-b-wandera-cv.pdf" variant="teal" download="Simon_B_Wandera_CV.pdf">
+              [ Download_CV ]
             </GlowButton>
           </div>
         </div>

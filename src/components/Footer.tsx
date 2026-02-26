@@ -32,7 +32,7 @@ export function Footer() {
         </div>
 
         <div className="footer-copy">
-          <span className="mono">&copy; {new Date().getFullYear()} Sir Simon — Systems Architect</span>
+          <span className="mono">&copy; {new Date().getFullYear()} Simon B. Wandera — Systems Architect</span>
         </div>
       </div>
     </footer>

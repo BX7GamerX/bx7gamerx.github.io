@@ -98,6 +98,19 @@ select.field-input option {
     var(--glow-green),
     0 0 0 2px var(--fedora-green);
 }
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-error {
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(237, 21, 21, 0.1);
+  border: 1px solid var(--error);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--error);
+}
 
 .contact-success {
   display: flex;

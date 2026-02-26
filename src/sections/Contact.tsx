@@ -5,12 +5,33 @@ import './Contact.css'
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [ref, isVisible] = useIntersectionObserver(0.1)
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // In production, integrate with Formspree or similar
-    setSubmitted(true)
+    setSending(true)
+    setError(null)
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const res = await fetch('https://formspree.io/f/xpweknre', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError('Transmission failed. Try again or contact directly.')
+      }
+    } catch {
+      setError('Network error. Check connection and retry.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -39,10 +60,11 @@ export function Contact() {
           ) : (
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-field">
-                <label className="field-label mono">
+                <label htmlFor="client_name" className="field-label mono">
                   <span className="text-plasma">[string]</span> Client_Entity_Name
                 </label>
                 <input
+                  id="client_name"
                   type="text"
                   name="client_name"
                   required
@@ -52,10 +74,10 @@ export function Contact() {
               </div>
 
               <div className="form-field">
-                <label className="field-label mono">
+                <label htmlFor="project_scope" className="field-label mono">
                   <span className="text-plasma">[enum]</span> Project_Scope
                 </label>
-                <select name="project_scope" required className="field-input">
+                <select id="project_scope" name="project_scope" required className="field-input">
                   <option value="">-- Select scope --</option>
                   <option value="web3-icp">Web3/ICP</option>
                   <option value="distributed-systems">Distributed Systems</option>
@@ -65,10 +87,10 @@ export function Contact() {
               </div>
 
               <div className="form-field">
-                <label className="field-label mono">
+                <label htmlFor="budget" className="field-label mono">
                   <span className="text-plasma">[enum]</span> Budget_Allocation
                 </label>
-                <select name="budget" required className="field-input">
+                <select id="budget" name="budget" required className="field-input">
                   <option value="">-- Select budget tier --</option>
                   <option value="under-10k">&lt; $10k</option>
                   <option value="10k-50k">$10k – $50k</option>
@@ -77,10 +99,11 @@ export function Contact() {
               </div>
 
               <div className="form-field">
-                <label className="field-label mono">
+                <label htmlFor="constraints" className="field-label mono">
                   <span className="text-plasma">[text]</span> Technical_Constraints
                 </label>
                 <textarea
+                  id="constraints"
                   name="constraints"
                   required
                   className="field-input field-textarea"
@@ -89,8 +112,10 @@ export function Contact() {
                 />
               </div>
 
-              <button type="submit" className="submit-button">
-                [ TRANSMIT_PAYLOAD ]
+              {error && <p className="form-error mono text-plasma">{error}</p>}
+
+              <button type="submit" className="submit-button" disabled={sending}>
+                {sending ? '[ TRANSMITTING... ]' : '[ TRANSMIT_PAYLOAD ]'}
               </button>
             </form>
           )}

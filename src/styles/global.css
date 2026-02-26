@@ -143,6 +143,7 @@ section {
   padding: var(--space-4xl) var(--space-xl);
   max-width: var(--max-width);
   margin: 0 auto;
+  scroll-margin-top: var(--header-height);
 }
 
 /* Reveal Animation */

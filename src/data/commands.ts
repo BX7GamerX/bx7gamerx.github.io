@@ -42,7 +42,7 @@ const HELP_TEXT = `Available commands:
 
 Keyboard: Ctrl + \\ to toggle terminal`
 
-const WHOAMI = `> Sir Simon
+const WHOAMI = `> Simon B. Wandera
   Role:     Systems Architect
   Base:     Nairobi, Kenya
   Stack:    Rust · C++ · ICP · Kafka

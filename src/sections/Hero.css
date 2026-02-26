@@ -35,6 +35,13 @@
   transform: translateX(0);
 }
 
+.hero-name {
+  font-size: var(--fs-lg);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
 .hero-headline {
   font-family: var(--font-heading);
   font-size: var(--fs-3xl);

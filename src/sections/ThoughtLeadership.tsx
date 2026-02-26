@@ -90,7 +90,7 @@ export function ThoughtLeadership() {
   const [ref, isVisible] = useIntersectionObserver(0.1)
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className={`thoughts-section reveal ${isVisible ? 'visible' : ''}`}>
+    <section id="thought-leadership" ref={ref as React.RefObject<HTMLElement>} className={`thoughts-section reveal ${isVisible ? 'visible' : ''}`}>
       <h2 className="section-title mono">
         <span className="text-plasma">&gt;</span> ~/logs/
       </h2>

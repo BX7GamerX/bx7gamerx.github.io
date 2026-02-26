@@ -5,6 +5,7 @@ const NAV_ITEMS = [
   { label: '[Architecture]', href: '#architecture' },
   { label: '[Web3_Solutions]', href: '#web3-solutions' },
   { label: '[Scientific_Convergence]', href: '#scientific-convergence' },
+  { label: '[~/logs/]', href: '#thought-leadership' },
   { label: '[Initialize_Contact]', href: '#initialize-contact' },
 ]
 

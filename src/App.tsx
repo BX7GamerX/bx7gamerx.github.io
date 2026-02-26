@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import './styles/global.css'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
@@ -6,9 +7,24 @@ import { TerminalOverlay } from './components/TerminalOverlay'
 import { Hero } from './sections/Hero'
 import { ProofOfWork } from './sections/ProofOfWork'
 import { DeepTech } from './sections/DeepTech'
-import { ScientificConvergence } from './sections/ScientificConvergence'
-import { ThoughtLeadership } from './sections/ThoughtLeadership'
-import { Contact } from './sections/Contact'
+
+const ScientificConvergence = lazy(() =>
+  import('./sections/ScientificConvergence').then((m) => ({ default: m.ScientificConvergence }))
+)
+const ThoughtLeadership = lazy(() =>
+  import('./sections/ThoughtLeadership').then((m) => ({ default: m.ThoughtLeadership }))
+)
+const Contact = lazy(() =>
+  import('./sections/Contact').then((m) => ({ default: m.Contact }))
+)
+
+function SectionFallback() {
+  return (
+    <div style={{ padding: '4rem 2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+      <span className="mono">&gt; loading module...</span>
+    </div>
+  )
+}
 
 export default function App() {
   return (
@@ -20,9 +36,15 @@ export default function App() {
         <Hero />
         <ProofOfWork />
         <DeepTech />
-        <ScientificConvergence />
-        <ThoughtLeadership />
-        <Contact />
+        <Suspense fallback={<SectionFallback />}>
+          <ScientificConvergence />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <ThoughtLeadership />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Contact />
+        </Suspense>
       </main>
 
       <Footer />
