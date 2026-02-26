@@ -27,21 +27,23 @@ export function Hero() {
       <div className="hero-inner">
         <div className="hero-terminal">
           <TerminalWindow title="system.boot">
-            <TypeAnimation
-              sequence={[
-                ...BOOT_SEQUENCE,
-                () => setShowContent(true),
-              ]}
-              wrapper="pre"
-              speed={75}
-              cursor={true}
-              repeat={0}
-              style={{
-                whiteSpace: 'pre-wrap',
-                display: 'block',
-                minHeight: '180px',
-              }}
-            />
+            <pre className="hero-boot-text">
+              <TypeAnimation
+                sequence={[
+                  ...BOOT_SEQUENCE,
+                  () => setShowContent(true),
+                ]}
+                wrapper="span"
+                speed={75}
+                cursor={true}
+                repeat={0}
+                style={{
+                  whiteSpace: 'pre-wrap',
+                  display: 'block',
+                  minHeight: '180px',
+                }}
+              />
+            </pre>
           </TerminalWindow>
         </div>
 
