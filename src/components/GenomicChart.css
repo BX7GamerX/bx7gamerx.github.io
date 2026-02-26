@@ -1,0 +1,32 @@
+.genomic-chart-container {
+  width: 100%;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.genomic-chart {
+  width: 100%;
+  height: auto;
+}
+
+.chart-grid {
+  stroke: var(--alt-surface);
+  stroke-width: 0.5;
+}
+
+.chart-axis-label {
+  fill: var(--text-muted);
+  font-family: var(--font-terminal);
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.chart-line {
+  stroke: var(--bio-teal);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px rgba(26, 188, 156, 0.6));
+}
+
+.chart-area {
+  fill: url(#teal-gradient);
+}

@@ -1,0 +1,215 @@
+/* ============================================
+   Global Styles — Dark Mode Terminal Aesthetic
+   ============================================ */
+
+@import "./variables.css";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+  background-color: var(--base-bg);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(61, 174, 233, 0.3);
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--base-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--alt-surface);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--plasma-blue);
+}
+
+/* Links */
+a {
+  color: var(--plasma-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--bio-teal);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: var(--fs-4xl);
+}
+h2 {
+  font-size: var(--fs-3xl);
+}
+h3 {
+  font-size: var(--fs-2xl);
+}
+h4 {
+  font-size: var(--fs-xl);
+}
+
+/* Terminal / Monospace Text */
+code,
+pre,
+.mono {
+  font-family: var(--font-terminal);
+}
+
+pre {
+  background: var(--alt-surface);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+}
+
+code {
+  background: var(--alt-surface);
+  padding: 0.15em 0.4em;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9em;
+}
+
+/* Utility Classes */
+.neon-glow-plasma {
+  filter: drop-shadow(0 0 6px rgba(61, 174, 233, 0.5));
+}
+
+.neon-glow-teal {
+  filter: drop-shadow(0 0 6px rgba(26, 188, 156, 0.5));
+}
+
+.neon-glow-green {
+  filter: drop-shadow(0 0 6px rgba(121, 201, 49, 0.5));
+}
+
+.text-plasma {
+  color: var(--plasma-blue);
+}
+.text-teal {
+  color: var(--bio-teal);
+}
+.text-green {
+  color: var(--fedora-green);
+}
+.text-faint {
+  color: var(--text-faint);
+}
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Section Base */
+section {
+  padding: var(--space-4xl) var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+  h1 {
+    font-size: var(--fs-3xl);
+  }
+  h2 {
+    font-size: var(--fs-2xl);
+  }
+}
+
+/* Image */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button Reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--plasma-blue);
+  outline-offset: 2px;
+}

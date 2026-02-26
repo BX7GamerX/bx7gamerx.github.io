@@ -1,0 +1,118 @@
+.proof-section {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.section-title {
+  font-family: var(--font-terminal);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--text-faint);
+  max-width: 700px;
+  margin-bottom: var(--space-2xl);
+  line-height: var(--lh-relaxed);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.proof-card .terminal-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.proof-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 3px 12px;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.badge-green {
+  color: var(--fedora-green);
+  border: 1px solid var(--fedora-green);
+  background: rgba(121, 201, 49, 0.1);
+}
+.badge-blue {
+  color: var(--plasma-blue);
+  border: 1px solid var(--plasma-blue);
+  background: rgba(61, 174, 233, 0.1);
+}
+
+.proof-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.proof-body {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--text-faint);
+  line-height: var(--lh-relaxed);
+}
+
+.proof-result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-sm);
+  color: var(--fedora-green);
+  font-weight: 700;
+}
+
+.result-icon {
+  font-size: var(--fs-xs);
+}
+
+.proof-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.tech-tag {
+  font-family: var(--font-terminal);
+  font-size: var(--fs-xs);
+  padding: 2px 10px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 400;
+}
+.tech-tag--plasma {
+  color: var(--plasma-blue);
+  background: rgba(61, 174, 233, 0.1);
+  border: 1px solid rgba(61, 174, 233, 0.25);
+}
+.tech-tag--green {
+  color: var(--fedora-green);
+  background: rgba(121, 201, 49, 0.1);
+  border: 1px solid rgba(121, 201, 49, 0.25);
+}
+.tech-tag--teal {
+  color: var(--bio-teal);
+  background: rgba(26, 188, 156, 0.1);
+  border: 1px solid rgba(26, 188, 156, 0.25);
+}
+
+@media (max-width: 768px) {
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+}

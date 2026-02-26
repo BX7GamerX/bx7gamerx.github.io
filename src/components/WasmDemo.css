@@ -1,0 +1,240 @@
+/* ── WasmDemo ── */
+
+.wasm-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.wasm-loading {
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.wasm-loading .blink {
+  animation: blink 1s step-end infinite;
+  color: var(--plasma-blue);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.wasm-error {
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  padding: var(--space-md);
+}
+
+.text-red {
+  color: #ed1515;
+}
+
+/* Controls */
+.wasm-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.wasm-control-row {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.wasm-control-row label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.85rem;
+}
+
+.wasm-input {
+  width: 80px;
+  padding: 4px 8px;
+  background: var(--base-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.wasm-input:focus {
+  outline: none;
+  border-color: var(--plasma-blue);
+  box-shadow: 0 0 6px rgba(61, 174, 233, 0.3);
+}
+
+.wasm-btn-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.wasm-btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-faint);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.wasm-btn:hover:not(:disabled) {
+  border-color: var(--plasma-blue);
+  color: var(--plasma-blue);
+  box-shadow: 0 0 8px rgba(61, 174, 233, 0.15);
+}
+
+.wasm-btn-run {
+  border-color: var(--fedora-green);
+  color: var(--fedora-green);
+}
+
+.wasm-btn-run:hover:not(:disabled) {
+  border-color: var(--fedora-green);
+  color: var(--fedora-green);
+  box-shadow: 0 0 8px rgba(121, 201, 49, 0.2);
+}
+
+.wasm-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Sequences */
+.wasm-sequences {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.wasm-seq-block {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.wasm-seq-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.wasm-seq-data {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  word-break: break-all;
+  line-height: 1.6;
+  color: var(--text-faint);
+  letter-spacing: 0.5px;
+}
+
+/* Results */
+.wasm-result {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.wasm-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.wasm-elapsed {
+  font-weight: 700;
+}
+
+/* Alignment display */
+.wasm-alignment-display {
+  background: var(--base-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: var(--space-sm) var(--space-md);
+  overflow-x: auto;
+}
+
+.wasm-aligned-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.wasm-aln-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  color: var(--plasma-blue);
+  width: 20px;
+}
+
+.wasm-aln-seq {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  white-space: pre;
+  letter-spacing: 1px;
+  color: var(--text-faint);
+}
+
+.wasm-match-line {
+  color: var(--fedora-green);
+}
+
+/* Stats */
+.wasm-stats {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.wasm-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wasm-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wasm-stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.wasm-footnote {
+  font-size: 0.75rem;
+  font-style: italic;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .wasm-control-row {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .wasm-stats {
+    gap: var(--space-md);
+  }
+}

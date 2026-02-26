@@ -1,0 +1,129 @@
+.deeptech-section {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.deeptech-content {
+  background: var(--alt-surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.deeptech-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.deeptech-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.deeptech-project {
+  font-family: var(--font-terminal);
+  font-size: var(--fs-xs);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.sub-heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--bio-teal);
+  margin-bottom: var(--space-sm);
+}
+
+.deeptech-problem p,
+.deeptech-solution p {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--text-faint);
+  line-height: var(--lh-relaxed);
+  max-width: 800px;
+}
+
+.diagram-container {
+  overflow-x: auto;
+  padding: var(--space-md) 0;
+}
+
+.arch-diagram {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
+
+.arch-node {
+  fill: rgba(11, 87, 164, 0.15);
+  stroke: var(--fedora-blue);
+  stroke-width: 1.5;
+}
+
+.arch-label {
+  fill: var(--text-primary);
+  font-family: var(--font-terminal);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.arch-label-sub {
+  fill: var(--text-muted);
+  font-family: var(--font-terminal);
+  font-size: 11px;
+}
+
+.arch-arrow {
+  stroke: var(--bio-teal);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 4px rgba(26, 188, 156, 0.5));
+}
+
+.arch-arrowhead {
+  fill: var(--bio-teal);
+  filter: drop-shadow(0 0 4px rgba(26, 188, 156, 0.5));
+}
+
+.arch-node-accent {
+  fill: rgba(26, 188, 156, 0.15);
+  stroke: var(--bio-teal);
+  stroke-width: 1.5;
+}
+
+.arch-label-accent {
+  fill: var(--bio-teal);
+  font-family: var(--font-terminal);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.arch-arrow-accent {
+  stroke: var(--bio-teal);
+  stroke-width: 1;
+  opacity: 0.6;
+}
+
+.deeptech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+  .deeptech-content {
+    padding: var(--space-lg);
+  }
+  .deeptech-title {
+    font-size: var(--fs-lg);
+  }
+}

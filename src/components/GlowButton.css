@@ -1,0 +1,76 @@
+.glow-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 12px 28px;
+  font-family: var(--font-terminal);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.glow-button--green {
+  color: var(--fedora-green);
+  border-color: var(--fedora-green);
+  background: rgba(121, 201, 49, 0.08);
+}
+.glow-button--green:hover {
+  background: rgba(121, 201, 49, 0.18);
+  box-shadow: var(--glow-green);
+  color: var(--fedora-green);
+}
+
+.glow-button--blue {
+  color: var(--plasma-blue);
+  border-color: var(--plasma-blue);
+  background: rgba(61, 174, 233, 0.08);
+}
+.glow-button--blue:hover {
+  background: rgba(61, 174, 233, 0.18);
+  box-shadow: var(--glow-plasma);
+  color: var(--plasma-blue);
+}
+
+.glow-button--teal {
+  color: var(--bio-teal);
+  border-color: var(--bio-teal);
+  background: rgba(26, 188, 156, 0.08);
+}
+.glow-button--teal:hover {
+  background: rgba(26, 188, 156, 0.18);
+  box-shadow: var(--glow-teal);
+  color: var(--bio-teal);
+}
+
+/* Focus-visible states */
+.glow-button--green:focus-visible {
+  outline: none;
+  box-shadow:
+    var(--glow-green),
+    0 0 0 2px var(--fedora-green);
+}
+.glow-button--blue:focus-visible {
+  outline: none;
+  box-shadow:
+    var(--glow-plasma),
+    0 0 0 2px var(--plasma-blue);
+}
+.glow-button--teal:focus-visible {
+  outline: none;
+  box-shadow:
+    var(--glow-teal),
+    0 0 0 2px var(--bio-teal);
+}
+
+@media (max-width: 480px) {
+  .glow-button {
+    padding: 10px 20px;
+    font-size: var(--fs-xs);
+  }
+}

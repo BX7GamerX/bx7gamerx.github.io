@@ -1,0 +1,72 @@
+/* ============================================
+   KDE Breeze Dark + Fedora Brand Color System
+   ============================================ */
+
+:root {
+  /* Core Backgrounds — KDE Breeze Dark */
+  --base-bg: #232627;
+  --alt-surface: #31363b;
+  --surface-hover: #3b4045;
+
+  /* Accent Colors — KDE Breeze Dark */
+  --plasma-blue: #3daee9;
+  --bio-teal: #1abc9c;
+
+  /* Accent Colors — Fedora Brand */
+  --fedora-green: #79c931;
+  --fedora-blue: #0b57a4;
+
+  /* Text — KDE Breeze Dark */
+  --text-primary: #fcfcfc;
+  --text-faint: #eff0f1;
+  --text-muted: #7f8c8d;
+
+  /* Functional */
+  --error: #ed1515;
+  --warning: #f67400;
+  --success: #27ae60;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* Typography */
+  --font-terminal: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  --font-body:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Space Grotesk", "Inter", sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 2rem;
+  --fs-4xl: 2.5rem;
+  --fs-5xl: 3rem;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 64px;
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+
+  /* Effects */
+  --glow-plasma: 0 0 10px rgba(61, 174, 233, 0.4);
+  --glow-teal: 0 0 10px rgba(26, 188, 156, 0.4);
+  --glow-green: 0 0 10px rgba(121, 201, 49, 0.4);
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}

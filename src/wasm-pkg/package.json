@@ -1,0 +1,16 @@
+{
+  "name": "helix-edge-wasm",
+  "type": "module",
+  "description": "Smith-Waterman sequence alignment demo for HelixEdge portfolio",
+  "version": "0.1.0",
+  "files": [
+    "helix_edge_wasm_bg.wasm",
+    "helix_edge_wasm.js",
+    "helix_edge_wasm.d.ts"
+  ],
+  "main": "helix_edge_wasm.js",
+  "types": "helix_edge_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

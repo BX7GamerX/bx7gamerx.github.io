@@ -1,0 +1,68 @@
+.terminal-window {
+  background: var(--base-bg);
+  border: 1px solid var(--alt-surface);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--alt-surface);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background: #ed1515;
+}
+.dot-yellow {
+  background: #f67400;
+}
+.dot-green {
+  background: #27ae60;
+}
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-terminal);
+  font-size: var(--fs-xs);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.terminal-dots-spacer {
+  width: 52px;
+}
+
+.terminal-body {
+  padding: var(--space-lg);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--text-primary);
+  min-height: 120px;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .terminal-body {
+    padding: var(--space-md);
+    font-size: var(--fs-xs);
+  }
+}

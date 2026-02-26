@@ -1,0 +1,145 @@
+.terminal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlayIn 0.2s ease;
+}
+
+.terminal-overlay-window {
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  background: var(--base-bg);
+  border: 1px solid var(--alt-surface);
+  border-radius: var(--border-radius);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.6),
+    var(--glow-plasma);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: windowIn 0.3s ease;
+}
+
+.terminal-overlay-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--alt-surface);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.terminal-overlay-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-terminal);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--plasma-blue);
+  letter-spacing: 1px;
+}
+
+.terminal-overlay-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-lg);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-sm);
+}
+
+.terminal-welcome {
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  margin-bottom: var(--space-md);
+}
+
+.terminal-entry {
+  margin-bottom: var(--space-md);
+}
+
+.terminal-command {
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.prompt-symbol {
+  color: var(--fedora-green);
+  font-weight: 700;
+}
+
+.terminal-output {
+  color: var(--text-faint);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-top: var(--space-xs);
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+}
+
+.terminal-output.error {
+  color: var(--error);
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-sm);
+  caret-color: var(--fedora-green);
+}
+
+/* Dot clickable */
+.terminal-overlay-titlebar .dot-red {
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+.terminal-overlay-titlebar .dot-red:hover {
+  opacity: 0.7;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes windowIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .terminal-overlay-window {
+    width: 95%;
+    max-height: 70vh;
+  }
+}
