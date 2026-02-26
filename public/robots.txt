@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bx7gamerx.github.io/sitemap.xml

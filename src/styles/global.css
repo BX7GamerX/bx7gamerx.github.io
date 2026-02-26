@@ -137,6 +137,9 @@ code {
 .text-muted {
   color: var(--text-muted);
 }
+.text-blue {
+  color: var(--plasma-blue);
+}
 
 /* Section Base */
 section {
@@ -207,6 +210,27 @@ button {
   background: none;
   font-family: inherit;
   color: inherit;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  background: var(--base-bg);
+  color: var(--plasma-blue);
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--plasma-blue);
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus {
+  top: var(--space-sm);
 }
 
 /* Focus Visible */

@@ -59,6 +59,8 @@ export function Contact() {
             </div>
           ) : (
             <form className="contact-form" onSubmit={handleSubmit}>
+              {/* Honeypot for spam prevention */}
+              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
               <div className="form-field">
                 <label htmlFor="client_name" className="field-label mono">
                   <span className="text-plasma">[string]</span> Client_Entity_Name
@@ -70,6 +72,20 @@ export function Contact() {
                   required
                   className="field-input"
                   placeholder="Your organization or name"
+                />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="client_email" className="field-label mono">
+                  <span className="text-plasma">[string]</span> Reply_Address
+                </label>
+                <input
+                  id="client_email"
+                  type="email"
+                  name="_replyto"
+                  required
+                  className="field-input"
+                  placeholder="your@email.com"
                 />
               </div>
 

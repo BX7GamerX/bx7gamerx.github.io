@@ -19,12 +19,16 @@ export function Footer() {
             rel="noopener noreferrer"
             className="footer-link"
           >
-            ICP Developer Profile
+            ICP Ecosystem
           </a>
-          <span className="footer-divider">|</span>
-          <span className="footer-pgp mono">
-            PGP: 0xBX7...CAFE
-          </span>
+          <a
+            href="https://linkedin.com/in/simon-wandera"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            LinkedIn
+          </a>
         </div>
 
         <div className="footer-badge">

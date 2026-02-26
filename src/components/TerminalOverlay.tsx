@@ -32,11 +32,15 @@ export function TerminalOverlay() {
     return () => document.removeEventListener('keydown', handler)
   }, [isOpen])
 
-  // Focus input when opened
+  // Focus input when opened + lock body scroll
   useEffect(() => {
     if (isOpen) {
+      document.body.style.overflow = 'hidden'
       setTimeout(() => inputRef.current?.focus(), 100)
+    } else {
+      document.body.style.overflow = ''
     }
+    return () => { document.body.style.overflow = '' }
   }, [isOpen])
 
   // Scroll to bottom on new output
@@ -98,6 +102,9 @@ export function TerminalOverlay() {
     <div className="terminal-overlay" onClick={() => setIsOpen(false)}>
       <div
         className="terminal-overlay-window"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Interactive terminal"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="terminal-overlay-titlebar">

@@ -52,6 +52,13 @@ export function GenomicChart() {
   return (
     <div className="genomic-chart-container">
       <svg viewBox={`0 0 ${width} ${height}`} className="genomic-chart" aria-label="Simulated read depth coverage chart">
+        <defs>
+          <linearGradient id="teal-gradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="rgba(26, 188, 156, 0.4)" />
+            <stop offset="100%" stopColor="rgba(26, 188, 156, 0.02)" />
+          </linearGradient>
+        </defs>
+
         {/* Grid lines */}
         {[0, 50, 100, 150, 200].map((tick) => {
           const y = padding.top + chartH - (tick / 200) * chartH

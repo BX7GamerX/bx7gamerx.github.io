@@ -29,6 +29,7 @@ function SectionFallback() {
 export default function App() {
   return (
     <>
+      <a href="#home" className="skip-link">Skip to content</a>
       <ParticleBackground />
       <Header />
 

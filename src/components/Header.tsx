@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Header.css'
 
 const NAV_ITEMS = [
@@ -11,6 +11,12 @@ const NAV_ITEMS = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  // Lock body scroll when mobile nav is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
 
   return (
     <header className="header">

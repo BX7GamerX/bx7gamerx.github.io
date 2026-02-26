@@ -85,6 +85,13 @@ In markets with high institutional distrust, reducing friction reduces trust. Th
   },
 ]
 
+/** Render inline markdown: **bold**, `code`, and \`backtick\` spans */
+function renderInline(text: string): string {
+  return text
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+}
+
 export function ThoughtLeadership() {
   const [expanded, setExpanded] = useState<string | null>(null)
   const [ref, isVisible] = useIntersectionObserver(0.1)
@@ -152,7 +159,7 @@ export function ThoughtLeadership() {
                       </ul>
                     )
                   }
-                  return <p key={i} className="article-para">{para}</p>
+                  return <p key={i} className="article-para" dangerouslySetInnerHTML={{ __html: renderInline(para) }} />
                 })}
               </div>
             )}
