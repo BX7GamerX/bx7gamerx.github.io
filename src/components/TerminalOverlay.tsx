@@ -8,8 +8,12 @@ interface HistoryEntry {
   isError?: boolean
 }
 
-export function TerminalOverlay() {
-  const [isOpen, setIsOpen] = useState(false)
+interface TerminalOverlayProps {
+  isOpen: boolean
+  onClose: () => void
+}
+
+export function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProps) {
   const [history, setHistory] = useState<HistoryEntry[]>([])
   const [input, setInput] = useState('')
   const [cmdHistory, setCmdHistory] = useState<string[]>([])
@@ -17,20 +21,16 @@ export function TerminalOverlay() {
   const inputRef = useRef<HTMLInputElement>(null)
   const outputRef = useRef<HTMLDivElement>(null)
 
-  // Global keyboard shortcut: Ctrl + \
+  // Close on Escape
   useEffect(() => {
     const handler = (e: globalThis.KeyboardEvent) => {
-      if (e.ctrlKey && e.key === '\\') {
-        e.preventDefault()
-        setIsOpen((prev) => !prev)
-      }
       if (e.key === 'Escape' && isOpen) {
-        setIsOpen(false)
+        onClose()
       }
     }
     document.addEventListener('keydown', handler)
     return () => document.removeEventListener('keydown', handler)
-  }, [isOpen])
+  }, [isOpen, onClose])
 
   // Focus input when opened + lock body scroll
   useEffect(() => {
@@ -99,7 +99,7 @@ export function TerminalOverlay() {
   if (!isOpen) return null
 
   return (
-    <div className="terminal-overlay" onClick={() => setIsOpen(false)}>
+    <div className="terminal-overlay" onClick={onClose}>
       <div
         className="terminal-overlay-window"
         role="dialog"
@@ -109,7 +109,7 @@ export function TerminalOverlay() {
       >
         <div className="terminal-overlay-titlebar">
           <div className="terminal-dots">
-            <span className="dot dot-red" onClick={() => setIsOpen(false)} />
+            <span className="dot dot-red" onClick={onClose} />
             <span className="dot dot-yellow" />
             <span className="dot dot-green" />
           </div>

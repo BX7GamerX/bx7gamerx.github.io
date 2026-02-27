@@ -57,7 +57,7 @@ export function Header() {
           </a>
         ))}
         <div className="mobile-nav-hint">
-          <kbd>Ctrl</kbd> + <kbd>\</kbd> — Open Terminal
+          <kbd>Ctrl</kbd> + <kbd>`</kbd> — Open Terminal
         </div>
       </div>
     </header>

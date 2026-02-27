@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useState, useEffect, useCallback } from 'react'
 import './styles/global.css'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
@@ -27,6 +27,22 @@ function SectionFallback() {
 }
 
 export default function App() {
+  const [terminalOpen, setTerminalOpen] = useState(false)
+  const toggleTerminal = useCallback(() => setTerminalOpen((prev) => !prev), [])
+  const closeTerminal = useCallback(() => setTerminalOpen(false), [])
+
+  // Global keyboard shortcut: Ctrl+\ or Ctrl+`
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.ctrlKey && (e.key === '\\' || e.key === '`')) {
+        e.preventDefault()
+        toggleTerminal()
+      }
+    }
+    document.addEventListener('keydown', handler)
+    return () => document.removeEventListener('keydown', handler)
+  }, [toggleTerminal])
+
   return (
     <>
       <a href="#home" className="skip-link">Skip to content</a>
@@ -49,7 +65,17 @@ export default function App() {
       </main>
 
       <Footer />
-      <TerminalOverlay />
+      <TerminalOverlay isOpen={terminalOpen} onClose={closeTerminal} />
+
+      {/* Floating terminal trigger button */}
+      <button
+        className="terminal-fab"
+        onClick={toggleTerminal}
+        aria-label="Open interactive terminal"
+        title="Open Terminal (Ctrl + `)"
+      >
+        &gt;_
+      </button>
     </>
   )
 }

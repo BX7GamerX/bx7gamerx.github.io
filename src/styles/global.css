@@ -245,3 +245,38 @@ button {
   outline: 2px solid var(--plasma-blue);
   outline-offset: 2px;
 }
+
+/* Floating Terminal Trigger Button */
+.terminal-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 150;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--plasma-blue);
+  background: var(--base-bg);
+  color: var(--plasma-blue);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    var(--glow-plasma);
+  transition: all var(--transition-normal);
+}
+.terminal-fab:hover {
+  background: rgba(61, 174, 233, 0.15);
+  transform: scale(1.1);
+}
+.terminal-fab:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--plasma-blue),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+}
