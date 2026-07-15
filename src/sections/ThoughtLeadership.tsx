@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { DetailDrawer } from '../components/DetailDrawer'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './ThoughtLeadership.css'
 
@@ -8,6 +9,29 @@ interface Article {
   description: string
   date: string
   content: string
+}
+
+type BenchmarkMode = 'latency' | 'memory' | 'composite'
+
+const BENCHMARK_MODES: Record<BenchmarkMode, { label: string; description: string; js: number; wasm: number }> = {
+  latency: {
+    label: 'Latency',
+    description: 'Relative response cost for a compute step.',
+    js: 82,
+    wasm: 47,
+  },
+  memory: {
+    label: 'Memory',
+    description: 'Relative retained footprint across repeated runs.',
+    js: 78,
+    wasm: 42,
+  },
+  composite: {
+    label: 'Composite',
+    description: 'Combined score across responsiveness and memory retention.',
+    js: 80,
+    wasm: 45,
+  },
 }
 
 const ARTICLES: Article[] = [
@@ -71,7 +95,10 @@ function renderInline(text: string): string {
 
 export function ThoughtLeadership() {
   const [expanded, setExpanded] = useState<string | null>(null)
+  const [benchmarkMode, setBenchmarkMode] = useState<BenchmarkMode>('latency')
+  const [drawerOpen, setDrawerOpen] = useState(false)
   const [ref, isVisible] = useIntersectionObserver(0.1)
+  const benchmark = BENCHMARK_MODES[benchmarkMode]
 
   return (
     <section id="thought-leadership" ref={ref as React.RefObject<HTMLElement>} className={`thoughts-section reveal ${isVisible ? 'visible' : ''}`}>
@@ -81,6 +108,51 @@ export function ThoughtLeadership() {
       <p className="section-subtitle">
         Performance appendix for the portfolio build.
       </p>
+
+      <div className="benchmark-shell">
+        <div className="benchmark-controls" role="tablist" aria-label="Benchmark modes">
+          {(['latency', 'memory', 'composite'] as BenchmarkMode[]).map((mode) => (
+            <button
+              key={mode}
+              type="button"
+              className={`benchmark-chip ${benchmarkMode === mode ? 'active' : ''}`}
+              onClick={() => setBenchmarkMode(mode)}
+              aria-pressed={benchmarkMode === mode}
+            >
+              {BENCHMARK_MODES[mode].label}
+            </button>
+          ))}
+        </div>
+
+        <div className="benchmark-panel">
+          <div className="benchmark-panel-copy">
+            <p className="benchmark-kicker mono">Interactive benchmark</p>
+            <h3 className="benchmark-title">{benchmark.label} comparison</h3>
+            <p className="benchmark-desc">{benchmark.description}</p>
+          </div>
+
+          <div className="benchmark-bars" aria-label="Relative benchmark bars">
+            <div className="benchmark-bar-group">
+              <span className="benchmark-bar-label mono">Native JS</span>
+              <div className="benchmark-bar-track">
+                <div className="benchmark-bar benchmark-bar--js" style={{ width: `${benchmark.js}%` }} />
+              </div>
+              <span className="benchmark-bar-value mono">{benchmark.js}</span>
+            </div>
+            <div className="benchmark-bar-group">
+              <span className="benchmark-bar-label mono">Rust/Wasm</span>
+              <div className="benchmark-bar-track">
+                <div className="benchmark-bar benchmark-bar--wasm" style={{ width: `${benchmark.wasm}%` }} />
+              </div>
+              <span className="benchmark-bar-value mono">{benchmark.wasm}</span>
+            </div>
+          </div>
+
+          <button type="button" className="benchmark-open-detail" onClick={() => setDrawerOpen(true)}>
+            Open detail drawer
+          </button>
+        </div>
+      </div>
 
       <div className="articles-list">
         {ARTICLES.map((article) => (
@@ -142,6 +214,24 @@ export function ThoughtLeadership() {
           </div>
         ))}
       </div>
+
+      <DetailDrawer
+        isOpen={drawerOpen}
+        title="Benchmarks and proof surfaces"
+        subtitle="Interactive evidence for the performance appendix"
+        summary="Use this drawer to review the benchmark framing, compare the current relative scores, and pivot into the architecture docs when needed."
+        highlights={[
+          'Toggle between latency, memory, and composite views.',
+          'Use the relative bars to scan the comparison without reading the whole article.',
+          'Connects directly to the architecture markdown and proposal docs.',
+        ]}
+        links={[
+          { label: 'Compute Architecture', href: '/COMPUTE_ARCH.md' },
+          { label: 'Proof Logic', href: '/PROOF_LOGIC.md' },
+          { label: 'Infrastructure Proposal', href: '/INFRA_PROPOSAL.md' },
+        ]}
+        onClose={() => setDrawerOpen(false)}
+      />
     </section>
   )
 }

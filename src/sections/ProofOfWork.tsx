@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { DetailDrawer } from '../components/DetailDrawer'
 import { TerminalWindow } from '../components/TerminalWindow'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './ProofOfWork.css'
@@ -8,6 +10,7 @@ function TechTag({ label, color = 'plasma' }: { label: string; color?: 'plasma' 
 
 export function ProofOfWork() {
   const [ref, isVisible] = useIntersectionObserver(0.1)
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
   return (
     <section id="architecture" ref={ref as React.RefObject<HTMLElement>} className={`proof-section reveal ${isVisible ? 'visible' : ''}`}>
@@ -35,6 +38,9 @@ export function ProofOfWork() {
             <TechTag label="Wasm" color="teal" />
             <TechTag label="Edge compute" color="plasma" />
           </div>
+          <button type="button" className="proof-open-detail" onClick={() => setDrawerOpen(true)}>
+            View architecture drawer
+          </button>
         </TerminalWindow>
 
         {/* UhasibuWatch */}
@@ -74,6 +80,23 @@ export function ProofOfWork() {
           </div>
         </TerminalWindow>
       </div>
+
+      <DetailDrawer
+        isOpen={drawerOpen}
+        title="ACSIS Grader"
+        subtitle="C# controller to Rust/Wasm execution lifecycle"
+        summary="This pillar documents the compute handoff from a thin controller into a local Wasm runtime. It is optimized to reduce interpreter overhead and keep the hot path deterministic."
+        highlights={[
+          'Controller validates and stages the request.',
+          'Wasm module executes the compute step locally.',
+          'The comparison table tracks the Native JS and Rust/Wasm baseline.',
+        ]}
+        links={[
+          { label: 'Compute Architecture', href: '/COMPUTE_ARCH.md' },
+          { label: 'Benchmarks', href: '/BENCHMARKS.md' },
+        ]}
+        onClose={() => setDrawerOpen(false)}
+      />
     </section>
   )
 }

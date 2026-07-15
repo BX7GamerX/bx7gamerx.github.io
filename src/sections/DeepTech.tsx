@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { DetailDrawer } from '../components/DetailDrawer'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './DeepTech.css'
 
@@ -33,6 +35,7 @@ function LogicDiagram() {
 
 export function DeepTech() {
   const [ref, isVisible] = useIntersectionObserver(0.1)
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
   return (
     <section id="web3-solutions" ref={ref as React.RefObject<HTMLElement>} className={`deeptech-section reveal ${isVisible ? 'visible' : ''}`}>
@@ -76,7 +79,28 @@ export function DeepTech() {
           <span className="tech-tag tech-tag--teal">Local-first</span>
           <span className="tech-tag tech-tag--plasma">No API calls</span>
         </div>
+
+        <button type="button" className="deeptech-open-detail" onClick={() => setDrawerOpen(true)}>
+          View proof drawer
+        </button>
       </div>
+
+      <DetailDrawer
+        isOpen={drawerOpen}
+        title="Invariant LimitState"
+        subtitle="Browser-native predicate evaluation"
+        summary="This pillar keeps the proof state local and deterministic so the browser can evaluate logic without external calls."
+        highlights={[
+          'Predicate input, logic engine, browser proof, deterministic verdict.',
+          'The flow is optimized for local-first privacy and predictable latency.',
+          'The repo-level PROOF_LOGIC doc contains the implementation notes.',
+        ]}
+        links={[
+          { label: 'Proof Logic', href: '/PROOF_LOGIC.md' },
+          { label: 'Benchmarks', href: '/BENCHMARKS.md' },
+        ]}
+        onClose={() => setDrawerOpen(false)}
+      />
     </section>
   )
 }

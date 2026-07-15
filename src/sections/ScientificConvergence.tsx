@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { DetailDrawer } from '../components/DetailDrawer'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './ScientificConvergence.css'
 
@@ -39,6 +41,7 @@ function InfraDiagram() {
 
 export function ScientificConvergence() {
   const [ref, isVisible] = useIntersectionObserver(0.1)
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
   return (
     <section id="scientific-convergence" ref={ref as React.RefObject<HTMLElement>} className={`science-section reveal ${isVisible ? 'visible' : ''}`}>
@@ -119,7 +122,28 @@ export function ScientificConvergence() {
             The proposal standardizes the runtime, isolates the application, and makes failure domains explicit. It is written to survive traffic spikes and deployment pressure.
           </p>
         </div>
+
+        <button type="button" className="science-open-detail" onClick={() => setDrawerOpen(true)}>
+          View proposal drawer
+        </button>
       </div>
+
+      <DetailDrawer
+        isOpen={drawerOpen}
+        title="WordPress Infrastructure Proposal"
+        subtitle="Containerized, hardened commercial stack"
+        summary="This proposal frames the CMS transition as a release-engineering and traffic-management problem rather than a simple hosting move."
+        highlights={[
+          'Nginx tuning, CDN integration, and zero-downtime deployment are the core controls.',
+          'The stack is designed to shrink the blast radius of deploys and traffic spikes.',
+          'The proposal lives in INFRA_PROPOSAL.md for quick reference.',
+        ]}
+        links={[
+          { label: 'Infrastructure Proposal', href: '/INFRA_PROPOSAL.md' },
+          { label: 'Benchmarks', href: '/BENCHMARKS.md' },
+        ]}
+        onClose={() => setDrawerOpen(false)}
+      />
     </section>
   )
 }

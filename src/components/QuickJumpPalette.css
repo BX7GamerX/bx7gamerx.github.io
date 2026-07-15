@@ -1,0 +1,115 @@
+.jump-palette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 175;
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10vh var(--space-md) 0;
+}
+
+.jump-palette {
+  width: min(720px, 100%);
+  background: var(--base-bg);
+  border: 1px solid var(--alt-surface);
+  border-radius: var(--border-radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  padding: var(--space-lg);
+  animation: paletteIn 0.2s ease;
+}
+
+.jump-palette-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.jump-palette-kicker {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.jump-palette-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+}
+
+.jump-palette-close {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--alt-surface);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.jump-palette-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(61, 174, 233, 0.25);
+  background: var(--alt-surface);
+  color: var(--text-primary);
+  font-family: var(--font-terminal);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-md);
+}
+
+.jump-palette-input::placeholder {
+  color: var(--text-muted);
+}
+
+.jump-palette-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--alt-surface);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.jump-palette-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--base-bg);
+  transition: background var(--transition-fast);
+}
+
+.jump-palette-item:hover {
+  background: rgba(61, 174, 233, 0.06);
+}
+
+.jump-palette-item-label {
+  font-family: var(--font-terminal);
+  color: var(--text-primary);
+}
+
+.jump-palette-item-description {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+@keyframes paletteIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .jump-palette-overlay {
+    padding-top: 6vh;
+  }
+}

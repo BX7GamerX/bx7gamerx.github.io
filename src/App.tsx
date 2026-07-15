@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { ParticleBackground } from './components/ParticleBackground'
 import { TerminalOverlay } from './components/TerminalOverlay'
+import { QuickJumpPalette } from './components/QuickJumpPalette'
 import { Hero } from './sections/Hero'
 import { ProofOfWork } from './sections/ProofOfWork'
 import { DeepTech } from './sections/DeepTech'
@@ -28,20 +29,38 @@ function SectionFallback() {
 
 export default function App() {
   const [terminalOpen, setTerminalOpen] = useState(false)
+  const [jumpPaletteOpen, setJumpPaletteOpen] = useState(false)
   const toggleTerminal = useCallback(() => setTerminalOpen((prev) => !prev), [])
   const closeTerminal = useCallback(() => setTerminalOpen(false), [])
+  const toggleJumpPalette = useCallback(() => setJumpPaletteOpen((prev) => !prev), [])
+  const closeJumpPalette = useCallback(() => setJumpPaletteOpen(false), [])
 
-  // Global keyboard shortcut: Ctrl+\ or Ctrl+`
+  const jumpTargets = [
+    { label: 'ACSIS Grader', description: 'Open the edge compute pillar', href: '#architecture' },
+    { label: 'Invariant LimitState', description: 'Open the proof logic pillar', href: '#web3-solutions' },
+    { label: 'WP Infrastructure', description: 'Open the hardening pillar', href: '#scientific-convergence' },
+    { label: 'Benchmarks', description: 'Jump to the performance appendix', href: '#thought-leadership' },
+    { label: 'Contact', description: 'Open the intake form', href: '#initialize-contact' },
+    { label: 'Compute Arch Doc', description: 'Open the architecture markdown', href: '/COMPUTE_ARCH.md' },
+    { label: 'Proof Logic Doc', description: 'Open the proof logic markdown', href: '/PROOF_LOGIC.md' },
+    { label: 'Infrastructure Proposal', description: 'Open the proposal markdown', href: '/INFRA_PROPOSAL.md' },
+    { label: 'Benchmarks Doc', description: 'Open the benchmark appendix', href: '/BENCHMARKS.md' },
+  ]
+
+  // Global keyboard shortcuts: Ctrl+\ or Ctrl+` for terminal, Ctrl+J for jump palette
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.ctrlKey && (e.key === '\\' || e.key === '`')) {
         e.preventDefault()
         toggleTerminal()
+      } else if (e.ctrlKey && e.key.toLowerCase() === 'j') {
+        e.preventDefault()
+        toggleJumpPalette()
       }
     }
     document.addEventListener('keydown', handler)
     return () => document.removeEventListener('keydown', handler)
-  }, [toggleTerminal])
+  }, [toggleJumpPalette, toggleTerminal])
 
   return (
     <>
@@ -66,6 +85,7 @@ export default function App() {
 
       <Footer />
       <TerminalOverlay isOpen={terminalOpen} onClose={closeTerminal} />
+      <QuickJumpPalette isOpen={jumpPaletteOpen} onClose={closeJumpPalette} targets={jumpTargets} />
 
       {/* Floating terminal trigger button */}
       <button
@@ -75,6 +95,15 @@ export default function App() {
         title="Open Terminal (Ctrl + `)"
       >
         &gt;_
+      </button>
+
+      <button
+        className="terminal-fab terminal-fab--secondary"
+        onClick={toggleJumpPalette}
+        aria-label="Open quick jump palette"
+        title="Quick Jump (Ctrl + J)"
+      >
+        J
       </button>
     </>
   )
