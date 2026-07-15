@@ -41,10 +41,7 @@ export function Contact() {
       </h2>
 
       <p className="contact-intro">
-        I partner exclusively with technical founders and enterprise engineering
-        teams to architect robust, offline-first, and memory-safe systems. To
-        initiate a technical discovery phase, define your system constraints in
-        the payload below.
+        Use this form for systems work, proposal review, or benchmark follow-up.
       </p>
 
       <div className="contact-form-wrapper">
@@ -95,9 +92,10 @@ export function Contact() {
                 </label>
                 <select id="project_scope" name="project_scope" required className="field-input">
                   <option value="">-- Select scope --</option>
-                  <option value="web3-icp">Web3/ICP</option>
+                  <option value="acsis-grader">ACSIS Grader</option>
+                  <option value="invariant-limitstate">Invariant LimitState</option>
+                  <option value="wordpress-infrastructure">WordPress Infrastructure</option>
                   <option value="distributed-systems">Distributed Systems</option>
-                  <option value="computational-biology">Computational Biology</option>
                   <option value="other">Other</option>
                 </select>
               </div>

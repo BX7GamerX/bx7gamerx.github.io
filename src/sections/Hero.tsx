@@ -5,17 +5,17 @@ import { GlowButton } from '../components/GlowButton'
 import './Hero.css'
 
 const BOOT_SEQUENCE = [
-  '> loading modules... [rust, c++, kafka, ic-cdk]',
+  '> loading modules... [rust, wasm, distributed-systems]',
   800,
-  '> loading modules... [rust, c++, kafka, ic-cdk]\n> fetching credentials...',
+  '> loading modules... [rust, wasm, distributed-systems]\n> verifying architecture...',
   600,
-  '> loading modules... [rust, c++, kafka, ic-cdk]\n> fetching credentials...\n  ICP_HACKATHON_WINNER=true',
+  '> loading modules... [rust, wasm, distributed-systems]\n> verifying architecture...\n  EDGE_COMPUTE_READY=true',
   400,
-  '> loading modules... [rust, c++, kafka, ic-cdk]\n> fetching credentials...\n  ICP_HACKATHON_WINNER=true\n> verifying...',
+  '> loading modules... [rust, wasm, distributed-systems]\n> verifying architecture...\n  EDGE_COMPUTE_READY=true\n> loading appendix...',
   600,
-  '> loading modules... [rust, c++, kafka, ic-cdk]\n> fetching credentials...\n  ICP_HACKATHON_WINNER=true\n> verifying...\n  KENYATTA_UNIV_BIOCHEM=active',
+  '> loading modules... [rust, wasm, distributed-systems]\n> verifying architecture...\n  EDGE_COMPUTE_READY=true\n> loading appendix...\n  BENCHMARKS_ENABLED=true',
   400,
-  '> loading modules... [rust, c++, kafka, ic-cdk]\n> fetching credentials...\n  ICP_HACKATHON_WINNER=true\n> verifying...\n  KENYATTA_UNIV_BIOCHEM=active\n\n> SYSTEM READY_',
+  '> loading modules... [rust, wasm, distributed-systems]\n> verifying architecture...\n  EDGE_COMPUTE_READY=true\n> loading appendix...\n  BENCHMARKS_ENABLED=true\n\n> SYSTEM READY_',
   1000,
 ] as const
 
@@ -50,29 +50,22 @@ export function Hero() {
         <div className={`hero-content ${showContent ? 'visible' : ''}`}>
           <p className="hero-name mono text-teal">Simon B. Wandera</p>
           <h1 className="hero-headline">
-            Constraint-Driven Systems Engineering.{' '}
-            <span className="text-plasma">
-              From Award-Winning ICP Wasm Environments to High-Throughput Kafka Backends.
-            </span>
+            Systems Engineer. Founder. High-performance computing & local-first data architecture.
           </h1>
 
           <p className="hero-sub">
-            Specializing in bridging Kenyatta University biochemistry research
-            with low-level Rust architecture. Creator of{' '}
-            <span className="text-green">Gain Chain</span> and the{' '}
-            <span className="text-teal">HelixEdge</span> offline genomic
-            surveillance system.
+            Current focus: Rust, Wasm, and distributed systems. The portfolio is structured as a three-pillar engineering system with measurable performance evidence.
           </p>
 
           <div className="hero-actions">
             <GlowButton href="#architecture" variant="green">
-              [ Execute: View_Architecture ]
+              [ Open_ACSIS_Grader ]
             </GlowButton>
-            <GlowButton href="#initialize-contact" variant="blue">
-              [ Initialize_Contact ]
+            <GlowButton href="#web3-solutions" variant="blue">
+              [ Open_Invariant_LimitState ]
             </GlowButton>
-            <GlowButton href="/simon-b-wandera-cv.pdf" variant="teal" download="Simon_B_Wandera_CV.pdf">
-              [ Download_CV ]
+            <GlowButton href="#thought-leadership" variant="teal">
+              [ Open_Benchmarks ]
             </GlowButton>
           </div>
         </div>

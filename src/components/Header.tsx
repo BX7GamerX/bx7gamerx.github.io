@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import './Header.css'
 
 const NAV_ITEMS = [
-  { label: '[Architecture]', href: '#architecture' },
-  { label: '[Web3_Solutions]', href: '#web3-solutions' },
-  { label: '[Scientific_Convergence]', href: '#scientific-convergence' },
-  { label: '[~/logs/]', href: '#thought-leadership' },
+  { label: '[ACSIS_Grader]', href: '#architecture' },
+  { label: '[Invariant_LimitState]', href: '#web3-solutions' },
+  { label: '[WP_Infrastructure]', href: '#scientific-convergence' },
+  { label: '[Benchmarks]', href: '#thought-leadership' },
   { label: '[Initialize_Contact]', href: '#initialize-contact' },
 ]
 

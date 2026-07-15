@@ -14,20 +14,16 @@ export function Footer() {
             GitHub
           </a>
           <a
-            href="https://internetcomputer.org"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/BENCHMARKS.md"
             className="footer-link"
           >
-            ICP Ecosystem
+            Benchmarks
           </a>
           <a
-            href="https://linkedin.com/in/simon-wandera"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/COMPUTE_ARCH.md"
             className="footer-link"
           >
-            LinkedIn
+            Compute Arch
           </a>
         </div>
 
@@ -36,7 +32,7 @@ export function Footer() {
         </div>
 
         <div className="footer-copy">
-          <span className="mono">&copy; {new Date().getFullYear()} Simon B. Wandera — Systems Architect</span>
+          <span className="mono">&copy; {new Date().getFullYear()} Simon B. Wandera — Systems Engineer</span>
         </div>
       </div>
     </footer>

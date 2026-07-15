@@ -4,32 +4,80 @@ interface CommandResult {
 }
 
 const STACK = {
-  systems: ['Rust', 'C++'],
-  backend: ['Apache Kafka', '.NET 8', 'PostgreSQL', 'Python'],
-  web3: ['ICP', 'ic-cdk', 'WebAssembly'],
-  frontend: ['React', 'TypeScript', 'Flutter'],
-  science: ['Parasail', 'htslib', 'Oxford Nanopore', 'zerocopy'],
+  systems: ['Rust', 'WebAssembly'],
+  controller: ['C#', '.NET', 'Local-first orchestration'],
+  backend: ['Nginx', 'CDN', 'Containerized delivery'],
+  logic: ['FOPL', 'Browser-only proof engine'],
+  frontend: ['React', 'TypeScript'],
 }
 
-const GAIN_CHAIN_MD = `# Gain Chain — ICP Hackathon Winner
+const COMPUTE_ARCH_MD = `# ACSIS Grader — Compute Architecture
 
 ## Overview
-Fully on-chain decentralized application built on the Internet Computer Protocol.
-No centralized cloud dependencies (AWS/GCP). Pure Web3 infrastructure.
+The controller prepares work and the Wasm module executes the compute path locally.
 
 ## Architecture
-- **Language:** Rust (compiled to WebAssembly)
-- **Framework:** ic-cdk (Canister Development Kit)
-- **Gas Model:** ICP Reverse Gas — users pay nothing
-- **Oracles:** Eliminated via Direct HTTPS Outcalls
-- **State:** Stable Memory persistence across upgrades
+- **Controller:** C#
+- **Runtime:** Rust compiled to WebAssembly
+- **Execution mode:** Local-first, deterministic, thin controller
 
-## Key Innovation
-Memory-safe Wasm modules executing at web speed on a decentralized subnet.
-Inter-canister call orchestration for service mesh patterns.
+## Lifecycle
+- Validate input in the controller.
+- Pass a compact payload to the Wasm module.
+- Return the result directly to the UI.
 
-## Result
-🏆 1st Place — ICP Hackathon`
+## Benchmark table
+| Metric | Native JS | Rust/Wasm |
+| --- | --- | --- |
+| Execution latency | Baseline | Lower |
+| Memory footprint | Baseline | Lower |
+
+Replace the baseline values with measured release data when they are available.
+`
+
+const PROOF_LOGIC_MD = `# Invariant LimitState — Proof Logic
+
+## Overview
+The engine evaluates First-Order Predicate Logic in the browser.
+
+## Rules
+- Keep state local.
+- Keep inference deterministic.
+- Avoid external API calls.
+
+## Implementation
+The parser tokenizes predicates, normalizes terms, and resolves truth values against local inputs.
+
+## Repository
+Add the verified public repository link here once the proof-of-concept URL is finalized.
+`
+
+const INFRA_PROPOSAL_MD = `# WordPress Infrastructure Proposal
+
+## Summary
+This proposal moves a default CMS into a containerized, performance-optimized, secure web stack.
+
+## Scope
+- Nginx tuning.
+- CDN integration.
+- Zero-downtime deployment pipelines.
+
+## Delivery
+The system keeps application traffic isolated, reduces cache miss pressure, and limits deployment blast radius.
+`
+
+const BENCHMARKS_MD = `# Benchmarks
+
+## Current comparisons
+| Workload | Interpreted baseline | Rust/Wasm |
+| --- | --- | --- |
+| Small compute task | Slower | Faster |
+| Repeated runs | Higher retained memory | Lower retained memory |
+| Local proof engine | Network-bound | Browser-local |
+
+## Notes
+Use measured values from the ACSIS harness, the browser proof engine, and the Wasm demo when publishing a release.
+`
 
 const HELP_TEXT = `Available commands:
 
@@ -99,8 +147,20 @@ export function processCommand(input: string): CommandResult {
     return { output: HELP_TEXT }
   }
 
-  if (cmd === 'cat gain_chain.md') {
-    return { output: GAIN_CHAIN_MD }
+  if (cmd === 'cat compute_arch.md') {
+    return { output: COMPUTE_ARCH_MD }
+  }
+
+  if (cmd === 'cat proof_logic.md') {
+    return { output: PROOF_LOGIC_MD }
+  }
+
+  if (cmd === 'cat infra_proposal.md') {
+    return { output: INFRA_PROPOSAL_MD }
+  }
+
+  if (cmd === 'cat benchmarks.md') {
+    return { output: BENCHMARKS_MD }
   }
 
   if (cmd === 'show stack') {
@@ -153,13 +213,14 @@ export function processCommand(input: string): CommandResult {
 
   if (cmd === 'ls' || cmd === 'ls -la') {
     return {
-      output: `drwxr-xr-x  simon  staff  gain_chain.md
--rw-r--r--  simon  staff  hobbies.txt
--rw-r--r--  simon  staff  philosophy.conf
+      output: `drwxr-xr-x  simon  staff  compute_arch.md
+drwxr-xr-x  simon  staff  proof_logic.md
+drwxr-xr-x  simon  staff  infra_proposal.md
+drwxr-xr-x  simon  staff  benchmarks.md
 -rwxr-xr-x  simon  staff  stack.json
 -rwxr-xr-x  simon  staff  diagnostics.sh
 
-Hint: try 'cat hobbies.txt' or 'cat philosophy.conf'`,
+Hint: try 'cat benchmarks.md' or 'cat compute_arch.md'`,
     }
   }
 
