@@ -25,6 +25,12 @@ export function Footer() {
           >
             Compute Arch
           </a>
+          <a
+            href="mailto:admin@hostara.app"
+            className="footer-link"
+          >
+            admin@hostara.app
+          </a>
         </div>
 
         <div className="footer-badge">
