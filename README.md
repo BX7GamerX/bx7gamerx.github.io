@@ -4,11 +4,11 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
-│  >_ sys.arch --target=distributed-ledgers --mode=deterministic-systems --release │
+│  >_ sys.arch --target=distributed-systems --mode=deterministic-compute --release │
 └──────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1200&color=3DAEE9&center=true&vCenter=true&width=800&lines=Lead+System+Architect+%7C+Baraza+Protocol;Solo+Creator+%26+Architect+%7C+Hostara+v5.2+Ecosystem;Systems+Rust+(no_std+Wasm)+%E2%80%A2+C%23+.NET+8+CQRS;Constraint-Driven+Edge+Infrastructure+%E2%80%A2+Stellar+Soroban)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1200&color=3DAEE9&center=true&vCenter=true&width=800&lines=Principal+Systems+Architect+%7C+Distributed+Ledgers;Solo+Creator+%26+Architect+%7C+Hostara+v5.2+Ecosystem;Systems+Rust+(no_std+Wasm)+%E2%80%A2+C%23+.NET+8+CQRS;Constraint-Driven+Edge+Infrastructure+%E2%80%A2+Stellar+Soroban)](https://git.io/typing-svg)
 
 <p align="center">
   <a href="mailto:bwires947@gmail.com"><img src="https://img.shields.io/badge/Console-bwires947%40gmail.com-232627?style=flat-square&logo=gnu-bash&logoColor=3DAEE9" alt="Email" /></a>
@@ -35,22 +35,22 @@
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                                     VERIFIED ARCHITECTURAL CODEBASES                                        │
 ├──────────────────────────────┬─────────────────────────────────────────┬────────────────────────────────────┤
-│ 1. Baraza Protocol           │ 2. Hostara (v5.2) Ecosystem             │ 3. HelixEdge & ACSIS Grader        │
+│ 1. Distributed Ledgers       │ 2. Hostara (v5.2) Ecosystem             │ 3. HelixEdge & ACSIS Grader        │
 ├──────────────────────────────┼─────────────────────────────────────────┼────────────────────────────────────┤
-│ • **Lead System Architect**  │ • **Solo Creator & Systems Architect**  │ • **HelixEdge Engine (Solo Dev)**  │
+│ • **Principal Systems Arch** │ • **Solo Creator & Systems Architect**  │ • **HelixEdge Engine (Solo Dev)**  │
 │ • **Lead Backend Engineer**  │ • C# .NET 8 Clean Architecture / CQRS   │   Offline-first constraint compute │
-│ • Pan-African Edge Topology  │ • Ultra-Low-Latency Rust Edge Proxy     │ • **ACSIS Wasm Engine (Solo Dev)** │
+│ • Sub-15ms Regional Edge     │ • Ultra-Low-Latency Rust Edge Proxy     │ • **ACSIS Wasm Engine (Solo Dev)** │
 │ • Soroban Progressive Multisig│ • Conversational Commerce Bot Engine   │   Local-first deterministic proofs │
-│ • Daraja / Paystack Sagas    │ • Docker Multi-Service Orchestration    │ • **Algorithmic Quantitative Bots**│
+│ • Multi-Rail FinTech Sagas   │ • Docker Multi-Service Orchestration    │ • **Algorithmic Quantitative Bots**│
 └──────────────────────────────┴─────────────────────────────────────────┴────────────────────────────────────┘
 ```
 
-### 1. 🌐 [Baraza Protocol](https://github.com/BX7GamerX) — Pan-African Decentralized Chama Infrastructure
-* **Engineering Mandate:** **Lead System Architect** & **Lead Backend Engineer**
-* **Edge Topology & Latency Elimination:** Designed the Cloudflare edge routing blueprint terminating TLS locally at regional African Internet Exchange Points (**KIXP Nairobi**, **NAPAfrica Johannesburg**, **IXPN Lagos**), eliminating international latency tromboning and maintaining **$< 15\text{ms}$ regional response times**.
-* **Soroban Smart Contract Architecture:** Authored the canonical progressive multi-signature treasury vault in Systems Rust (`contracts/stellar/treasury_vault/src/lib.rs`) on Stellar Protocol 20+, featuring dynamic $M$-of-$N$ threshold governance, state rent auto-extension, and Checks-Effects-Interactions reentrancy security.
-* **Zero-Trust FinTech Ingress:** Built multi-rail payment ingress integrating **Safaricom Daraja STK Push** with active query polling FSMs (`transaction-status.ts`), **Paystack multi-rail checkout** with constant-time HMAC-SHA512 verification (`paystack.ts`), and Kotani Pay proxies.
-* **Double-Entry Ledger Invariants:** Engineered the pure domain Dynamic Fee Engine (`feeEngine.ts`) with fixed-point minor integer arithmetic (eliminating IEEE 754 float drift) and PostgreSQL double-entry ledgers protected by fail-closed Row Level Security (RLS).
+### 1. 🌐 Distributed Financial Infrastructure & Sovereign Ledgers
+* **Engineering Scope:** **Principal Systems Architect & Lead Backend Engineer**
+* **Regional Edge Topologies:** Designed edge routing topologies terminating TLS locally at regional African Internet Exchange Points (**KIXP Nairobi**, **NAPAfrica Johannesburg**, **IXPN Lagos**), eliminating international latency tromboning and maintaining **$< 15\text{ms}$ regional response times**.
+* **Smart Contract Architecture (Stellar Soroban Protocol 20+):** Engineered progressive multi-signature vaults in **Systems Rust (`#![no_std]`)**, featuring dynamic $M$-of-$N$ threshold governance, state rent auto-extension, and Checks-Effects-Interactions reentrancy security.
+* **Zero-Trust FinTech Ingress:** Architected multi-rail payment ingress integrating mobile money STK push with active query polling FSMs, multi-rail checkout with constant-time HMAC-SHA512 verification, and non-blocking webhook ingestion queues.
+* **Double-Entry Financial Ledgers:** Engineered immutable double-entry accounting schemas with fixed-point minor integer arithmetic (zero floating-point drift) and PostgreSQL Row Level Security (RLS) multi-tenant isolation.
 
 ---
 
@@ -80,7 +80,7 @@
 │ **Low-Level & Systems**    │ Rust (#![no_std] Wasm), C# (.NET 8 Core), C/C++, Tokio Async, Linux POSIX     │
 │ **Distributed Systems**    │ CQRS / MediatR, Cloudflare V8 Workers, BGP Anycast, Redis Swarm, Docker Compose│
 │ **Web3 & Financial Ledgers**│ Stellar Soroban (Proto 20+), PostgreSQL 16 (RLS), Daraja 2.0, Paystack HMAC-512│
-│ **Formal Architecture & QA**│ C4 Modeling, Distributed Sagas, ADR Governance, Vitest 100-Burst, Rust Proptest│
+│ **Formal Architecture & QA**│ C4 Modeling, Distributed Sagas, ADR Governance, Vitest Concurrency, Proptest   │
 │ **Scientific & Quant**     │ Computational Biochemistry, Finite Field Math, Fixed-Point Decimal Invariants   │
 └────────────────────────────┴────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -89,13 +89,11 @@
 
 ## 🔒 Verified Codebase Invariant Defenses
 
-Every system in production enforces non-negotiable mathematical and systems-level invariants:
-
-- **Invariant I1 (Zero Double-Spend):** Concurrency-safe balance mutations using atomic SQL row-level locks (`SELECT FOR UPDATE`) and 24-hour idempotency keys. Tested under **100-burst simultaneous HTTP requests** with 0 duplicate mints.
-- **Invariant I2 (Constant-Time Verification):** Cryptographic webhooks verified using bitwise XOR accumulators (`crypto.timingSafeEqual`), eliminating CPU branch predictor timing leaks.
-- **Invariant I3 (Non-Custodial Multi-Signature):** Soroban vault funds locked behind on-chain $M$-of-$N$ threshold cryptographic authorization (`Address::require_auth()`).
-- **Invariant I4 (Zero Floating-Point Drift):** Monetary ledger calculations strictly executed in integer minor units (ISO 4217 cents, Stellar stroops) with basis-point fee scaling.
-- **Invariant I5 (Edge Latency Guarantees):** Regional ingress termination at KIXP/NAPAfrica peering points guaranteeing $<15\text{ms}$ roundtrip execution.
+- **Invariant I1 (Zero Double-Spend):** Concurrency-safe balance mutations using atomic SQL row-level locks and 24-hour idempotency keys. Tested under **100-burst simultaneous HTTP requests** with 0 duplicate mints.
+- **Invariant I2 (Constant-Time Verification):** Cryptographic webhooks verified using bitwise XOR accumulators, eliminating CPU branch predictor timing leaks.
+- **Invariant I3 (Non-Custodial Multi-Signature):** On-chain $M$-of-$N$ threshold cryptographic authorization over Curve25519 / Ed25519.
+- **Invariant I4 (Zero Floating-Point Drift):** Monetary ledger calculations strictly executed in integer minor units with basis-point fee scaling.
+- **Invariant I5 (Edge Latency Guarantees):** Regional ingress termination at African IXP peering points guaranteeing $<15\text{ms}$ roundtrip execution.
 
 ---
 
@@ -109,15 +107,6 @@ Every system in production enforces non-negotiable mathematical and systems-leve
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=BX7GamerX&theme=tokyonight&hide_border=true&background=1b1d1e&ring=3DAEE9&fire=79C931&currStreakNum=EFF0F1" alt="Streak Stats" width="98%" />
 </div>
-
----
-
-## 📜 Canonical Architectural Publications
-
-- **Author, Baraza Protocol Software Architecture Document (SAD)** — *Rev 1.0, Technical Foundation & Class A/G/F Boundaries.*
-- **Author, Baraza Protocol Master Technical Compendium & ADR Register** — *v2.0, Architecture Decision Records ADR-001 through ADR-009.*
-- **Author, Baraza Protocol Official Cloudflare Infrastructure Architecture** — *`BARAZA-CF-INFRA-OFFICIAL-V1.0`, Sub-15ms Edge Blueprint.*
-- **Author, 48-Week Baraza Protocol Engineering Masterclass** — *49 Modules across Systems Rust, Cryptography, Ledgers, and Soroban SDK.*
 
 ---
 
